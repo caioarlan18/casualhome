@@ -7,7 +7,12 @@ function App() {
       <Router>
 
         <Header />
-
+        <Routes>
+          <Route path='/' element={''} />
+          <Route path='todosprodutos' element={''} />
+          <Route path='itenscasa' element={''} />
+          <Route path='itensanimais' element={''} />
+        </Routes>
       </Router>
     </div>
   );
