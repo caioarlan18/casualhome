@@ -14,8 +14,8 @@
   cursor: pointer;
 }
 .hd1 img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   cursor: pointer;
 }
 .hdd {
@@ -30,7 +30,7 @@
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   border: 1px solid #1b3768;
-  height: 25px;
+  height: 35px;
   font-family: poppins;
   font-size: 12px;
   text-indent: 10px;
@@ -45,11 +45,15 @@
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   cursor: pointer;
+  width: 40px;
 }
 .hdd1 button svg {
   color: white;
   display: flex;
-  stroke-width: 2px;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
 }
 
 /* menu hamburguer */
@@ -99,5 +103,10 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+  display: none;
+}
+
+/* menu desktop */
+.mndesktop {
   display: none;
 }

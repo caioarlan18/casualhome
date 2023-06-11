@@ -28,33 +28,76 @@ function Header() {
     return (
         <div>
             {/* cabeçalho mobile */}
-            <div className={`${stylesMobile.hd} ${stylesDesktop.hd}`}>
-                <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
-                    <FaBars onClick={MenuOpen} />
+            <div className={`${stylesMobile.mnmobile} ${stylesDesktop.mnmobile}`}>
+                <div className={`${stylesMobile.hd} ${stylesDesktop.hd}`}>
+                    <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
+                        <FaBars onClick={MenuOpen} />
+                    </div>
+                    <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
+                        <img src={Logo} alt="logo do site" />
+                    </div>
+                    <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
+                        <IoCartOutline />
+                    </div>
                 </div>
-                <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
-                    <img src={Logo} alt="logo do site" />
+                <div className={`${stylesMobile.hdd} ${stylesDesktop.hdd}`}>
+                    <div className={`${stylesMobile.hdd1} ${stylesDesktop.hdd1}`}>
+                        <input type="text" placeholder='Pesquisar produtos' />
+                        <button><FaSearch /></button>
+                    </div>
                 </div>
-                <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
-                    <IoCartOutline />
+
+                {/* menu hamburguer */}
+                <div className={`${stylesMobile.nav} ${stylesDesktop.nav}`} >
+                    <FaTimes onClick={MenuClose} />
+                    <ul className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
+                        <Link to='todosprodutos'><li>Ver todos os produtos</li></Link>
+                        <Link to='itenscasa'><li>Itens para casa</li></Link>
+                        <Link to='itensanimais'><li>Itens para animais</li></Link>
+                    </ul>
                 </div>
             </div>
-            <div className={`${stylesMobile.hdd} ${stylesDesktop.hdd}`}>
-                <div className={`${stylesMobile.hdd1} ${stylesDesktop.hdd1}`}>
-                    <input type="text" placeholder='Pesquisar produtos' />
-                    <button><FaSearch /></button>
+            {/* menu desktop */}
+            <div className={`${stylesMobile.mndesktop} ${stylesDesktop.mndesktop}`}>
+                <div className={`${stylesMobile.hd_desk} ${stylesDesktop.hd_desk}`}>
+                    <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
+                        <Link to='/'>Home</Link>
+                    </div>
+                    <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
+                        <Link>Contato</Link>
+                    </div>
+                </div>
+
+                <div className={`${stylesMobile.hdd_desk} ${stylesDesktop.hdd_desk}`}>
+                    <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
+                        <img src={Logo} alt="logo do site" />
+                    </div>
+                    <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
+                        <input type="text" placeholder='Pesquisar produtos' />
+                        <button><FaSearch /></button>
+                    </div>
+                    <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
+                        <IoCartOutline />
+                    </div>
+                </div>
+
+                <div className={`${stylesMobile.hddd_desk} ${stylesDesktop.hddd_desk}`}>
+                    <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
+                        <Link to='todosprodutos'>Todos os produtos</Link>
+                    </div>
+                    <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
+                        <Link>Intruções de compra</Link>
+                    </div>
+                    <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
+                        <Link>Sobre nós</Link>
+                    </div>
+                    <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
+                        <Link>Nos acompanhe</Link>
+                    </div>
                 </div>
             </div>
 
-            {/* menu hamburguer */}
-            <div className={`${stylesMobile.nav} ${stylesDesktop.nav}`} >
-                <FaTimes onClick={MenuClose} />
-                <ul className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
-                    <Link to='todosprodutos'><li>Ver todos os produtos</li></Link>
-                    <Link to='itenscasa'><li>Itens para casa</li></Link>
-                    <Link to='itensanimais'><li>Itens para animais</li></Link>
-                </ul>
-            </div>
+
             <div className={`${stylesMobile.overlay}`} onClick={sumir}></div>
         </div>
     )
