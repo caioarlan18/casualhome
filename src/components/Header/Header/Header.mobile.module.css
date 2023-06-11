@@ -1,4 +1,6 @@
 /* cabeçalho */
+* {
+}
 .hd {
   background-color: white;
   width: 100%;

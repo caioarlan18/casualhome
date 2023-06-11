@@ -1,0 +1,14 @@
+@media screen and (min-width: 992px) and (max-width: 4000px) {
+  .sliderDesktop {
+    margin-top: 30px;
+    display: block;
+  }
+  .banner2 {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+  }
+  .sliderMobile {
+    display: none;
+  }
+}

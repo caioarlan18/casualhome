@@ -1,0 +1,10 @@
+.sliderMobile {
+  margin-top: 30px;
+  overflow: hidden;
+}
+.banner {
+  width: 100%;
+}
+.sliderDesktop {
+  display: none;
+}

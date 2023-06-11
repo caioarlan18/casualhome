@@ -7,6 +7,7 @@ import { FaTimes } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Logo from '../../../image/WhatsApp_Image_2023-06-11_at_00.00.07-removebg-preview.png'
 function Header() {
+
     function MenuOpen() {
         var menu = document.querySelector(`.${stylesMobile.nav}`)
         menu.classList.toggle(stylesMobile.active)
@@ -40,6 +41,7 @@ function Header() {
                         <IoCartOutline />
                     </div>
                 </div>
+
                 <div className={`${stylesMobile.hdd} ${stylesDesktop.hdd}`}>
                     <div className={`${stylesMobile.hdd1} ${stylesDesktop.hdd1}`}>
                         <input type="text" placeholder='Pesquisar produtos' />
@@ -94,6 +96,7 @@ function Header() {
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
                         <Link>Nos acompanhe</Link>
                     </div>
+
                 </div>
             </div>
 
