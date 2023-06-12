@@ -3,10 +3,10 @@ import stylesDesktop from './MainContent.desktop.module.css'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Banner1 from '../../../image/Banner1.jpeg'
-import Banner2 from '../../../image/Banner2.jpeg'
+import Banner1 from '../../../image/Banner30Mobile.jpg'
+import Banner2 from '../../../image/bannerFreteMobile.jpg'
 import Banner1D from '../../../image/Banner1D.jpeg'
-import Banner2D from '../../../image/Banner2D.jpeg'
+import Banner2D from '../../../image/BannerFreteDesktop.jpg'
 function MainContent() {
     const images = [
         { id: 1, src: Banner1, alt: 'Image 1' },
@@ -26,7 +26,7 @@ function MainContent() {
     };
     return (
         <div>
-            <div className={stylesMobile.sliderMobile}>
+            <div className={`${stylesMobile.sliderM} ${stylesDesktop.sliderM}`}>
                 <Slider {...settings} >
                     {images.map((image) => (
                         <div key={image.id}>
@@ -35,7 +35,7 @@ function MainContent() {
                     ))}
                 </Slider>
             </div>
-            <div className={stylesDesktop.sliderDesktop}>
+            <div className={`${stylesMobile.sliderD} ${stylesDesktop.sliderD}`}>
                 <Slider {...settings} >
                     {images2.map((image) => (
                         <div key={image.id}>

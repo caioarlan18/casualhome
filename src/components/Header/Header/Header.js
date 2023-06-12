@@ -5,7 +5,13 @@ import { IoCartOutline } from 'react-icons/io5';
 import { FaSearch } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Logo from '../../../image/WhatsApp_Image_2023-06-11_at_00.00.07-removebg-preview.png'
+import Logo from '../../../image/logotipocasualhome.png'
+import { FaHome } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import petIcon from '../../../image/icone-de-pet.png'
+import homeIcon from '../../../image/icone-de-casa-removebg-preview.png'
+import bolsaCompra from '../../../image/bolsa-de-compras-azul-removebg-preview.png'
 function Header() {
 
     function MenuOpen() {
@@ -51,12 +57,27 @@ function Header() {
 
                 {/* menu hamburguer */}
                 <div className={`${stylesMobile.nav} ${stylesDesktop.nav}`} >
-                    <FaTimes onClick={MenuClose} />
-                    <ul className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
-                        <Link to='todosprodutos'><li>Ver todos os produtos</li></Link>
-                        <Link to='itenscasa'><li>Itens para casa</li></Link>
-                        <Link to='itensanimais'><li>Itens para animais</li></Link>
-                    </ul>
+
+                    <div className={stylesMobile.navl}>
+                        <FaTimes onClick={MenuClose} />
+                        <div className={stylesMobile.englob}>
+                            <div className={stylesMobile.navl1}>
+                                <Link to="/"><FaHome /><span>Home</span></Link>
+                            </div>
+                            <div className={stylesMobile.navl1}>
+                                <a href="https://www.instagram.com/casual_home_loja/"><FaInstagram /></a>
+                                <a href="https://www.facebook.com/CasualHomeloja/"><FaFacebook /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={stylesMobile.categorias}>
+                        <ul className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
+                            <Link to='todosprodutos'><img src={bolsaCompra} alt="" width='50px' /> <span>Ver todos os produtos</span></Link>
+                            <Link to='itenscasa'><img src={homeIcon} alt="" width='30px' /><span>Itens para casa</span></Link>
+                            <Link to='itensanimais'> <img src={petIcon} alt="" width='30px' /> <span>Itens para animais</span></Link>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
             {/* menu desktop */}
