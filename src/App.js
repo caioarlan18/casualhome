@@ -12,6 +12,11 @@ function App() {
           <Route path='todosprodutos' element={''} />
           <Route path='itenscasa' element={''} />
           <Route path='itensanimais' element={''} />
+          <Route path='sobre' />
+          <Route path='trocas' />
+          <Route path='politicadeprivacidade' />
+          <Route path='contato' />
+          <Route path='intrucaodecompra' />
         </Routes>
       </Router>
     </div>

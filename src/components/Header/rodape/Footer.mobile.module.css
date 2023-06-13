@@ -1,0 +1,51 @@
+.ft {
+  background-color: #e7e7e7;
+  margin-top: 40px;
+}
+.ft1 {
+  padding: 20px;
+}
+.ft1 img {
+  margin-top: 15px;
+}
+.ft1 h1 {
+  font-family: poppins;
+  font-size: 20px;
+  font-weight: 500;
+}
+.ft1 a,
+.ft1 h2 {
+  font-size: 16px;
+  font-family: poppins;
+  font-weight: 400;
+  display: flex;
+  color: black;
+  text-decoration: none;
+  margin-top: 8px;
+}
+.ft2 svg {
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
+  color: white;
+  background-color: #1b3768;
+  border-radius: 100%;
+  padding: 10px;
+}
+.ftsec {
+  height: 210px;
+  background-color: #1b3768;
+}
+.ftsec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ftsec h1 {
+  font-family: poppins;
+  font-size: 15px;
+  color: white;
+  font-weight: 400;
+  margin-top: 30px;
+}

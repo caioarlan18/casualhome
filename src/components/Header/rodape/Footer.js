@@ -1,0 +1,54 @@
+import { FaInstagram } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import Bandeira1 from '../../../image/bandeiras cartao1.png'
+import Bandeira2 from '../../../image/bandeira2.png'
+import CompraSegura from '../../../image/compra segura.png'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import stylesMobile from './Footer.mobile.module.css'
+import stylesDesktop from './Footer.desktop.module.css'
+function Footer() {
+    return (
+        <div>
+            <footer className={`${stylesMobile.ft} ${stylesDesktop.ft}`}>
+                <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
+                    <h1>Insticional</h1>
+                    <Link to='instrucaodecompra'>Instruções</Link>
+                    <Link to='contato'>Contato</Link>
+                    <Link to='sobre'>Sobre nós</Link>
+                </div>
+                <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
+                    <h1>Políticas</h1>
+                    <Link>Política de privacidade</Link>
+                    <Link>Termos e condições</Link>
+                    <Link>Política de devolução</Link>
+                </div>
+                <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
+                    <h1>Formas de pagamento</h1>
+                    <img src={Bandeira1} alt="formas de pagamento" width='400px' />
+                    <img src={Bandeira2} alt="formas de pagamento" width='400px' />
+                </div>
+                <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
+                    <h1>Contato</h1>
+                    <h2>casualhomeoficial@gmail.com</h2>
+                    <h2>(22) 999677704</h2>
+                    <h2>(22) 997225723</h2>
+
+                </div>
+                <div className={`${stylesMobile.ft2} ${stylesDesktop.ft2}`} >
+                    <a href="https://www.instagram.com/casual_home_loja/"><FaInstagram /></a><a href="https://www.facebook.com/CasualHomeloja/"><FaFacebook /></a>
+
+                </div>
+                <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
+                    <img src={CompraSegura} alt="imagem de compra segura" width='300px' />
+                </div>
+            </footer>
+            <footer className={`${stylesMobile.ftsec} ${stylesDesktop.ftsec}`} >
+                <h1>CasualHome Ltda.</h1>
+                <h1>Loja 100% virtual</h1>
+                <h1>© 2023 CasualHome - Todos seus direitos reservados</h1>
+            </footer>
+        </div>
+
+    )
+}
+export default Footer

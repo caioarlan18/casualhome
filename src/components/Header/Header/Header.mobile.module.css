@@ -61,12 +61,17 @@
 .nav {
   background-color: #f4f4f4;
   width: 0;
-  height: 100%;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   top: 0;
   overflow: hidden;
   transition: 0.3s;
   z-index: 2;
+}
+.active {
+  width: 60%;
+  overflow: visible;
+  transition: 0.3s;
 }
 .nav svg {
   color: white;
@@ -81,7 +86,7 @@
 .navl {
   background-color: #1b3768;
   width: 100%;
-  height: 25%;
+  height: 150px;
 }
 .navl1 svg {
   margin: 0;
@@ -107,25 +112,46 @@
   justify-content: center;
 }
 
-.active {
-  width: 60%;
-  overflow: visible;
-  transition: 0.3s;
-}
-
 .nav1 a {
   display: flex;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 20px;
   text-decoration: none;
   color: black;
   font-family: poppins;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
   background-color: white;
   padding: 10px;
   border-radius: 30px;
   height: 30px;
+  width: 80%;
+}
+.nav2 {
+  margin-top: 30px;
+}
+.nav2 a {
+  text-decoration: none;
+  color: #1b3768;
+  font-family: poppins;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  height: 45px;
+  border-bottom: 1px solid #f4f4f4;
+}
+.nav2 a:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.nav2 a:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.nav2 svg {
+  color: gray;
 }
 
 .overlay {

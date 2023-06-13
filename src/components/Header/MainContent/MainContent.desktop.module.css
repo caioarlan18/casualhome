@@ -1,7 +1,9 @@
 @media screen and (min-width: 992px) and (max-width: 4000px) {
+  /* slider rotativo */
   .sliderD {
     margin-top: 30px;
     display: block;
+    overflow: hidden;
   }
   .banner2 {
     width: 100%;
@@ -10,5 +12,17 @@
   }
   .sliderM {
     display: none;
+  }
+
+  /* seção de categorias*/
+  .categoriesSection1 {
+    width: 45vw;
+  }
+
+  /* seção de informações */
+
+  .info {
+    flex-direction: row;
+    margin-top: 50px;
   }
 }

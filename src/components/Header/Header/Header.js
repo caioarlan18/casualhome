@@ -12,6 +12,10 @@ import { FaFacebook } from 'react-icons/fa';
 import petIcon from '../../../image/icone-de-pet.png'
 import homeIcon from '../../../image/icone-de-casa-removebg-preview.png'
 import bolsaCompra from '../../../image/bolsa-de-compras-azul-removebg-preview.png'
+import { FaBox } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
+import { FaLock } from 'react-icons/fa';
+import { FaPhone } from 'react-icons/fa';
 function Header() {
 
     function MenuOpen() {
@@ -35,7 +39,7 @@ function Header() {
     return (
         <div>
             {/* cabeçalho mobile */}
-            <div className={`${stylesMobile.mnmobile} ${stylesDesktop.mnmobile}`}>
+            <header className={`${stylesMobile.mnmobile} ${stylesDesktop.mnmobile}`}>
                 <div className={`${stylesMobile.hd} ${stylesDesktop.hd}`}>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
                         <FaBars onClick={MenuOpen} />
@@ -56,7 +60,7 @@ function Header() {
                 </div>
 
                 {/* menu hamburguer */}
-                <div className={`${stylesMobile.nav} ${stylesDesktop.nav}`} >
+                <nav className={`${stylesMobile.nav} ${stylesDesktop.nav}`} >
 
                     <div className={stylesMobile.navl}>
                         <FaTimes onClick={MenuClose} />
@@ -70,24 +74,30 @@ function Header() {
                             </div>
                         </div>
                     </div>
-                    <div className={stylesMobile.categorias}>
-                        <ul className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
-                            <Link to='todosprodutos'><img src={bolsaCompra} alt="" width='50px' /> <span>Ver todos os produtos</span></Link>
-                            <Link to='itenscasa'><img src={homeIcon} alt="" width='30px' /><span>Itens para casa</span></Link>
-                            <Link to='itensanimais'> <img src={petIcon} alt="" width='30px' /> <span>Itens para animais</span></Link>
-                        </ul>
+
+                    <div className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
+                        <Link to='todosprodutos'><img src={bolsaCompra} alt="icone de bolsa de compra" width='50px' /> <span>Ver todos os produtos</span></Link>
+                        <Link to='itenscasa'><img src={homeIcon} alt="icone de uma casa" width='30px' /><span>Itens para casa</span></Link>
+                        <Link to='itensanimais'> <img src={petIcon} alt="icone de pet" width='30px' /> <span>Itens para animais</span></Link>
                     </div>
 
-                </div>
-            </div>
+                    <div className={`${stylesMobile.nav2} ${stylesDesktop.nav2}`} >
+                        <Link to='sobre'><FaBox />Quem Somos</Link>
+                        <Link to='trocas'><FaArrowLeft />Trocas e devoluções</Link>
+                        <Link to='politicadeprivacidade'><FaLock />Política de privacidade</Link>
+                        <Link to='contato'><FaPhone />Central de atendimento</Link>
+                    </div>
+
+                </nav>
+            </header>
             {/* menu desktop */}
-            <div className={`${stylesMobile.mndesktop} ${stylesDesktop.mndesktop}`}>
+            <header className={`${stylesMobile.mndesktop} ${stylesDesktop.mndesktop}`}>
                 <div className={`${stylesMobile.hd_desk} ${stylesDesktop.hd_desk}`}>
                     <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
                         <Link to='/'>Home</Link>
                     </div>
                     <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
-                        <Link>Contato</Link>
+                        <Link to='contato'>Contato</Link>
                     </div>
                 </div>
 
@@ -104,22 +114,22 @@ function Header() {
                     </div>
                 </div>
 
-                <div className={`${stylesMobile.hddd_desk} ${stylesDesktop.hddd_desk}`}>
+                <nav className={`${stylesMobile.hddd_desk} ${stylesDesktop.hddd_desk}`}>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
                         <Link to='todosprodutos'>Todos os produtos</Link>
                     </div>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
-                        <Link>Intruções de compra</Link>
+                        <Link to='intrucaodecompra'>Intruções de compra</Link>
                     </div>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
-                        <Link>Sobre nós</Link>
+                        <Link to='sobre'>Sobre nós</Link>
                     </div>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
-                        <Link>Nos acompanhe</Link>
+                        <a href='https://www.instagram.com/casual_home_loja/'>Nos acompanhe</a>
                     </div>
 
-                </div>
-            </div>
+                </nav>
+            </header>
 
 
             <div className={`${stylesMobile.overlay}`} onClick={sumir}></div>
