@@ -16,8 +16,11 @@ import { FaBox } from 'react-icons/fa';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaLock } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
+import { animateScroll as scroll } from 'react-scroll';
 function Header() {
-
+    const scrollToTop = () => {
+        scroll.scrollToTop();
+    };
     function MenuOpen() {
         var menu = document.querySelector(`.${stylesMobile.nav}`)
         menu.classList.toggle(stylesMobile.active)
@@ -45,7 +48,7 @@ function Header() {
                         <FaBars onClick={MenuOpen} />
                     </div>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
-                        <img src={Logo} alt="logo do site" />
+                        <Link to='/'><img src={Logo} alt="logo do site" /></Link>
                     </div>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
                         <IoCartOutline />
@@ -76,16 +79,16 @@ function Header() {
                     </div>
 
                     <div className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
-                        <Link to='todosprodutos'><img src={bolsaCompra} alt="icone de bolsa de compra" width='50px' /> <span>Ver todos os produtos</span></Link>
-                        <Link to='itenscasa'><img src={homeIcon} alt="icone de uma casa" width='30px' /><span>Itens para casa</span></Link>
-                        <Link to='itensanimais'> <img src={petIcon} alt="icone de pet" width='30px' /> <span>Itens para animais</span></Link>
+                        <Link to='/todosprodutos' onClick={scrollToTop}><img src={bolsaCompra} alt="icone de bolsa de compra" width='50px' /> <span>Ver todos os produtos</span></Link>
+                        <Link to='/itenscasa' onClick={scrollToTop}><img src={homeIcon} alt="icone de uma casa" width='30px' /><span>Itens para casa</span></Link>
+                        <Link to='/itensanimais' onClick={scrollToTop}> <img src={petIcon} alt="icone de pet" width='30px' /> <span>Itens para animais</span></Link>
                     </div>
 
                     <div className={`${stylesMobile.nav2} ${stylesDesktop.nav2}`} >
-                        <Link to='sobre'><FaBox />Quem Somos</Link>
-                        <Link to='trocas'><FaArrowLeft />Trocas e devoluções</Link>
-                        <Link to='politicadeprivacidade'><FaLock />Política de privacidade</Link>
-                        <Link to='contato'><FaPhone />Central de atendimento</Link>
+                        <Link to='/sobre' onClick={scrollToTop}><FaBox />Quem Somos</Link>
+                        <Link to='/trocas' onClick={scrollToTop}><FaArrowLeft />Trocas e devoluções</Link>
+                        <Link to='/politicadeprivacidade' onClick={scrollToTop}><FaLock />Política de privacidade</Link>
+                        <Link to='/contato' onClick={scrollToTop}><FaPhone />Central de atendimento</Link>
                     </div>
 
                 </nav>
@@ -97,13 +100,13 @@ function Header() {
                         <Link to='/'>Home</Link>
                     </div>
                     <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
-                        <Link to='contato'>Contato</Link>
+                        <Link to='/contato'>Contato</Link>
                     </div>
                 </div>
 
                 <div className={`${stylesMobile.hdd_desk} ${stylesDesktop.hdd_desk}`}>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
-                        <img src={Logo} alt="logo do site" />
+                        <Link to='/'><img src={Logo} alt="logo do site" /></Link>
                     </div>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
                         <input type="text" placeholder='Pesquisar produtos' />
@@ -116,13 +119,13 @@ function Header() {
 
                 <nav className={`${stylesMobile.hddd_desk} ${stylesDesktop.hddd_desk}`}>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
-                        <Link to='todosprodutos'>Todos os produtos</Link>
+                        <Link to='/todosprodutos'>Todos os produtos</Link>
                     </div>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
-                        <Link to='intrucaodecompra'>Intruções de compra</Link>
+                        <Link to='/intrucaodecompra'>Intruções de compra</Link>
                     </div>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
-                        <Link to='sobre'>Sobre nós</Link>
+                        <Link to='/sobre'>Sobre nós</Link>
                     </div>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
                         <a href='https://www.instagram.com/casual_home_loja/'>Nos acompanhe</a>

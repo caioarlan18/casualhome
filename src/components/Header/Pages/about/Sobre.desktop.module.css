@@ -1,0 +1,45 @@
+@media screen and (min-width: 992px) and (max-width: 4000px) {
+  .about1 {
+    display: none;
+  }
+  .about {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 80%;
+  }
+  .about2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .about2 h1 {
+    color: #1b3768;
+    font-family: poppins;
+    font-size: 30px;
+    text-align: right;
+    width: 90%;
+    font-weight: 500;
+  }
+  .about2 h2 {
+    color: #1b3768;
+    font-family: poppins;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+    width: 80%;
+  }
+  .about2 p {
+    font-size: 17px;
+    color: #423f3f;
+    text-align: right;
+    font-family: poppins;
+    width: 80%;
+    line-height: 1.4;
+    word-spacing: 0.5em;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+  .about2 img {
+    width: 450px;
+  }
+}

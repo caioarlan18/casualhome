@@ -6,21 +6,27 @@ import CompraSegura from '../../../image/compra segura.png'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import stylesMobile from './Footer.mobile.module.css'
 import stylesDesktop from './Footer.desktop.module.css'
+import { animateScroll as scroll } from 'react-scroll';
+
 function Footer() {
+    const scrollToTop = () => {
+        scroll.scrollToTop();
+    };
+
     return (
         <div>
             <footer className={`${stylesMobile.ft} ${stylesDesktop.ft}`}>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Insticional</h1>
-                    <Link to='instrucaodecompra'>Instruções</Link>
-                    <Link to='contato'>Contato</Link>
-                    <Link to='sobre'>Sobre nós</Link>
+                    <Link to='/instrucaodecompra' onClick={scrollToTop}>Instruções</Link>
+                    <Link to='/contato' onClick={scrollToTop}>Contato</Link>
+                    <Link to='/sobre' onClick={scrollToTop}>Sobre nós</Link>
                 </div>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Políticas</h1>
-                    <Link>Política de privacidade</Link>
-                    <Link>Termos e condições</Link>
-                    <Link>Política de devolução</Link>
+                    <Link onClick={scrollToTop}>Política de privacidade</Link>
+                    <Link onClick={scrollToTop}>Termos e condições</Link>
+                    <Link onClick={scrollToTop}>Política de devolução</Link>
                 </div>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Formas de pagamento</h1>
@@ -32,13 +38,14 @@ function Footer() {
                     <h2>casualhomeoficial@gmail.com</h2>
                     <h2>(22) 999677704</h2>
                     <h2>(22) 997225723</h2>
-
+                    <div className={`${stylesMobile.seg} ${stylesDesktop.seg}`}><a href="https://www.instagram.com/casual_home_loja/"><FaInstagram /></a><a href="https://www.facebook.com/CasualHomeloja/"><FaFacebook /></a></div>
+                    <img src={CompraSegura} alt="imagem de compra segura" width='250px' className={`${stylesMobile.seg} ${stylesDesktop.seg}`} />
                 </div>
-                <div className={`${stylesMobile.ft2} ${stylesDesktop.ft2}`} >
+                <div className={`${stylesMobile.ft2} ${stylesDesktop.ft3}`} >
                     <a href="https://www.instagram.com/casual_home_loja/"><FaInstagram /></a><a href="https://www.facebook.com/CasualHomeloja/"><FaFacebook /></a>
 
                 </div>
-                <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
+                <div className={`${stylesMobile.ft1} ${stylesDesktop.ft3}`} >
                     <img src={CompraSegura} alt="imagem de compra segura" width='300px' />
                 </div>
             </footer>

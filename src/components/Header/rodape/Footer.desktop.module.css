@@ -2,7 +2,22 @@
   .ft {
     display: flex;
   }
-  .ft2 {
+  .ft1 img {
+    width: 300px;
+    display: flex;
+  }
+  .ft3 {
     display: none;
+  }
+  .seg {
+    display: flex;
+  }
+  .seg svg {
+    width: 25px;
+    height: 25px;
+    color: white;
+    background-color: #1b3768;
+    border-radius: 100%;
+    padding: 10px;
   }
 }

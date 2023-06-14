@@ -21,10 +21,13 @@ import { FaTruck } from 'react-icons/fa';
 import { FaCreditCard } from 'react-icons/fa';
 import { FaShieldAlt } from 'react-icons/fa';
 import { FaRegListAlt } from 'react-icons/fa';
-
+import { animateScroll as scroll } from 'react-scroll';
 
 
 function MainContent() {
+    const scrollToTop = () => {
+        scroll.scrollToTop();
+    };
     const images = [
         { id: 1, src: Banner1, alt: 'Image 1' },
         { id: 2, src: Banner2, alt: 'Image 2' },
@@ -48,7 +51,7 @@ function MainContent() {
                 <Slider {...settings} >
                     {images.map((image) => (
                         <div key={image.id}>
-                            <img src={image.src} alt={image.alt} className={stylesMobile.banner} />
+                            <Link to='/todosprodutos'><img src={image.src} alt={image.alt} className={stylesMobile.banner} /></Link>
                         </div>
                     ))}
                 </Slider>
@@ -58,7 +61,7 @@ function MainContent() {
                 <Slider {...settings} >
                     {images2.map((image) => (
                         <div key={image.id}>
-                            <img src={image.src} alt={image.alt} className={stylesDesktop.banner2} />
+                            <Link to='/todosprodutos'><img src={image.src} alt={image.alt} className={stylesDesktop.banner2} /></Link>
                         </div>
                     ))}
                 </Slider>
@@ -72,10 +75,10 @@ function MainContent() {
 
                 <section className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
                     <div className={`${stylesMobile.productSections1} ${stylesDesktop.productSections1}`}>
-                        <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 40,00'} custoP={'R$ 25,00'} />
-                        <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 99,90'} custoP={'R$ 129,90'} />
-                        <Produto imagemProduto={tampaSilicone} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 109,90'} custoP={'R$ 69,90'} />
-                        <Produto imagemProduto={escovaMagica} titulo={'Escova mágica de gato e cachorro para pelo'} custoR={'R$ 149,90'} custoP={'R$ 55,90'} />
+                        <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} />
+                        <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} />
+                        <Produto imagemProduto={tampaSilicone} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 90,87'} custoP={'R$ 69,90'} />
+                        <Produto imagemProduto={escovaMagica} titulo={'Escova mágica de gato e cachorro para pelo'} custoR={'R$ 77,87'} custoP={'R$ 59,90'} />
                     </div>
                 </section>
             </div>
@@ -86,10 +89,10 @@ function MainContent() {
                 </div>
                 <section className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
                     <div className={`${stylesMobile.productSections1} ${stylesDesktop.productSections1}`}>
-                        <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 219,90'} custoP={'R$ 179,90'} />
-                        <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 40,00'} custoP={'R$ 25,00'} />
-                        <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 99,90'} custoP={'R$ 129,90'} />
-                        <Produto imagemProduto={escovaEletrica} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 109,90'} custoP={'R$ 69,90'} />
+                        <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 233,87'} custoP={'R$ 179,90'} />
+                        <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} />
+                        <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} />
+                        <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} />
 
                     </div>
                 </section>
@@ -101,12 +104,12 @@ function MainContent() {
                     <h1>Categorias</h1>
                 </div>
                 <section className={`${stylesMobile.categoriesSection} ${stylesDesktop.categoriesSection}`} >
-                    <Link to='itenscasa'> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
+                    <Link to='/itenscasa' onClick={scrollToTop}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
                         <img src={homeIcon} alt="icone de casa" />
                         <h1>Itens para casa</h1>
                     </div>
                     </Link>
-                    <Link to='itensanimais'>
+                    <Link to='/itensanimais' onClick={scrollToTop}>
                         <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
                             <img src={petIcon} alt="icone de pet" />
                             <h1>Itens para animais</h1>
