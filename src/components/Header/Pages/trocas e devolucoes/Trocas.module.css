@@ -1,0 +1,27 @@
+.trocas {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  width: 80%;
+}
+.trocas h1 {
+  font-size: 30px;
+  font-family: poppins;
+  color: #1b3768;
+}
+.trocas p {
+  font-size: 13px;
+  color: #4b4f58;
+  font-family: poppins;
+  line-height: 1.6;
+}
+@media screen and (min-width: 992px) and (max-width: 4000px) {
+  .trocas {
+    width: 75%;
+  }
+  .trocas p {
+    line-height: 2;
+    font-size: 14px;
+  }
+}

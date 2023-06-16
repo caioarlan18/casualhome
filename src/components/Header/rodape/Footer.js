@@ -24,9 +24,9 @@ function Footer() {
                 </div>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Políticas</h1>
-                    <Link onClick={scrollToTop}>Política de privacidade</Link>
-                    <Link onClick={scrollToTop}>Termos e condições</Link>
-                    <Link onClick={scrollToTop}>Política de devolução</Link>
+                    <Link to='/politicadeprivacidade' onClick={scrollToTop}>Política de privacidade</Link>
+                    <Link to='/termos' onClick={scrollToTop}>Termos e condições</Link>
+                    <Link to='/trocas' onClick={scrollToTop}>Política de devolução</Link>
                 </div>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Formas de pagamento</h1>

@@ -4,8 +4,8 @@ import { FaBars } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { FaSearch } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Logo from '../../../image/logotipocasualhome.png'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
@@ -17,10 +17,12 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { FaLock } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
+import Produto from '../produtos/Produto';
 function Header() {
     const scrollToTop = () => {
         scroll.scrollToTop();
     };
+
     function MenuOpen() {
         var menu = document.querySelector(`.${stylesMobile.nav}`)
         menu.classList.toggle(stylesMobile.active)
@@ -38,6 +40,10 @@ function Header() {
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         menu.classList.remove(stylesMobile.active)
         overlay.style.display = 'none';
+    }
+
+    function teste() {
+        ''
     }
     return (
         <div>
@@ -57,7 +63,7 @@ function Header() {
 
                 <div className={`${stylesMobile.hdd} ${stylesDesktop.hdd}`}>
                     <div className={`${stylesMobile.hdd1} ${stylesDesktop.hdd1}`}>
-                        <input type="text" placeholder='Pesquisar produtos' />
+                        <input type="search" placeholder='Pesquisar produtos' onClick={teste} />
                         <button><FaSearch /></button>
                     </div>
                 </div>
@@ -122,7 +128,7 @@ function Header() {
                         <Link to='/todosprodutos'>Todos os produtos</Link>
                     </div>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
-                        <Link to='/intrucaodecompra'>Intruções de compra</Link>
+                        <Link to='/instrucaodecompra'>Intruções de compra</Link>
                     </div>
                     <div className={`${stylesMobile.hddd1_desk} ${stylesDesktop.hddd1_desk}`}>
                         <Link to='/sobre'>Sobre nós</Link>

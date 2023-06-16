@@ -1,0 +1,105 @@
+.contato {
+  width: 85%;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+.redes1 {
+  color: #1b3768;
+  margin-right: 10px;
+}
+.redes2 {
+  width: 25px;
+  height: 25px;
+  background-color: #1b3768;
+  border-radius: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  color: white;
+  margin-right: 10px;
+}
+.contato1 h1 {
+  font-size: 30px;
+  font-family: poppins;
+  color: #1b3768;
+  font-weight: 500;
+}
+.contato1 p {
+  font-size: 15px;
+  color: #171717;
+  font-family: poppins;
+  margin-top: 15px;
+  font-weight: 400;
+}
+
+.contato2 label {
+  color: #1b3768;
+  font-family: poppins;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.contato3 {
+  margin-top: 30px;
+}
+.contato3 input {
+  width: 100%;
+  border-radius: 30px;
+  height: 45px;
+  font-family: poppins;
+  font-size: 15px;
+  text-indent: 10px;
+  border: 1px solid #171717;
+}
+
+.contato3 select {
+  width: 100%;
+  border-radius: 30px;
+  height: 40px;
+  font-family: poppins;
+  font-size: 15px;
+  text-indent: 10px;
+  border: 1px solid #171717;
+}
+.contato3 option {
+  color: #1b3768;
+}
+.contato3:nth-last-child(2) textarea {
+  height: 80px;
+  width: 100%;
+  border-radius: 30px;
+  height: 45px;
+  font-family: poppins;
+  font-size: 15px;
+  text-indent: 10px;
+  border: 1px solid #171717;
+}
+.contato3:last-child input {
+  cursor: pointer;
+  color: white;
+  background-color: #1b3768;
+  border: 0;
+  width: 30%;
+}
+
+@media screen and (min-width: 992px) and (max-width: 4000px) {
+  .contato {
+    display: flex;
+    width: 85%;
+  }
+  .contato1 {
+    margin-top: 90px;
+    width: 40%;
+  }
+  .contato1 h1 {
+    font-size: 35px;
+  }
+  .contato1 p {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  .contato2 {
+    width: 40%;
+  }
+}

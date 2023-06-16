@@ -1,0 +1,32 @@
+.termos {
+  width: 85%;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.termos h1 {
+  font-size: 30px;
+  font-family: poppins;
+  font-weight: 500;
+  color: #1b3768;
+}
+.termos p {
+  font-size: 13px;
+  font-family: poppins;
+  color: black;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 992px) and (max-width: 4000px) {
+  .termos {
+    width: 70%;
+    margin-top: 50px;
+  }
+  .termos h1 {
+    font-size: 35px;
+  }
+  .termos p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}

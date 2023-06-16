@@ -1,0 +1,21 @@
+.politicaP {
+  width: 80%;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.politicaP h1 {
+  font-size: 30px;
+  color: #1b3768;
+  font-family: poppins;
+}
+.politicaP p {
+  font-size: 13px;
+  color: #4b4f58;
+  font-family: poppins;
+  line-height: 1.6;
+}
+@media screen and (min-width: 992px) and (max-width: 4000px) {
+  .politicaP {
+    width: 75%;
+  }
+}

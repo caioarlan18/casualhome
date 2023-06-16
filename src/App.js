@@ -5,6 +5,11 @@ import TodosProdutos from './components/Header/Pages/AllProducts/TodosProdutos';
 import HomeItens from './components/Header/Pages/itens para casa/HomeItens';
 import PetItens from './components/Header/Pages/itens para animais/PetItens';
 import Sobre from './components/Header/Pages/about/Sobre';
+import Trocas from './components/Header/Pages/trocas e devolucoes/Trocas';
+import PoliticaPrivacidade from './components/Header/Pages/politica de privacidade/PoliticaPrivacidade';
+import Contato from './components/Header/Pages/contato/Contato';
+import Guia from './components/Header/Pages/instrucao/Guia';
+import Termos from './components/Header/Pages/termos e condicoes/Termos';
 function App() {
   return (
     <div >
@@ -17,10 +22,11 @@ function App() {
           <Route path='/itenscasa' element={<HomeItens />} />
           <Route path='/itensanimais' element={<PetItens />} />
           <Route path='/sobre' element={<Sobre />} />
-          <Route path='/trocas' />
-          <Route path='/politicadeprivacidade' />
-          <Route path='/contato' />
-          <Route path='/intrucaodecompra' />
+          <Route path='/trocas' element={<Trocas />} />
+          <Route path='/politicadeprivacidade' element={<PoliticaPrivacidade />} />
+          <Route path='/contato' element={<Contato />} />
+          <Route path='/instrucaodecompra' element={<Guia />} />
+          <Route path='/termos' element={<Termos />} />
         </Routes>
       </Router>
     </div>

@@ -1,0 +1,26 @@
+.guia {
+  width: 85%;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.guia h1 {
+  font-size: 30px;
+  font-family: poppins;
+  color: #1b3768;
+}
+.guia p {
+  color: #4b4f58;
+  font-size: 13px;
+  font-family: poppins;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 992px) and (max-width: 4000px) {
+  .guia {
+    width: 70%;
+    margin-top: 50px;
+  }
+  .guia p {
+    font-size: 15px;
+  }
+}
