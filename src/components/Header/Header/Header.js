@@ -18,7 +18,10 @@ import { FaLock } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
 import Produto from '../produtos/Produto';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 function Header() {
+
     const scrollToTop = () => {
         scroll.scrollToTop();
     };
@@ -41,10 +44,15 @@ function Header() {
         menu.classList.remove(stylesMobile.active)
         overlay.style.display = 'none';
     }
-
-    function teste() {
-        ''
+    const navigate = useNavigate();
+    function search() {
+        navigate('/todosprodutos')
     }
+    var lista = ['banana', 'maçr', 'larbnjd', 'mamão', 'limão']
+    const [teste, setTeste] = useState('')
+    var avu = lista.filter((frutas) => (
+        frutas.includes(teste)
+    ))
     return (
         <div>
             {/* cabeçalho mobile */}
@@ -63,8 +71,9 @@ function Header() {
 
                 <div className={`${stylesMobile.hdd} ${stylesDesktop.hdd}`}>
                     <div className={`${stylesMobile.hdd1} ${stylesDesktop.hdd1}`}>
-                        <input type="search" placeholder='Pesquisar produtos' onClick={teste} />
+                        <input type="text" placeholder='Pesquisar produtos' onClick={search} onChange={(event) => setTeste(event.target.value)} value={teste} />
                         <button><FaSearch /></button>
+
                     </div>
                 </div>
 

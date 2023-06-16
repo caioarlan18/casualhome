@@ -23,11 +23,12 @@
   width: 100%;
 }
 .hdd1 {
+  width: 90%;
   display: flex;
   justify-content: center;
 }
 .hdd1 input {
-  width: 80%;
+  width: 100%;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   border: 1px solid #1b3768;
