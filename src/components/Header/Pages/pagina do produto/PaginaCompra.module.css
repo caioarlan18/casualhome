@@ -1,20 +1,169 @@
 .compra {
   margin-top: 50px;
   width: 100%;
+  margin-bottom: 100px;
 }
 .imagem_principal img {
-  width: 80%;
+  width: 85%;
   display: flex;
   justify-content: center;
   cursor: pointer;
 }
 .compra1 {
   display: flex;
-  width: 80%;
+  width: 85%;
 }
 .compra1 img {
-  width: 26%;
+  width: 28%;
   display: flex;
   margin-top: 20px;
   cursor: pointer;
+}
+.compra2 {
+  width: 85%;
+}
+.compra2 h1 {
+  font-family: poppins;
+  font-weight: 500;
+  font-size: 23px;
+  margin: 30px 0px;
+}
+.compra2 a {
+  color: #1b3768;
+  font-size: 15px;
+  font-family: poppins;
+}
+.compra3 {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.compra3 h2 {
+  font-family: poppins;
+  font-size: 30px;
+  color: #00b050;
+  margin: 0;
+}
+.compra3 h3 {
+  font-family: poppins;
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 25px;
+  text-decoration: line-through;
+  margin-right: 10px;
+  margin: 0;
+  margin-right: 10px;
+}
+.compra4 {
+  width: 85%;
+  margin-top: 30px;
+}
+.compra4 h1 {
+  font-size: 15px;
+  font-family: poppins;
+}
+.compra4 select {
+  font-family: poppins;
+  width: 70px;
+}
+.compra5 {
+  width: 85%;
+  margin-top: 30px;
+}
+.compra5 button {
+  border: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #1b3768;
+  color: #1b3768;
+  color: white;
+  font-family: poppins;
+  text-decoration: none;
+  border-radius: 30px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 0 0 6px;
+  border-color: #0c2765;
+  font-weight: 600;
+}
+.compra6 {
+  width: 85%;
+  margin-top: 50px;
+}
+.compra6b {
+  font-family: poppins;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #226a7c;
+}
+.compra6b:first-child {
+  color: #4a4a4a;
+}
+.compra6b svg {
+  margin-right: 10px;
+}
+.compra7 {
+  width: 85%;
+}
+.compra7 img {
+  width: 100%;
+  margin-top: 50px;
+}
+.compra8 {
+  width: 85%;
+  margin-top: 50px;
+}
+.compra8 h1 {
+  font-size: 22px;
+  color: #1b3768;
+  font-family: poppins;
+  font-weight: 500;
+}
+.compra8 h2 {
+  color: #515151;
+  font-size: 18px;
+  font-family: poppins;
+  margin-top: 20px;
+}
+.compra8 p {
+  color: #4b4f58;
+  margin-top: 15px;
+  font-family: poppins;
+  line-height: 1.6;
+  font-size: 15px;
+}
+.relacionados {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tire {
+  width: 85%;
+  margin-top: 80px;
+}
+.tire h1 {
+  color: #3a3a3a;
+  font-family: poppins;
+  font-size: 20px;
+  font-weight: 500;
+}
+.compra_desktop {
+  display: none;
+}
+@media screen and (min-width: 992px) and (max-width: 4000px) {
+  .compra {
+    display: none;
+  }
+  .desktop1 {
+    width: 50%;
+  }
+  .compra_desktop {
+    display: block;
+    width: 70%;
+    margin-top: 50px;
+  }
+  .desktop {
+    display: flex;
+  }
 }

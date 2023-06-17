@@ -13,6 +13,13 @@ import Termos from './components/Header/Pages/termos e condicoes/Termos';
 import Busca from './components/Header/Pages/busca de produtos/Busca';
 import Carrinho from './components/Header/Pages/carrinho/Carrinho';
 import PaginaCompra from './components/Header/Pages/pagina do produto/PaginaCompra';
+import { Item1 } from './components/Header/Pages/compraAllProducts/Item1';
+import { Item2 } from './components/Header/Pages/compraAllProducts/Item2';
+import { Item3 } from './components/Header/Pages/compraAllProducts/Item3';
+import { Item4 } from './components/Header/Pages/compraAllProducts/Item4';
+import { Item5 } from './components/Header/Pages/compraAllProducts/Item5';
+import { Item6 } from './components/Header/Pages/compraAllProducts/Item6';
+import { Item7 } from './components/Header/Pages/compraAllProducts/Item7';
 function App() {
 
   return (
@@ -34,6 +41,13 @@ function App() {
           <Route path='/busca' element={<Busca />} />
           <Route path='/carrinho' element={<Carrinho />} />
           <Route path='/compra' element={<PaginaCompra />} />
+          <Route path='/item1' element={<Item1 />} />
+          <Route path='/item2' element={<Item2 />} />
+          <Route path='/item3' element={<Item3 />} />
+          <Route path='/item4' element={<Item4 />} />
+          <Route path='/item5' element={<Item5 />} />
+          <Route path='/item6' element={<Item6 />} />
+          <Route path='/item7' element={<Item7 />} />
         </Routes>
       </Router>
     </div>

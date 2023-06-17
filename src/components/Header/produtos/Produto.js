@@ -4,13 +4,20 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { animateScroll as scroll } from 'react-scroll';
+import { useEffect } from 'react';
 
+function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart, buy }) {
 
-function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart }) {
     const scrollToTop = () => {
         scroll.scrollToTop();
     };
+    const handleClick = () => {
 
+
+        setTimeout(() => {
+            scrollToTop();
+        }, 1);
+    };
     return (
         <div>
             <div className={`${stylesMobile.produto} ${stylesDesktop.produto}`}>
@@ -34,7 +41,7 @@ function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart }) {
                     <h3>{custoR}</h3><h2>{custoP}</h2>
                 </div>
                 <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
-                    <Link to='' onClick={scrollToTop}> Ver opções</Link>
+                    <Link to={buy} onClick={handleClick}> Ver opções</Link>
                 </div>
 
 
