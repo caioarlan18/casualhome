@@ -2,13 +2,21 @@ import stylesMobile from './Produto.mobile.module.css'
 import stylesDesktop from './Produto.desktop.module.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
+import { IoCartOutline } from 'react-icons/io5';
+import { animateScroll as scroll } from 'react-scroll';
 
-// ...
 
-function Produto({ id, imagemProduto, titulo, custoR, custoP }) {
+function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart }) {
+    const scrollToTop = () => {
+        scroll.scrollToTop();
+    };
+
     return (
         <div>
             <div className={`${stylesMobile.produto} ${stylesDesktop.produto}`}>
+                <div className={`${stylesMobile.cart} ${stylesDesktop.cart}`}>
+                    <IoCartOutline onClick={() => addToCart({ imagemProduto, titulo, custoP })} />
+                </div>
                 <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
                     <img src={imagemProduto} alt="imagem do produto" />
                 </div>
@@ -26,8 +34,10 @@ function Produto({ id, imagemProduto, titulo, custoR, custoP }) {
                     <h3>{custoR}</h3><h2>{custoP}</h2>
                 </div>
                 <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
-                    <Link to={`/product/${id}`}>Ver opções</Link>
+                    <Link to='' onClick={scrollToTop}> Ver opções</Link>
                 </div>
+
+
             </div>
         </div>
     )

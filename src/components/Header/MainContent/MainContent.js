@@ -22,9 +22,25 @@ import { FaCreditCard } from 'react-icons/fa';
 import { FaShieldAlt } from 'react-icons/fa';
 import { FaRegListAlt } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
-
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function MainContent() {
+    const [cartItems, setCartItems] = useState([]);
+    const addToCart = (item) => {
+        const updatedCartItems = [...cartItems, item];
+        setCartItems(updatedCartItems);
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        alert('Produto adicionado ao carrinho')
+    };
+
+    // Função para recuperar os dados do carrinho ao carregar a página
+    useEffect(() => {
+        const savedCartItems = localStorage.getItem('cartItems');
+        if (savedCartItems) {
+            setCartItems(JSON.parse(savedCartItems));
+        }
+    }, []);
     const scrollToTop = () => {
         scroll.scrollToTop();
     };
@@ -75,10 +91,10 @@ function MainContent() {
 
                 <section className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
                     <div className={`${stylesMobile.productSections1} ${stylesDesktop.productSections1}`}>
-                        <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} />
-                        <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} />
-                        <Produto imagemProduto={tampaSilicone} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 90,87'} custoP={'R$ 69,90'} />
-                        <Produto imagemProduto={escovaMagica} titulo={'Escova mágica de gato e cachorro para pelo'} custoR={'R$ 77,87'} custoP={'R$ 59,90'} />
+                        <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} />
+                        <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} addToCart={addToCart} />
+                        <Produto imagemProduto={tampaSilicone} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 90,87'} custoP={'R$ 69,90'} addToCart={addToCart} />
+                        <Produto imagemProduto={escovaMagica} titulo={'Escova mágica de gato e cachorro para pelo'} custoR={'R$ 77,87'} custoP={'R$ 59,90'} addToCart={addToCart} />
                     </div>
                 </section>
             </div>
@@ -89,10 +105,10 @@ function MainContent() {
                 </div>
                 <section className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
                     <div className={`${stylesMobile.productSections1} ${stylesDesktop.productSections1}`}>
-                        <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 233,87'} custoP={'R$ 179,90'} />
-                        <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} />
-                        <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} />
-                        <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} />
+                        <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 233,87'} custoP={'R$ 179,90'} addToCart={addToCart} />
+                        <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} />
+                        <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} addToCart={addToCart} />
+                        <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} addToCart={addToCart} />
 
                     </div>
                 </section>

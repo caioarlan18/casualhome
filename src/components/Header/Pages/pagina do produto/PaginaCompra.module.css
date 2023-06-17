@@ -1,0 +1,20 @@
+.compra {
+  margin-top: 50px;
+  width: 100%;
+}
+.imagem_principal img {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.compra1 {
+  display: flex;
+  width: 80%;
+}
+.compra1 img {
+  width: 26%;
+  display: flex;
+  margin-top: 20px;
+  cursor: pointer;
+}

@@ -11,7 +11,10 @@ import Contato from './components/Header/Pages/contato/Contato';
 import Guia from './components/Header/Pages/instrucao/Guia';
 import Termos from './components/Header/Pages/termos e condicoes/Termos';
 import Busca from './components/Header/Pages/busca de produtos/Busca';
+import Carrinho from './components/Header/Pages/carrinho/Carrinho';
+import PaginaCompra from './components/Header/Pages/pagina do produto/PaginaCompra';
 function App() {
+
   return (
     <div >
       <Router>
@@ -29,6 +32,8 @@ function App() {
           <Route path='/instrucaodecompra' element={<Guia />} />
           <Route path='/termos' element={<Termos />} />
           <Route path='/busca' element={<Busca />} />
+          <Route path='/carrinho' element={<Carrinho />} />
+          <Route path='/compra' element={<PaginaCompra />} />
         </Routes>
       </Router>
     </div>

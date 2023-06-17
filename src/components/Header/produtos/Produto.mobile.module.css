@@ -18,7 +18,7 @@
 .produto1 {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
   flex-wrap: wrap;
 }
 .produto1 h2 {
@@ -37,6 +37,18 @@
 .produto1 svg {
   margin-top: 10px;
   color: #ffa500;
+}
+.cart {
+  position: absolute;
+}
+.cart svg {
+  color: white;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: #1b3768;
+  border-radius: 50%;
+  padding: 10px;
 }
 .produto1 img {
   width: 90%;

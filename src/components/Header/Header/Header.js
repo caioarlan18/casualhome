@@ -47,6 +47,7 @@ function Header({ buscar }) {
         navigate('/busca')
     }
     const location = useLocation();
+
     // mobile
     const buscarRef = useRef(null);
     useEffect(() => {
@@ -75,7 +76,7 @@ function Header({ buscar }) {
                         <Link to='/'><img src={Logo} alt="logo do site" /></Link>
                     </div>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
-                        <IoCartOutline />
+                        <Link to='/carrinho'><IoCartOutline /></Link>
                     </div>
                 </div>
 
@@ -139,7 +140,7 @@ function Header({ buscar }) {
                         <button><FaSearch /></button>
                     </div>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
-                        <IoCartOutline />
+                        <Link to='/carrinho'><IoCartOutline /></Link>
                     </div>
                 </div>
 
