@@ -10,6 +10,7 @@ import PoliticaPrivacidade from './components/Header/Pages/politica de privacida
 import Contato from './components/Header/Pages/contato/Contato';
 import Guia from './components/Header/Pages/instrucao/Guia';
 import Termos from './components/Header/Pages/termos e condicoes/Termos';
+import Busca from './components/Header/Pages/busca de produtos/Busca';
 function App() {
   return (
     <div >
@@ -27,6 +28,7 @@ function App() {
           <Route path='/contato' element={<Contato />} />
           <Route path='/instrucaodecompra' element={<Guia />} />
           <Route path='/termos' element={<Termos />} />
+          <Route path='/busca' element={<Busca />} />
         </Routes>
       </Router>
     </div>

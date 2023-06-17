@@ -17,15 +17,13 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { FaLock } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
-import Produto from '../produtos/Produto';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-function Header() {
-
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+function Header({ buscar }) {
     const scrollToTop = () => {
         scroll.scrollToTop();
     };
-
     function MenuOpen() {
         var menu = document.querySelector(`.${stylesMobile.nav}`)
         menu.classList.toggle(stylesMobile.active)
@@ -46,13 +44,25 @@ function Header() {
     }
     const navigate = useNavigate();
     function search() {
-        navigate('/todosprodutos')
+        navigate('/busca')
     }
-    var lista = ['banana', 'maçr', 'larbnjd', 'mamão', 'limão']
-    const [teste, setTeste] = useState('')
-    var avu = lista.filter((frutas) => (
-        frutas.includes(teste)
-    ))
+    const location = useLocation();
+    // mobile
+    const buscarRef = useRef(null);
+    useEffect(() => {
+        if (location.pathname === '/busca') {
+            buscarRef.current.focus();
+        }
+    }, [location]);
+
+    // desktop  
+    const buscarRef2 = useRef(null);
+    useEffect(() => {
+        if (location.pathname === '/busca') {
+            buscarRef2.current.focus();
+        }
+    }, [location]);
+
     return (
         <div>
             {/* cabeçalho mobile */}
@@ -71,10 +81,10 @@ function Header() {
 
                 <div className={`${stylesMobile.hdd} ${stylesDesktop.hdd}`}>
                     <div className={`${stylesMobile.hdd1} ${stylesDesktop.hdd1}`}>
-                        <input type="text" placeholder='Pesquisar produtos' onClick={search} onChange={(event) => setTeste(event.target.value)} value={teste} />
+                        <input type="text" ref={buscarRef} placeholder='Pesquisar produtos' onClick={search} onChange={buscar} />
                         <button><FaSearch /></button>
-
                     </div>
+
                 </div>
 
                 {/* menu hamburguer */}
@@ -107,9 +117,10 @@ function Header() {
                     </div>
 
                 </nav>
-            </header>
+            </header >
             {/* menu desktop */}
-            <header className={`${stylesMobile.mndesktop} ${stylesDesktop.mndesktop}`}>
+            <header className={`${stylesMobile.mndesktop} ${stylesDesktop.mndesktop}`
+            }>
                 <div className={`${stylesMobile.hd_desk} ${stylesDesktop.hd_desk}`}>
                     <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
                         <Link to='/'>Home</Link>
@@ -124,7 +135,7 @@ function Header() {
                         <Link to='/'><img src={Logo} alt="logo do site" /></Link>
                     </div>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
-                        <input type="text" placeholder='Pesquisar produtos' />
+                        <input type="text" ref={buscarRef2} placeholder='Pesquisar produtos' onClick={search} onChange={buscar} />
                         <button><FaSearch /></button>
                     </div>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
@@ -147,11 +158,11 @@ function Header() {
                     </div>
 
                 </nav>
-            </header>
+            </header >
 
 
             <div className={`${stylesMobile.overlay}`} onClick={sumir}></div>
-        </div>
+        </div >
     )
 }
 export default Header
