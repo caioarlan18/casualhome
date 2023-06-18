@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import HomePage from './components/Header/HomePage/Homepage';
 import TodosProdutos from './components/Header/Pages/AllProducts/TodosProdutos';
@@ -25,8 +25,6 @@ function App() {
   return (
     <div >
       <Router>
-
-
         <Routes>
           <Route exact path='/' element={<HomePage />} />
           <Route path='/todosprodutos' element={<TodosProdutos />} />

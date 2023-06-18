@@ -30,8 +30,8 @@ function Footer() {
                 </div>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Formas de pagamento</h1>
-                    <img src={Bandeira1} alt="formas de pagamento" width='400px' />
-                    <img src={Bandeira2} alt="formas de pagamento" width='400px' />
+                    <img src={Bandeira1} alt="formas de pagamento" width='85%' />
+                    <img src={Bandeira2} alt="formas de pagamento" width='85%' />
                 </div>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Contato</h1>
