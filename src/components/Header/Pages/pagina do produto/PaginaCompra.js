@@ -12,6 +12,7 @@ import escovaEletrica from '../../../../image/foto escova eletrica.webp'
 import lavadorDeCopos from '../../../../image/foto lavador de copo.webp'
 import removedorDePelos from '../../../../image/foto remover de pelo.webp'
 import { useEffect } from "react";
+import { HashLink as Link } from 'react-router-hash-link';
 function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, variation, variation2, variation3, custoR, custoP, desc }) {
 
     const [cartItems, setCartItems] = useState([]);
@@ -63,7 +64,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                 <div className={styles.compra2}>
                     {/* prop de titulo */}
                     <h1>{titulo}</h1>
-                    <a href="#moreinfo">Mais informações</a>
+                    <Link smooth to="#moreinfo">Mais informações</Link>
 
                 </div>
                 <div className={styles.compra3}>
@@ -82,7 +83,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                     </select>
                 </div>
                 <div className={styles.compra5}>
-                    <button>COMPRAR</button>
+                    <button onClick={addToCart}>COMPRAR</button>
                 </div>
                 <div className={styles.compra6}>
                     <div className={styles.compra6b}>
@@ -139,7 +140,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                         <div className={styles.compra2}>
                             {/* prop de titulo */}
                             <h1>{titulo}</h1>
-                            <a href="#moreinfo">Mais informações</a>
+                            <Link smooth to="#moreinfo2">Mais informações</Link>
 
                         </div>
                         <div className={styles.compra3}>
@@ -178,7 +179,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                         </div>
                     </div>
                 </div>
-                <div className={styles.compra8} id="moreinfo">
+                <div className={styles.compra8} id="moreinfo2">
                     <h1>Informações do produto</h1>
                     {/* colocar prop desc */}
                     <h2>Descrição</h2>

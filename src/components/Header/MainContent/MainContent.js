@@ -41,8 +41,9 @@ function MainContent() {
             setCartItems(JSON.parse(savedCartItems));
         }
     }, []);
-    const scrollToTop = () => {
-        scroll.scrollToTop();
+    const handleClick = () => {
+        // Rolar para o topo imediatamente
+        scroll.scrollToTop({ duration: 0 });
     };
     const images = [
         { id: 1, src: Banner1, alt: 'Image 1' },
@@ -120,12 +121,12 @@ function MainContent() {
                     <h1>Categorias</h1>
                 </div>
                 <section className={`${stylesMobile.categoriesSection} ${stylesDesktop.categoriesSection}`} >
-                    <Link to='/itenscasa' onClick={scrollToTop}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
+                    <Link to='/itenscasa' onClick={handleClick}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
                         <img src={homeIcon} alt="icone de casa" />
                         <h1>Itens para casa</h1>
                     </div>
                     </Link>
-                    <Link to='/itensanimais' onClick={scrollToTop}>
+                    <Link to='/itensanimais' onClick={handleClick}>
                         <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
                             <img src={petIcon} alt="icone de pet" />
                             <h1>Itens para animais</h1>

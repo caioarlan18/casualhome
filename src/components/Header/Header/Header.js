@@ -21,8 +21,9 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 function Header({ buscar }) {
-    const scrollToTop = () => {
-        scroll.scrollToTop();
+    const handleClick = () => {
+        // Rolar para o topo imediatamente
+        scroll.scrollToTop({ duration: 0 });
     };
     function MenuOpen() {
         var menu = document.querySelector(`.${stylesMobile.nav}`)
@@ -105,16 +106,16 @@ function Header({ buscar }) {
                     </div>
 
                     <div className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
-                        <Link to='/todosprodutos' onClick={scrollToTop}><img src={bolsaCompra} alt="icone de bolsa de compra" width='50px' /> <span>Ver todos os produtos</span></Link>
-                        <Link to='/itenscasa' onClick={scrollToTop}><img src={homeIcon} alt="icone de uma casa" width='30px' /><span>Itens para casa</span></Link>
-                        <Link to='/itensanimais' onClick={scrollToTop}> <img src={petIcon} alt="icone de pet" width='30px' /> <span>Itens para animais</span></Link>
+                        <Link to='/todosprodutos' onClick={handleClick}><img src={bolsaCompra} alt="icone de bolsa de compra" width='50px' /> <span>Ver todos os produtos</span></Link>
+                        <Link to='/itenscasa' onClick={handleClick}><img src={homeIcon} alt="icone de uma casa" width='30px' /><span>Itens para casa</span></Link>
+                        <Link to='/itensanimais' onClick={handleClick}> <img src={petIcon} alt="icone de pet" width='30px' /> <span>Itens para animais</span></Link>
                     </div>
 
                     <div className={`${stylesMobile.nav2} ${stylesDesktop.nav2}`} >
-                        <Link to='/sobre' onClick={scrollToTop}><FaBox />Quem Somos</Link>
-                        <Link to='/trocas' onClick={scrollToTop}><FaArrowLeft />Trocas e devoluções</Link>
-                        <Link to='/politicadeprivacidade' onClick={scrollToTop}><FaLock />Política de privacidade</Link>
-                        <Link to='/contato' onClick={scrollToTop}><FaPhone />Central de atendimento</Link>
+                        <Link to='/sobre' onClick={handleClick}><FaBox />Quem Somos</Link>
+                        <Link to='/trocas' onClick={handleClick}><FaArrowLeft />Trocas e devoluções</Link>
+                        <Link to='/politicadeprivacidade' onClick={handleClick}><FaLock />Política de privacidade</Link>
+                        <Link to='/contato' onClick={handleClick}><FaPhone />Central de atendimento</Link>
                     </div>
 
                 </nav>

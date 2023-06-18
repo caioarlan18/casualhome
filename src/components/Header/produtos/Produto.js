@@ -8,16 +8,11 @@ import { useEffect } from 'react';
 
 function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart, buy }) {
 
-    const scrollToTop = () => {
-        scroll.scrollToTop();
-    };
     const handleClick = () => {
-
-
-        setTimeout(() => {
-            scrollToTop();
-        }, 1);
+        // Rolar para o topo imediatamente
+        scroll.scrollToTop({ duration: 0 });
     };
+
     return (
         <div>
             <div className={`${stylesMobile.produto} ${stylesDesktop.produto}`}>

@@ -9,24 +9,24 @@ import stylesDesktop from './Footer.desktop.module.css'
 import { animateScroll as scroll } from 'react-scroll';
 
 function Footer() {
-    const scrollToTop = () => {
-        scroll.scrollToTop();
+    const handleClick = () => {
+        // Rolar para o topo imediatamente
+        scroll.scrollToTop({ duration: 0 });
     };
-
     return (
         <div>
             <footer className={`${stylesMobile.ft} ${stylesDesktop.ft}`}>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Insticional</h1>
-                    <Link to='/instrucaodecompra' onClick={scrollToTop}>Instruções</Link>
-                    <Link to='/contato' onClick={scrollToTop}>Contato</Link>
-                    <Link to='/sobre' onClick={scrollToTop}>Sobre nós</Link>
+                    <Link to='/instrucaodecompra' onClick={handleClick}>Instruções</Link>
+                    <Link to='/contato' onClick={handleClick}>Contato</Link>
+                    <Link to='/sobre' onClick={handleClick}>Sobre nós</Link>
                 </div>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Políticas</h1>
-                    <Link to='/politicadeprivacidade' onClick={scrollToTop}>Política de privacidade</Link>
-                    <Link to='/termos' onClick={scrollToTop}>Termos e condições</Link>
-                    <Link to='/trocas' onClick={scrollToTop}>Política de devolução</Link>
+                    <Link to='/politicadeprivacidade' onClick={handleClick}>Política de privacidade</Link>
+                    <Link to='/termos' onClick={handleClick}>Termos e condições</Link>
+                    <Link to='/trocas' onClick={handleClick}>Política de devolução</Link>
                 </div>
                 <div className={`${stylesMobile.ft1} ${stylesDesktop.ft1}`}>
                     <h1>Formas de pagamento</h1>
