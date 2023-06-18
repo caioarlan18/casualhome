@@ -4,6 +4,7 @@
   margin-top: 30px;
   overflow: hidden;
 }
+
 .banner {
   width: 100%;
 }
@@ -16,15 +17,15 @@
   text-align: center;
   font-weight: 500;
 }
+
 .productSections {
-  width: 100%;
-}
-.productSections1 {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 }
 .secG {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 /* seção de categorias */
@@ -35,12 +36,13 @@
   align-items: center;
 }
 .categoriesSection1 {
-  width: 80vw;
+  width: 85vw;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   margin-top: 50px;
   height: 150px;
   display: flex;
+  background-color: white;
   flex-direction: column;
   justify-content: center;
 }
