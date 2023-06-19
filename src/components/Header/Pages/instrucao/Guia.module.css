@@ -13,6 +13,7 @@
   font-size: 13px;
   font-family: poppins;
   line-height: 1.4;
+  margin-top: 15px;
 }
 
 @media screen and (min-width: 992px) and (max-width: 4000px) {

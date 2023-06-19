@@ -51,7 +51,7 @@ function Busca() {
         <div>
             <Header buscar={valor} />
             <Navigation navTitle={'Buscar produtos'} />
-            <div style={{ marginTop: '30px', marginBottom: '100px', display: 'flex', flexWrap: 'wrap' }}>
+            <div style={{ marginTop: '30px', marginBottom: '100px', display: 'flex', flexWrap: 'wrap', width: '90%' }}>
                 {avu.map((produto, index) => (
                     pesquisa !== '' && <div key={index}>{produto}</div>
                 ))}

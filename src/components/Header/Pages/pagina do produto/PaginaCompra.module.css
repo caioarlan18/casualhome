@@ -140,6 +140,7 @@
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
+  width: 90%;
 }
 .tire {
   width: 85%;

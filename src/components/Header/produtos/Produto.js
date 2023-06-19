@@ -20,7 +20,7 @@ function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart, buy }) 
             <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
                 <img src={imagemProduto} alt="imagem do produto" />
             </div>
-            <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
+            <div className={`${stylesMobile.produto2} ${stylesDesktop.produto2}`}>
                 <FaStar />
                 <FaStar />
                 <FaStar />
