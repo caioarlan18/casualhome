@@ -13,7 +13,13 @@ import lavadorDeCopos from '../../../../image/foto lavador de copo.webp'
 import removedorDePelos from '../../../../image/foto remover de pelo.webp'
 import { useEffect } from "react";
 import { HashLink as Link } from 'react-router-hash-link';
-function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, variation, variation2, variation3, custoR, custoP, desc }) {
+function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, variation, variation2, variation3, custoR, custoP, desc, Add }) {
+    const [selectedValue, setSelectedValue] = useState(variation);
+
+    const handleChange = (event) => {
+        const selectedOption = event.target.value;
+        setSelectedValue(selectedOption);
+    };
 
     const [cartItems, setCartItems] = useState([]);
     const addToCart = (item) => {
@@ -75,15 +81,14 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                 <div className={styles.compra4}>
                     {/* prop nameVariation */}
                     <h1>{nameVariation}</h1>
-                    <select>
+                    <select value={selectedValue} onChange={handleChange}>
                         {/* variation */}
-                        <option value="1">{variation}</option>
-                        <option value="2">{variation2}</option>
-                        <option value="3">{variation3}</option>
+                        <option value={variation}>{variation}</option>
+                        <option value={variation2}>{variation2}</option>
                     </select>
                 </div>
                 <div className={styles.compra5}>
-                    <button onClick={addToCart}>COMPRAR</button>
+                    <button onClick={() => addToCart({ imagemMain, titulo, custoP, selectedValue })}>COMPRAR</button>
                 </div>
                 <div className={styles.compra6}>
                     <div className={styles.compra6b}>
@@ -150,15 +155,14 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                         <div className={styles.compra4}>
                             {/* prop nameVariation */}
                             <h1>{nameVariation}</h1>
-                            <select>
+                            <select value={selectedValue} onChange={handleChange}>
                                 {/* prop variation */}
-                                <option value="1">{variation}</option>
-                                <option value="2">{variation2}</option>
-                                <option value="3">{variation3}</option>
+                                <option value={variation}>{variation}</option>
+                                <option value={variation2}>{variation2}</option>
                             </select>
                         </div>
                         <div className={styles.compra5}>
-                            <button>COMPRAR</button>
+                            <button onClick={() => addToCart({ imagemMain, titulo, custoP, selectedValue })}>COMPRAR</button>
                         </div>
                         <div className={styles.compra6}>
                             <div className={styles.compra6b}>

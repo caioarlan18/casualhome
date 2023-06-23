@@ -21,7 +21,6 @@ import { Item5 } from './components/Header/Pages/compraAllProducts/Item5';
 import { Item6 } from './components/Header/Pages/compraAllProducts/Item6';
 import { Item7 } from './components/Header/Pages/compraAllProducts/Item7';
 function App() {
-
   return (
     <div >
       <Router>

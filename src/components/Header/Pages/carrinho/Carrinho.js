@@ -7,6 +7,12 @@ import { useEffect } from "react"
 import { AiOutlineClose } from 'react-icons/ai';
 
 function Carrinho() {
+
+
+
+
+
+
     const [cartItems, setCartItems] = useState([]);
 
     // Função para recuperar os dados do carrinho ao carregar a página
@@ -22,7 +28,8 @@ function Carrinho() {
         // Função para calcular o total ao atualizar o carrinho
         const calculateTotal = () => {
             const sum = cartItems.reduce((accumulator, item) => {
-                return accumulator + parseFloat(item.custoP.replace('R$ ', ''));
+                const custoPString = String(item.custoP);
+                return accumulator + parseFloat(custoPString.replace('R$ ', ''));
             }, 0);
             setTotal(sum);
         };
@@ -72,10 +79,13 @@ function Carrinho() {
 
                             <div className={styles.carrinho3}>
                                 <AiOutlineClose onClick={() => removeFromCart(index)}>Remover</AiOutlineClose>
-                                <img src={item.imagemProduto} alt="imagem do produto" />
+                                <img src={item.imagemProduto || item.imagemMain} alt="imagem do produto" />
                                 <p>{item.titulo}</p>
+
                             </div>
+
                             <div className={styles.carrinho3}>
+                                <p>{item.selectedValue}</p>
                                 <p>{item.custoP}</p>
                             </div>
                         </div>
