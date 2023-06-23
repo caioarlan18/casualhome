@@ -13,9 +13,9 @@ import lavadorDeCopos from '../../../../image/foto lavador de copo.webp'
 import removedorDePelos from '../../../../image/foto remover de pelo.webp'
 import { useEffect } from "react";
 import { HashLink as Link } from 'react-router-hash-link';
+
 function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, variation, variation2, variation3, custoR, custoP, desc, Add }) {
     const [selectedValue, setSelectedValue] = useState(variation);
-
     const handleChange = (event) => {
         const selectedOption = event.target.value;
         setSelectedValue(selectedOption);

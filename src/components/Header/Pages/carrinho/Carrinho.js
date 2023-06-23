@@ -7,12 +7,6 @@ import { useEffect } from "react"
 import { AiOutlineClose } from 'react-icons/ai';
 
 function Carrinho() {
-
-
-
-
-
-
     const [cartItems, setCartItems] = useState([]);
 
     // Função para recuperar os dados do carrinho ao carregar a página
@@ -58,7 +52,6 @@ function Carrinho() {
             </div>
         )
     }
-
     return (
         <div>
             <Header />
