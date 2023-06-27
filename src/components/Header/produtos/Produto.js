@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { animateScroll as scroll } from 'react-scroll';
+
 function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart, buy }) {
 
     const handleClick = () => {
@@ -18,7 +19,7 @@ function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart, buy }) 
                 <IoCartOutline onClick={() => addToCart({ imagemProduto, titulo, custoP })} />
             </div>
             <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
-                <img src={imagemProduto} alt="imagem do produto" />
+                <Link to={buy} onClick={handleClick}><img src={imagemProduto} alt="imagem do produto" /></Link>
             </div>
             <div className={`${stylesMobile.produto2} ${stylesDesktop.produto2}`}>
                 <FaStar />
@@ -34,7 +35,7 @@ function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart, buy }) 
                 <h3>{custoR}</h3><h2>{custoP}</h2>
             </div>
             <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
-                <Link to={buy} onClick={handleClick}> Ver opções</Link>
+                <Link to={buy} onClick={handleClick} className={`${stylesMobile.comprar} ${stylesDesktop.comprar}`}> Ver opções</Link>
             </div>
 
 

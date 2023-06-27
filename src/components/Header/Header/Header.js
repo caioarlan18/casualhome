@@ -20,6 +20,7 @@ import { animateScroll as scroll } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 function Header({ buscar }) {
     const handleClick = () => {
         // Rolar para o topo imediatamente
@@ -64,6 +65,18 @@ function Header({ buscar }) {
             buscarRef2.current.focus();
         }
     }, [location]);
+    const [cartItems, setCartItems] = useState([]);
+    const [quantidade, setQuantidade] = useState(0);
+
+    // Função para recuperar os dados do carrinho ao carregar a página
+    useEffect(() => {
+        const savedCartItems = localStorage.getItem('cartItems');
+        if (savedCartItems) {
+            setCartItems(JSON.parse(savedCartItems));
+        }
+        setQuantidade(cartItems.length);
+    }, [cartItems]);
+
 
     return (
         <div>
@@ -78,6 +91,7 @@ function Header({ buscar }) {
                     </div>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
                         <Link to='/carrinho'><IoCartOutline /></Link>
+                        <div style={{ textAlign: 'center', fontFamily: 'poppins', fontSize: '15px' }}>{quantidade}</div>
                     </div>
                 </div>
 

@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Banner1 from '../../../image/Banner30Mobile.jpg'
 import Banner2 from '../../../image/bannerFreteMobile.jpg'
-import Banner1D from '../../../image/Banner1D.jpeg'
+import Banner1D from '../../../image/banner main.jpeg'
 import Banner2D from '../../../image/BannerFreteDesktop.jpg'
 import Produto from '../produtos/Produto';
 import removedorDePelos from '../../../image/foto remover de pelo.webp'

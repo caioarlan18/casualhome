@@ -5,10 +5,11 @@ import styles from './Carrinho.module.css'
 import { useState } from "react"
 import { useEffect } from "react"
 import { AiOutlineClose } from 'react-icons/ai';
+import StripeCheckout from 'react-stripe-checkout';
 
 function Carrinho() {
-    const [cartItems, setCartItems] = useState([]);
 
+    const [cartItems, setCartItems] = useState([]);
     // Função para recuperar os dados do carrinho ao carregar a página
     useEffect(() => {
         const savedCartItems = localStorage.getItem('cartItems');
@@ -38,6 +39,8 @@ function Carrinho() {
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     };
 
+
+
     if (!cartItems || cartItems.length === 0) {
         return (
             <div>
@@ -53,6 +56,7 @@ function Carrinho() {
         )
     }
     return (
+
         <div>
             <Header />
             <Navigation navTitle={'Carrinho de compras'} />
@@ -85,7 +89,14 @@ function Carrinho() {
                     ))}
                     <div className={styles.carrinho4}>
                         <p>Total a pagar: R$ {total.toFixed(2)}</p>
-                        <button>Pagar</button>
+                        <StripeCheckout
+                            stripeKey="pk_live_51LEgv6DzGyc8oNNRoZTLPG3kmmAnxcEeEfiFKOIFze45hQyBfyMH6NU49HN2zCHJd2W4dELgdtnoF7Lldzpscrcm00YIN3P9yN"
+                            name="Casual Home"
+                            amount={total * 100}
+                            currency="BRL"
+                        >
+                            <button>Finalizar Compra</button>
+                        </StripeCheckout>
                     </div>
                 </div>
             </div>
