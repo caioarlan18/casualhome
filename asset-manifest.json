@@ -1,14 +1,17 @@
 {
   "files": {
     "main.css": "/casualhome/static/css/main.5604aec5.css",
-    "main.js": "/casualhome/static/js/main.7b25804b.js",
+    "main.js": "/casualhome/static/js/main.5643e81e.js",
     "static/js/787.fc40571a.chunk.js": "/casualhome/static/js/787.fc40571a.chunk.js",
     "static/media/BannerFreteDesktop.jpg": "/casualhome/static/media/BannerFreteDesktop.d3ea584767aebad0eccc.jpg",
     "static/media/bannerFreteMobile.jpg": "/casualhome/static/media/bannerFreteMobile.27d9cc34c427aa7b0360.jpg",
     "static/media/Banner30Mobile.jpg": "/casualhome/static/media/Banner30Mobile.4ac150186bd00eacccba.jpg",
     "static/media/compra segura.png": "/casualhome/static/media/compra segura.c8b39b5d31955b37e2af.png",
+    "static/media/tabuadobravel.jpg": "/casualhome/static/media/tabuadobravel.77ecbda169239d2b310e.jpg",
     "static/media/bandeira2.png": "/casualhome/static/media/bandeira2.e6e85f19199514f31b2c.png",
+    "static/media/TerciariaTabuaDobravel.jpg": "/casualhome/static/media/TerciariaTabuaDobravel.5bb3abe4fc7f62901e52.jpg",
     "static/media/bandeiras cartao1.png": "/casualhome/static/media/bandeiras cartao1.c86ce376bffcc336094d.png",
+    "static/media/secundariaTabuaDobravel.jpg": "/casualhome/static/media/secundariaTabuaDobravel.c92fe674264a65f8cbcb.jpg",
     "static/media/banner main.jpeg": "/casualhome/static/media/banner main.bf2f0ba922b85e2451eb.jpeg",
     "static/media/eseletrica secundaria.webp": "/casualhome/static/media/eseletrica secundaria.68ce52272ead9fc4f4ad.webp",
     "static/media/magica sec.webp": "/casualhome/static/media/magica sec.e534dcbee39a1df1796c.webp",
@@ -43,11 +46,11 @@
     "static/media/slick.woff": "/casualhome/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/casualhome/index.html",
     "main.5604aec5.css.map": "/casualhome/static/css/main.5604aec5.css.map",
-    "main.7b25804b.js.map": "/casualhome/static/js/main.7b25804b.js.map",
+    "main.5643e81e.js.map": "/casualhome/static/js/main.5643e81e.js.map",
     "787.fc40571a.chunk.js.map": "/casualhome/static/js/787.fc40571a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5604aec5.css",
-    "static/js/main.7b25804b.js"
+    "static/js/main.5643e81e.js"
   ]
 }
