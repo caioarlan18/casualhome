@@ -5,7 +5,7 @@ import styles from './Carrinho.module.css'
 import { useState } from "react"
 import { useEffect } from "react"
 import { AiOutlineClose } from 'react-icons/ai';
-import StripeCheckout from 'react-stripe-checkout';
+
 
 function Carrinho() {
 
@@ -89,14 +89,8 @@ function Carrinho() {
                     ))}
                     <div className={styles.carrinho4}>
                         <p>Total a pagar: R$ {total.toFixed(2)}</p>
-                        <StripeCheckout
-                            stripeKey="pk_live_51LEgv6DzGyc8oNNRoZTLPG3kmmAnxcEeEfiFKOIFze45hQyBfyMH6NU49HN2zCHJd2W4dELgdtnoF7Lldzpscrcm00YIN3P9yN"
-                            name="Casual Home"
-                            amount={total * 100}
-                            currency="BRL"
-                        >
-                            <button>Finalizar Compra</button>
-                        </StripeCheckout>
+
+                        <button>Finalizar Compra</button>
                     </div>
                 </div>
             </div>
