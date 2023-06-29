@@ -9,6 +9,7 @@ import seladoraVacuo from '../../../../image/foto seladora vacuo.webp'
 import escovaEletrica from '../../../../image/foto escova eletrica.webp'
 import { useState } from "react"
 import { useEffect } from "react"
+import tabuaDobravel from '../../../../image/tabuadobravel.jpg'
 function HomeItens() {
     // sistema de adicionar itens ao carrinho
     const [cartItems, setCartItems] = useState([]);
@@ -36,7 +37,7 @@ function HomeItens() {
                 <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} addToCart={addToCart} buy={'/item4'} />
                 <Produto imagemProduto={tampaSilicone} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 90,87'} custoP={'R$ 69,90'} addToCart={addToCart} buy={'/item5'} />
                 <Produto imagemProduto={seladoraVacuo} titulo={'Seladora à vácuo portátil'} custoR={'R$ 297,97'} custoP={'R$ 229,90'} addToCart={addToCart} buy={'/item6'} />
-
+                <Produto imagemProduto={tabuaDobravel} titulo={'Tábua Gourmet de Corte Dobrável'} custoR={'R$ 51,87'} custoP={'R$ 39,90'} addToCart={addToCart} buy={'/item8'} />
             </section>
             <Footer />
         </div>

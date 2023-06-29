@@ -9,9 +9,11 @@ import escovaMagica from '../../../../image/foto escova magica.webp'
 import impressoraPortatil from '../../../../image/foto impressora portatil.webp'
 import escovaEletrica from '../../../../image/foto escova eletrica.webp'
 import seladoraVacuo from '../../../../image/foto seladora vacuo.webp'
+import tabuaDobravel from '../../../../image/tabuadobravel.jpg'
 import Navigation from "../../Navigation/Navigation"
 import { useEffect } from "react"
 import { useState } from "react"
+
 function TodosProdutos() {
     const [cartItems, setCartItems] = useState([]);
     const addToCart = (item) => {
@@ -41,6 +43,7 @@ function TodosProdutos() {
                 <Produto imagemProduto={tampaSilicone} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 90,87'} custoP={'R$ 69,90'} addToCart={addToCart} buy={'/item5'} />
                 <Produto imagemProduto={seladoraVacuo} titulo={'Seladora à vácuo portátil'} custoR={'R$ 297,97'} custoP={'R$ 229,90'} addToCart={addToCart} buy={'/item6'} />
                 <Produto imagemProduto={escovaMagica} titulo={'Escova mágica de gato e cachorro para pelo'} custoR={'R$ 77,87'} custoP={'R$ 59,90'} addToCart={addToCart} buy={'/item7'} />
+                <Produto imagemProduto={tabuaDobravel} titulo={'Tábua Gourmet de Corte Dobrável'} custoR={'R$ 51,87'} custoP={'R$ 39,90'} addToCart={addToCart} buy={'/item8'} />
             </section>
 
 

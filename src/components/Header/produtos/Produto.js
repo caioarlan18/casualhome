@@ -8,7 +8,7 @@ import { animateScroll as scroll } from 'react-scroll';
 function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart, buy }) {
 
     const handleClick = () => {
-        // Rolar para o topo imediatamente
+
         scroll.scrollToTop({ duration: 0 });
     };
 

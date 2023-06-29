@@ -21,6 +21,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
         setSelectedValue(selectedOption);
     };
 
+
     const [cartItems, setCartItems] = useState([]);
     const addToCart = (item) => {
         const updatedCartItems = [...cartItems, item];

@@ -20,6 +20,7 @@ import { Item4 } from './components/Header/Pages/compraAllProducts/Item4';
 import { Item5 } from './components/Header/Pages/compraAllProducts/Item5';
 import { Item6 } from './components/Header/Pages/compraAllProducts/Item6';
 import { Item7 } from './components/Header/Pages/compraAllProducts/Item7';
+import { Item8 } from './components/Header/Pages/compraAllProducts/Item8';
 function App() {
   return (
     <div >
@@ -45,6 +46,7 @@ function App() {
           <Route path='/item5' element={<Item5 />} />
           <Route path='/item6' element={<Item6 />} />
           <Route path='/item7' element={<Item7 />} />
+          <Route path='/item8' element={<Item8 />} />
         </Routes>
       </Router>
     </div>

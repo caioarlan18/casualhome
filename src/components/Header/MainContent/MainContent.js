@@ -24,7 +24,7 @@ import { FaRegListAlt } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import tabuaDobravel from '../../../image/tabuadobravel.jpg'
 function MainContent() {
     const [cartItems, setCartItems] = useState([]);
     const addToCart = (item) => {
@@ -102,10 +102,10 @@ function MainContent() {
                     <h1>Lançamentos</h1>
                 </div>
                 <div className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
+                    <Produto imagemProduto={tabuaDobravel} titulo={'Tábua Gourmet de Corte Dobrável'} custoR={'R$ 51,87'} custoP={'R$ 39,90'} addToCart={addToCart} buy={'/item8'} />
                     <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 233,87'} custoP={'R$ 179,90'} addToCart={addToCart} buy={'/item1'} />
                     <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} buy={'/item2'} />
                     <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} addToCart={addToCart} buy={'/item3'} />
-                    <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} addToCart={addToCart} buy={'/item4'} />
 
                 </div>
 
