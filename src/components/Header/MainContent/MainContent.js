@@ -14,7 +14,6 @@ import lavadorDeCopos from '../../../image/foto lavador de copo.webp'
 import tampaSilicone from '../../../image/foto tampas de silicone.webp'
 import escovaMagica from '../../../image/foto escova magica.webp'
 import impressoraPortatil from '../../../image/foto impressora portatil.webp'
-import escovaEletrica from '../../../image/foto escova eletrica.webp'
 import petIcon from '../../../image/icone-de-pet.png'
 import homeIcon from '../../../image/icone-de-casa-removebg-preview.png'
 import { FaTruck } from 'react-icons/fa';
@@ -25,6 +24,9 @@ import { animateScroll as scroll } from 'react-scroll';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import tabuaDobravel from '../../../image/tabuadobravel.jpg'
+import ItensCozinha from '../../../image/icone-de-categoria-cozinha.svg'
+import banheiro from '../../../image/icone privada.png'
+
 function MainContent() {
     const [cartItems, setCartItems] = useState([]);
     const addToCart = (item) => {
@@ -120,6 +122,16 @@ function MainContent() {
                     <Link to='/itenscasa' onClick={handleClick}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
                         <img src={homeIcon} alt="icone de casa" />
                         <h1>Itens para casa</h1>
+                    </div>
+                    </Link>
+                    <Link to='/itenscozinha' onClick={handleClick}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
+                        <img src={ItensCozinha} alt="icone de panela" />
+                        <h1>Itens para cozinha</h1>
+                    </div>
+                    </Link>
+                    <Link to='/itensbanheiro' onClick={handleClick}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
+                        <img src={banheiro} alt="icone de banheiro" />
+                        <h1>Itens para banheiro</h1>
                     </div>
                     </Link>
                     <Link to='/itensanimais' onClick={handleClick}>

@@ -15,8 +15,11 @@
   }
 
   /* seção de categorias*/
+  .categoriesSection {
+    width: 90%;
+  }
   .categoriesSection1 {
-    width: 45vw;
+    width: 40vw;
   }
 
   /* seção de informações */

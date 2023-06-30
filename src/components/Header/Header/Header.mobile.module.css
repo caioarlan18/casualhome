@@ -71,7 +71,7 @@
 }
 .active {
   width: 80%;
-  overflow: visible;
+  overflow: auto;
   transition: 0.3s;
 }
 .nav svg {

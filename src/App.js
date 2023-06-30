@@ -21,6 +21,8 @@ import { Item5 } from './components/Header/Pages/compraAllProducts/Item5';
 import { Item6 } from './components/Header/Pages/compraAllProducts/Item6';
 import { Item7 } from './components/Header/Pages/compraAllProducts/Item7';
 import { Item8 } from './components/Header/Pages/compraAllProducts/Item8';
+import ItensCozinha from './components/Header/Pages/itens para cozinha/ItensCozinha';
+import ItensBanheiro from './components/Header/Pages/itens banheiro/ItensBanheiro';
 function App() {
   return (
     <div >
@@ -29,6 +31,8 @@ function App() {
           <Route exact path='/' element={<HomePage />} />
           <Route path='/todosprodutos' element={<TodosProdutos />} />
           <Route path='/itenscasa' element={<HomeItens />} />
+          <Route path='/itenscozinha' element={<ItensCozinha />} />
+          <Route path='/itensbanheiro' element={<ItensBanheiro />} />
           <Route path='/itensanimais' element={<PetItens />} />
           <Route path='/sobre' element={<Sobre />} />
           <Route path='/trocas' element={<Trocas />} />

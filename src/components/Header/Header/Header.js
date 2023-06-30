@@ -21,33 +21,41 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import itensCozinha from '../../../image/icone-de-categoria-cozinha.svg'
+import banheiro from '../../../image/icone privada.png'
 function Header({ buscar }) {
     const handleClick = () => {
         // Rolar para o topo imediatamente
         scroll.scrollToTop({ duration: 0 });
     };
+
     function MenuOpen() {
-        var menu = document.querySelector(`.${stylesMobile.nav}`)
-        menu.classList.toggle(stylesMobile.active)
+        const menu = document.querySelector(`.${stylesMobile.nav}`);
+        menu.classList.toggle(stylesMobile.active);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         overlay.style.display = 'block';
     }
+
     function MenuClose() {
-        var menu = document.querySelector(`.${stylesMobile.nav}`)
-        menu.classList.remove(stylesMobile.active)
+        const menu = document.querySelector(`.${stylesMobile.nav}`);
+        menu.classList.remove(stylesMobile.active);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         overlay.style.display = 'none';
     }
+
     function sumir() {
-        var menu = document.querySelector(`.${stylesMobile.nav}`)
+        const menu = document.querySelector(`.${stylesMobile.nav}`);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
-        menu.classList.remove(stylesMobile.active)
+        menu.classList.remove(stylesMobile.active);
         overlay.style.display = 'none';
     }
+
     const navigate = useNavigate();
+
     function search() {
-        navigate('/busca')
+        navigate('/busca');
     }
+
     const location = useLocation();
 
     // mobile
@@ -58,13 +66,14 @@ function Header({ buscar }) {
         }
     }, [location]);
 
-    // desktop  
+    // desktop
     const buscarRef2 = useRef(null);
     useEffect(() => {
         if (location.pathname === '/busca') {
             buscarRef2.current.focus();
         }
     }, [location]);
+
     const [cartItems, setCartItems] = useState([]);
     const [quantidade, setQuantidade] = useState(0);
 
@@ -74,6 +83,10 @@ function Header({ buscar }) {
         if (savedCartItems) {
             setCartItems(JSON.parse(savedCartItems));
         }
+    }, []); // Dependência vazia para executar apenas uma vez
+
+    // Atualizar a quantidade com base no estado atualizado de cartItems
+    useEffect(() => {
         setQuantidade(cartItems.length);
     }, [cartItems]);
 
@@ -122,6 +135,8 @@ function Header({ buscar }) {
                     <div className={`${stylesMobile.nav1} ${stylesDesktop.nav1}`}>
                         <Link to='/todosprodutos' onClick={handleClick}><img src={bolsaCompra} alt="icone de bolsa de compra" width='50px' /> <span>Ver todos os produtos</span></Link>
                         <Link to='/itenscasa' onClick={handleClick}><img src={homeIcon} alt="icone de uma casa" width='30px' /><span>Itens para casa</span></Link>
+                        <Link to='/itenscozinha' onClick={handleClick}><img src={itensCozinha} alt="icone de cozinha" width='35px' /><span>Itens para cozinha</span></Link>
+                        <Link to='/itenscozinha' onClick={handleClick}><img src={banheiro} alt="icone de banheiro" width='35px' /><span>Itens para banheiro</span></Link>
                         <Link to='/itensanimais' onClick={handleClick}> <img src={petIcon} alt="icone de pet" width='30px' /> <span>Itens para animais</span></Link>
                     </div>
 
