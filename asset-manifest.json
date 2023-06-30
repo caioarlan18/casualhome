@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/casualhome/static/css/main.5604aec5.css",
-    "main.js": "/casualhome/static/js/main.5643e81e.js",
+    "main.css": "/casualhome/static/css/main.5be9233c.css",
+    "main.js": "/casualhome/static/js/main.f41fd6f6.js",
     "static/js/787.fc40571a.chunk.js": "/casualhome/static/js/787.fc40571a.chunk.js",
     "static/media/BannerFreteDesktop.jpg": "/casualhome/static/media/BannerFreteDesktop.d3ea584767aebad0eccc.jpg",
     "static/media/bannerFreteMobile.jpg": "/casualhome/static/media/bannerFreteMobile.27d9cc34c427aa7b0360.jpg",
@@ -31,6 +31,7 @@
     "static/media/lavador terciaria.webp": "/casualhome/static/media/lavador terciaria.48c2911fc774d0e9d242.webp",
     "static/media/lavador secundaria.webp": "/casualhome/static/media/lavador secundaria.7379713caab696d379a3.webp",
     "static/media/eseletrica terciaria.webp": "/casualhome/static/media/eseletrica terciaria.51343189f38e894b96d2.webp",
+    "static/media/icone privada.png": "/casualhome/static/media/icone privada.5ecdedb035ee8d43fcc1.png",
     "static/media/anti-pirata.webp": "/casualhome/static/media/anti-pirata.fe9e283e9bc36c08a17a.webp",
     "static/media/foto tampas de silicone.webp": "/casualhome/static/media/foto tampas de silicone.6bee3059248072986a61.webp",
     "static/media/foto remover de pelo.webp": "/casualhome/static/media/foto remover de pelo.96d6dd7aa3005bbc54a0.webp",
@@ -40,17 +41,18 @@
     "static/media/foto lavador de copo.webp": "/casualhome/static/media/foto lavador de copo.1d52338e7663badfdc16.webp",
     "static/media/foto escova eletrica.webp": "/casualhome/static/media/foto escova eletrica.85a2f5197c456e5567af.webp",
     "static/media/foto escova magica.webp": "/casualhome/static/media/foto escova magica.2e62f69c90bc5dc02816.webp",
+    "static/media/icone-de-categoria-cozinha.svg": "/casualhome/static/media/icone-de-categoria-cozinha.b1bd266d5dbb99d4ee6ddb7c2779f798.svg",
     "static/media/slick.svg": "/casualhome/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/casualhome/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/casualhome/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/casualhome/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/casualhome/index.html",
-    "main.5604aec5.css.map": "/casualhome/static/css/main.5604aec5.css.map",
-    "main.5643e81e.js.map": "/casualhome/static/js/main.5643e81e.js.map",
+    "main.5be9233c.css.map": "/casualhome/static/css/main.5be9233c.css.map",
+    "main.f41fd6f6.js.map": "/casualhome/static/js/main.f41fd6f6.js.map",
     "787.fc40571a.chunk.js.map": "/casualhome/static/js/787.fc40571a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5604aec5.css",
-    "static/js/main.5643e81e.js"
+    "static/css/main.5be9233c.css",
+    "static/js/main.f41fd6f6.js"
   ]
 }
