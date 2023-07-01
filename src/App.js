@@ -23,6 +23,7 @@ import { Item7 } from './components/Header/Pages/compraAllProducts/Item7';
 import { Item8 } from './components/Header/Pages/compraAllProducts/Item8';
 import ItensCozinha from './components/Header/Pages/itens para cozinha/ItensCozinha';
 import ItensBanheiro from './components/Header/Pages/itens banheiro/ItensBanheiro';
+
 function App() {
   return (
     <div >

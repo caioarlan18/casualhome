@@ -8,12 +8,6 @@ import Banner1 from '../../../image/Banner30Mobile.jpg'
 import Banner2 from '../../../image/bannerFreteMobile.jpg'
 import Banner1D from '../../../image/banner main.jpeg'
 import Banner2D from '../../../image/BannerFreteDesktop.jpg'
-import Produto from '../produtos/Produto';
-import removedorDePelos from '../../../image/foto remover de pelo.webp'
-import lavadorDeCopos from '../../../image/foto lavador de copo.webp'
-import tampaSilicone from '../../../image/foto tampas de silicone.webp'
-import escovaMagica from '../../../image/foto escova magica.webp'
-import impressoraPortatil from '../../../image/foto impressora portatil.webp'
 import petIcon from '../../../image/icone-de-pet.png'
 import homeIcon from '../../../image/icone-de-casa-removebg-preview.png'
 import { FaTruck } from 'react-icons/fa';
@@ -21,28 +15,13 @@ import { FaCreditCard } from 'react-icons/fa';
 import { FaShieldAlt } from 'react-icons/fa';
 import { FaRegListAlt } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import tabuaDobravel from '../../../image/tabuadobravel.jpg'
 import ItensCozinha from '../../../image/icone-de-categoria-cozinha.svg'
 import banheiro from '../../../image/icone privada.png'
-
+import { useContext } from "react"
+import { ArrayContext } from '../Pages/arrayproducts/ArrayProvider';
 function MainContent() {
-    const [cartItems, setCartItems] = useState([]);
-    const addToCart = (item) => {
-        const updatedCartItems = [...cartItems, item];
-        setCartItems(updatedCartItems);
-        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-        alert('Produto adicionado ao carrinho')
-    };
+    const produtos = useContext(ArrayContext);
 
-    // Função para recuperar os dados do carrinho ao carregar a página
-    useEffect(() => {
-        const savedCartItems = localStorage.getItem('cartItems');
-        if (savedCartItems) {
-            setCartItems(JSON.parse(savedCartItems));
-        }
-    }, []);
     const handleClick = () => {
         // Rolar para o topo imediatamente
         scroll.scrollToTop({ duration: 0 });
@@ -63,6 +42,14 @@ function MainContent() {
         autoplay: true,
         autoplaySpeed: 3000,
     };
+
+    // produtos destaques
+    const produtosCopia = [...produtos];
+    for (let i = produtosCopia.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [produtosCopia[i], produtosCopia[j]] = [produtosCopia[j], produtosCopia[i]];
+    }
+
     return (
         <div >
             {/* slider Mobile */}
@@ -92,10 +79,9 @@ function MainContent() {
                     <h1>Destaques</h1>
                 </div>
                 <div className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
-                    <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} buy={'/item2'} />
-                    <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} addToCart={addToCart} buy={'/item3'} />
-                    <Produto imagemProduto={tampaSilicone} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 90,87'} custoP={'R$ 69,90'} addToCart={addToCart} buy={'/item5'} />
-                    <Produto imagemProduto={escovaMagica} titulo={'Escova mágica de gato e cachorro para pelo'} custoR={'R$ 77,87'} custoP={'R$ 59,90'} addToCart={addToCart} buy={'/item7'} />
+                    {produtosCopia.slice(0, 4).map((produto) => (
+                        produto
+                    ))}
                 </div>
             </div>
 
@@ -104,10 +90,10 @@ function MainContent() {
                     <h1>Lançamentos</h1>
                 </div>
                 <div className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
-                    <Produto imagemProduto={tabuaDobravel} titulo={'Tábua Gourmet de Corte Dobrável'} custoR={'R$ 51,87'} custoP={'R$ 39,90'} addToCart={addToCart} buy={'/item8'} />
-                    <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 233,87'} custoP={'R$ 179,90'} addToCart={addToCart} buy={'/item1'} />
-                    <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} buy={'/item2'} />
-                    <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} addToCart={addToCart} buy={'/item3'} />
+                    {produtos[produtos.length - 1]}
+                    {produtos[produtos.length - 2]}
+                    {produtos[produtos.length - 3]}
+                    {produtos[produtos.length - 4]}
 
                 </div>
 

@@ -1,33 +1,18 @@
 import Header from "../../Header/Header"
 import Footer from "../../rodape/Footer"
 import Navigation from "../../Navigation/Navigation"
-import escovaMagica from '../../../../image/foto escova magica.webp'
-import Produto from "../../produtos/Produto"
-import { useState } from "react"
-import { useEffect } from "react"
+import { useContext } from "react"
+import { ArrayContext } from "../arrayproducts/ArrayProvider"
 function PetItens() {
-    // sistema de adicionar itens ao carrinho
-    const [cartItems, setCartItems] = useState([]);
-    const addToCart = (item) => {
-        const updatedCartItems = [...cartItems, item];
-        setCartItems(updatedCartItems);
-        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-        alert('Produto adicionado ao carrinho')
-    };
-
-    // Função para recuperar os dados do carrinho ao carregar a página
-    useEffect(() => {
-        const savedCartItems = localStorage.getItem('cartItems');
-        if (savedCartItems) {
-            setCartItems(JSON.parse(savedCartItems));
-        }
-    }, []);
+    const produtos = useContext(ArrayContext)
     return (
         <div>
             <Header />
             <Navigation navTitle='Itens para animais' />
             <section style={{ display: 'flex', flexWrap: 'wrap', marginTop: '30px', marginBottom: '100px', width: '90%' }}>
-                <Produto imagemProduto={escovaMagica} titulo={'Escova mágica de gato e cachorro para pelo'} custoR={'R$ 77,87'} custoP={'R$ 59,90'} addToCart={addToCart} buy={'/item7'} />
+                {produtos.map((produto) => (
+                    produto.props.categoria.includes('animais') && produto
+                ))}
             </section>
             <Footer />
         </div>
