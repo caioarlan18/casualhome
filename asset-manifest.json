@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/casualhome/static/css/main.a6b483d5.css",
+    "main.css": "/casualhome/static/css/main.f870f6d7.css",
     "main.js": "/casualhome/static/js/main.41d59a89.js",
     "static/js/787.fc40571a.chunk.js": "/casualhome/static/js/787.fc40571a.chunk.js",
     "static/media/BannerFreteDesktop.jpg": "/casualhome/static/media/BannerFreteDesktop.d3ea584767aebad0eccc.jpg",
@@ -47,12 +47,12 @@
     "static/media/slick.ttf": "/casualhome/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/casualhome/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/casualhome/index.html",
-    "main.a6b483d5.css.map": "/casualhome/static/css/main.a6b483d5.css.map",
+    "main.f870f6d7.css.map": "/casualhome/static/css/main.f870f6d7.css.map",
     "main.41d59a89.js.map": "/casualhome/static/js/main.41d59a89.js.map",
     "787.fc40571a.chunk.js.map": "/casualhome/static/js/787.fc40571a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6b483d5.css",
+    "static/css/main.f870f6d7.css",
     "static/js/main.41d59a89.js"
   ]
 }
