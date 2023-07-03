@@ -11,9 +11,11 @@ import impressoraPortatil from '../../../../image/foto impressora portatil.webp'
 import escovaEletrica from '../../../../image/foto escova eletrica.webp'
 import lavadorDeCopos from '../../../../image/foto lavador de copo.webp'
 import removedorDePelos from '../../../../image/foto remover de pelo.webp'
-import { useEffect } from "react";
 import { HashLink as Link } from 'react-router-hash-link';
-
+import { useContext } from "react";
+import { ArrayContext } from "../arrayproducts/ArrayProvider";
+import { Fragment } from "react";
+import { useEffect } from "react";
 function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, variation, variation2, variation3, custoR, custoP, desc, Add }) {
     const [selectedValue, setSelectedValue] = useState(variation);
     const handleChange = (event) => {
@@ -29,14 +31,13 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         alert('Produto adicionado ao carrinho')
     };
-
-    // Função para recuperar os dados do carrinho ao carregar a página
     useEffect(() => {
         const savedCartItems = localStorage.getItem('cartItems');
         if (savedCartItems) {
             setCartItems(JSON.parse(savedCartItems));
         }
-    }, []);
+    }, [cartItems]);
+
 
     const [main1, setMain1] = useState(true)
     const [main2, setMain2] = useState(false)
@@ -54,6 +55,13 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
     if (main3) {
         // prop de imagem3
         principal = imagem3
+    }
+
+    const produtos = useContext(ArrayContext)
+    const produtosCopia = [...produtos];
+    for (let i = produtosCopia.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [produtosCopia[i], produtosCopia[j]] = [produtosCopia[j], produtosCopia[i]];
     }
     return (
         <div>
@@ -120,10 +128,11 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                 </div>
 
                 <div className={styles.relacionados}>
-                    <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 233,87'} custoP={'R$ 179,90'} addToCart={addToCart} buy={'/item1'} />
-                    <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} buy={'/item2'} />
-                    <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} addToCart={addToCart} buy={'/item3'} />
-                    <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} addToCart={addToCart} buy={'/item4'} />
+                    {produtosCopia.slice(0, 4).map((produto, index) => (
+                        <Fragment key={index}>
+                            {produto}
+                        </Fragment>
+                    ))}
                 </div>
             </div>
 

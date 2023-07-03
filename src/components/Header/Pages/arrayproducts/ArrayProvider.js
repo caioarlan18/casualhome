@@ -22,14 +22,14 @@ export const ArrayProvider = ({ children }) => {
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     alert('Produto adicionado ao carrinho')
   };
-
-  // Função para recuperar os dados do carrinho ao carregar a página
   useEffect(() => {
     const savedCartItems = localStorage.getItem('cartItems');
     if (savedCartItems) {
       setCartItems(JSON.parse(savedCartItems));
     }
-  }, []);
+  }, [cartItems]);
+
+
 
   // meus produtos
   const produtos = [

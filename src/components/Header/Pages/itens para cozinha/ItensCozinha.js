@@ -1,7 +1,7 @@
 import Header from "../../Header/Header"
 import Footer from "../../rodape/Footer"
 import Navigation from "../../Navigation/Navigation"
-import { useContext } from "react"
+import { Fragment, useContext } from "react"
 import { ArrayContext } from "../arrayproducts/ArrayProvider"
 function ItensCozinha() {
     const produtos = useContext(ArrayContext)
@@ -10,8 +10,10 @@ function ItensCozinha() {
             <Header />
             <Navigation navTitle='Itens para cozinha' />
             <section style={{ display: 'flex', flexWrap: 'wrap', marginTop: '30px', marginBottom: '100px', width: '90%' }}>
-                {produtos.map((produto) => (
-                    produto.props.categoria.includes('cozinha') && produto
+                {produtos.map((produto, index) => (
+                    <Fragment key={index}>
+                        {produto.props.categoria.includes('cozinha') && produto}
+                    </Fragment>
                 ))}
             </section>
             <Footer />

@@ -43,12 +43,7 @@ function MainContent() {
         autoplaySpeed: 3000,
     };
 
-    // produtos destaques
-    const produtosCopia = [...produtos];
-    for (let i = produtosCopia.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [produtosCopia[i], produtosCopia[j]] = [produtosCopia[j], produtosCopia[i]];
-    }
+
 
     return (
         <div >
@@ -79,9 +74,10 @@ function MainContent() {
                     <h1>Destaques</h1>
                 </div>
                 <div className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
-                    {produtosCopia.slice(0, 4).map((produto) => (
-                        produto
-                    ))}
+                    {produtos[0]}
+                    {produtos[1]}
+                    {produtos[2]}
+                    {produtos[3]}
                 </div>
             </div>
 

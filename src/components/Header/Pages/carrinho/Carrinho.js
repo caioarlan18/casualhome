@@ -2,12 +2,12 @@ import Header from "../../Header/Header"
 import Navigation from "../../Navigation/Navigation"
 import Footer from "../../rodape/Footer"
 import styles from './Carrinho.module.css'
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import { AiOutlineClose } from 'react-icons/ai';
 
-
 function Carrinho() {
+
+
 
     const [cartItems, setCartItems] = useState([]);
     // Função para recuperar os dados do carrinho ao carregar a página
@@ -16,7 +16,7 @@ function Carrinho() {
         if (savedCartItems) {
             setCartItems(JSON.parse(savedCartItems));
         }
-    }, []);
+    }, [cartItems]);
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
@@ -39,8 +39,6 @@ function Carrinho() {
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     };
 
-
-
     if (!cartItems || cartItems.length === 0) {
         return (
             <div>
@@ -49,38 +47,29 @@ function Carrinho() {
                 <div className={styles.vazio}>
                     <p>Carrinho vazio</p>
                 </div>
-
                 <Footer />
-
             </div>
         )
     }
-    return (
 
+    return (
         <div>
             <Header />
             <Navigation navTitle={'Carrinho de compras'} />
             <div className={styles.carrinho}>
                 <h2>Carrinho de Compras</h2>
-                <div >
+                <div>
                     <div className={styles.carrinho1}>
-                        <h1>
-                            Produto
-                        </h1>
-                        <h1>
-                            Preço
-                        </h1>
+                        <h1>Produto</h1>
+                        <h1>Preço</h1>
                     </div>
                     {cartItems.map((item, index) => (
                         <div key={index} className={styles.carrinho2}>
-
                             <div className={styles.carrinho3}>
                                 <AiOutlineClose onClick={() => removeFromCart(index)}>Remover</AiOutlineClose>
                                 <img src={item.imagemProduto || item.imagemMain} alt="imagem do produto" />
                                 <p>{item.titulo}</p>
-
                             </div>
-
                             <div className={styles.carrinho3}>
                                 <p>{item.selectedValue}</p>
                                 <p>{item.custoP}</p>
@@ -89,7 +78,6 @@ function Carrinho() {
                     ))}
                     <div className={styles.carrinho4}>
                         <p>Total a pagar: R$ {total.toFixed(2)}</p>
-
                         <button>Finalizar Compra</button>
                     </div>
                 </div>

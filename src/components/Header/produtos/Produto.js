@@ -4,11 +4,26 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { animateScroll as scroll } from 'react-scroll';
+import { useState } from 'react';
+import { useEffect } from 'react';
+function Produto({ imagemProduto, titulo, custoR, custoP, buy }) {
 
-function Produto({ id, imagemProduto, titulo, custoR, custoP, addToCart, buy }) {
+    const [cartItems, setCartItems] = useState([]);
+    const addToCart = (item) => {
+        const updatedCartItems = [...cartItems, item];
+        setCartItems(updatedCartItems);
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        alert('Produto adicionado ao carrinho')
+    };
+    useEffect(() => {
+        const savedCartItems = localStorage.getItem('cartItems');
+        if (savedCartItems) {
+            setCartItems(JSON.parse(savedCartItems));
+        }
+    }, [cartItems]);
+
 
     const handleClick = () => {
-
         scroll.scrollToTop({ duration: 0 });
     };
 
