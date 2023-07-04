@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/casualhome/static/css/main.9233e561.css",
-    "main.js": "/casualhome/static/js/main.8e2c1580.js",
+    "main.css": "/casualhome/static/css/main.56e8afd5.css",
+    "main.js": "/casualhome/static/js/main.6158f002.js",
     "static/js/787.fc40571a.chunk.js": "/casualhome/static/js/787.fc40571a.chunk.js",
     "static/media/BannerFreteDesktop.jpg": "/casualhome/static/media/BannerFreteDesktop.d3ea584767aebad0eccc.jpg",
     "static/media/bannerFreteMobile.jpg": "/casualhome/static/media/bannerFreteMobile.27d9cc34c427aa7b0360.jpg",
@@ -47,12 +47,12 @@
     "static/media/slick.ttf": "/casualhome/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/casualhome/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/casualhome/index.html",
-    "main.9233e561.css.map": "/casualhome/static/css/main.9233e561.css.map",
-    "main.8e2c1580.js.map": "/casualhome/static/js/main.8e2c1580.js.map",
+    "main.56e8afd5.css.map": "/casualhome/static/css/main.56e8afd5.css.map",
+    "main.6158f002.js.map": "/casualhome/static/js/main.6158f002.js.map",
     "787.fc40571a.chunk.js.map": "/casualhome/static/js/787.fc40571a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9233e561.css",
-    "static/js/main.8e2c1580.js"
+    "static/css/main.56e8afd5.css",
+    "static/js/main.6158f002.js"
   ]
 }
