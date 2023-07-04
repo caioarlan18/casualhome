@@ -9,8 +9,8 @@ export function Item1() {
             imagem2={secundaria}
             imagem3={terciaria}
             titulo={'Impressora de etiquetas térmica portátil'}
-            custoR={Number(233.87)}
-            custoP={Number(179.99)}
+            custoR={'233.87'}
+            custoP={'179.99'}
             nameVariation={'Cor'}
             variation={'Verde'}
             variation2={'Branco'}

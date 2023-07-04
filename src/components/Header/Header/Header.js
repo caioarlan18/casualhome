@@ -83,9 +83,9 @@ function Header({ buscar }) {
         if (savedCartItems) {
             setCartItems(JSON.parse(savedCartItems));
         }
-    }, []); // Dependência vazia para executar apenas uma vez
+    }, []);
 
-    // Atualizar a quantidade com base no estado atualizado de cartItems
+
     useEffect(() => {
         setQuantidade(cartItems.length);
     }, [cartItems]);
@@ -171,6 +171,7 @@ function Header({ buscar }) {
                     </div>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
                         <Link to='/carrinho'><IoCartOutline /></Link>
+                        <div style={{ textAlign: 'center', fontFamily: 'poppins', fontSize: '15px' }}>{quantidade}</div>
                     </div>
                 </div>
 

@@ -6,17 +6,14 @@ import { FaPlane, FaShieldAlt, FaExchangeAlt } from 'react-icons/fa';
 import Bandeira1 from '../../../../image/bandeiras cartao1.png'
 import Bandeira2 from '../../../../image/bandeira2.png'
 import antiPirata from '../../../../image/anti-pirata.webp'
-import Produto from "../../produtos/Produto";
-import impressoraPortatil from '../../../../image/foto impressora portatil.webp'
-import escovaEletrica from '../../../../image/foto escova eletrica.webp'
-import lavadorDeCopos from '../../../../image/foto lavador de copo.webp'
-import removedorDePelos from '../../../../image/foto remover de pelo.webp'
 import { HashLink as Link } from 'react-router-hash-link';
 import { useContext } from "react";
 import { ArrayContext } from "../arrayproducts/ArrayProvider";
 import { Fragment } from "react";
 import { useEffect } from "react";
-function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, variation, variation2, variation3, custoR, custoP, desc, Add }) {
+import { useNavigate } from "react-router";
+import { animateScroll as scroll } from 'react-scroll';
+function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, variation, variation2, custoR, custoP, desc }) {
     const [selectedValue, setSelectedValue] = useState(variation);
     const handleChange = (event) => {
         const selectedOption = event.target.value;
@@ -25,18 +22,26 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
 
 
     const [cartItems, setCartItems] = useState([]);
+    const navigate = useNavigate()
     const addToCart = (item) => {
         const updatedCartItems = [...cartItems, item];
-        setCartItems(updatedCartItems);
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-        alert('Produto adicionado ao carrinho')
+        navigate('/carrinho')
+        scroll.scrollToTop({ duration: 0 });
     };
+
+    const addToCart2 = (item) => {
+        const updatedCartItems = [...cartItems, item];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        alert('Produto adicionado ao carrinho');
+    };
+
     useEffect(() => {
         const savedCartItems = localStorage.getItem('cartItems');
         if (savedCartItems) {
             setCartItems(JSON.parse(savedCartItems));
         }
-    }, [cartItems]);
+    }, []);
 
 
     const [main1, setMain1] = useState(true)
@@ -98,6 +103,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                 </div>
                 <div className={styles.compra5}>
                     <button onClick={() => addToCart({ imagemMain, titulo, custoP, selectedValue })}>COMPRAR</button>
+                    <button onClick={() => addToCart2({ imagemMain, titulo, custoP, selectedValue })} className={styles.compra51}>ADICIONAR AO CARRINHO</button>
                 </div>
                 <div className={styles.compra6}>
                     <div className={styles.compra6b}>
@@ -173,6 +179,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                         </div>
                         <div className={styles.compra5}>
                             <button onClick={() => addToCart({ imagemMain, titulo, custoP, selectedValue })}>COMPRAR</button>
+                            <button onClick={() => addToCart2({ imagemMain, titulo, custoP, selectedValue })} className={styles.compra51}>ADICIONAR AO CARRINHO</button>
                         </div>
                         <div className={styles.compra6}>
                             <div className={styles.compra6b}>
@@ -205,10 +212,11 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                 </div>
 
                 <div className={styles.relacionados}>
-                    <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 233,87'} custoP={'R$ 179,90'} addToCart={addToCart} buy={'/item1'} />
-                    <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} buy={'/item2'} />
-                    <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} addToCart={addToCart} buy={'/item3'} />
-                    <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} addToCart={addToCart} buy={'/item4'} />
+                    {produtosCopia.slice(0, 4).map((produto, index) => (
+                        <Fragment key={index}>
+                            {produto}
+                        </Fragment>
+                    ))}
                 </div>
             </div>
 

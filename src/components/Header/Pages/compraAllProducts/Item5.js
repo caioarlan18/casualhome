@@ -9,8 +9,8 @@ export function Item5() {
             imagem2={secundaria}
             imagem3={terciaria}
             titulo={'Tampas de silicone ajustáveis (6 peças)'}
-            custoR={Number(90.87)}
-            custoP={Number(69.90)}
+            custoR={'90.87'}
+            custoP={'69.90'}
             nameVariation={'Cor'}
             variation={'retangular - 6 pcs'}
             variation2={'circular - 6pcs'}

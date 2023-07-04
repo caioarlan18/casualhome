@@ -16,7 +16,7 @@ function Carrinho() {
         if (savedCartItems) {
             setCartItems(JSON.parse(savedCartItems));
         }
-    }, [cartItems]);
+    }, []);
     const [total, setTotal] = useState(0);
 
     useEffect(() => {

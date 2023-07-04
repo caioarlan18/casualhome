@@ -16,18 +16,19 @@ export const ArrayContext = createContext();
 export const ArrayProvider = ({ children }) => {
 
   const [cartItems, setCartItems] = useState([]);
+
   const addToCart = (item) => {
     const updatedCartItems = [...cartItems, item];
-    setCartItems(updatedCartItems);
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-    alert('Produto adicionado ao carrinho')
+    alert('Produto adicionado ao carrinho');
   };
+
   useEffect(() => {
     const savedCartItems = localStorage.getItem('cartItems');
     if (savedCartItems) {
       setCartItems(JSON.parse(savedCartItems));
     }
-  }, [cartItems]);
+  }, []);
 
 
 
