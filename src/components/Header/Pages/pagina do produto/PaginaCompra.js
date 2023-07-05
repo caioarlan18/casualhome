@@ -13,6 +13,8 @@ import { Fragment } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { animateScroll as scroll } from 'react-scroll';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+
 function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, variation, variation2, custoR, custoP, desc }) {
     const [selectedValue, setSelectedValue] = useState(variation);
     const handleChange = (event) => {
@@ -90,6 +92,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
                 <div className={styles.compra3}>
                     {/* prop de custoR e custoP*/}
                     <h3>R$ {custoR}</h3>
+                    <span><AiOutlineArrowDown />30%</span>
                     <h2>R$ {custoP}</h2>
                 </div>
                 <div className={styles.compra4}>

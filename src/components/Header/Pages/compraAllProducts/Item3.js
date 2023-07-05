@@ -9,8 +9,8 @@ export function Item3() {
             imagem2={secundaria}
             imagem3={terciaria}
             titulo={'Lavador automático de copo para pia'}
-            custoR={'149.90'}
-            custoP={'99.90'}
+            custoR={'149,90'}
+            custoP={'99,90'}
             nameVariation={'Tipo'}
             variation={'1 PC ENXAGUADOR'}
             variation2={'1 CONJUNTO'}

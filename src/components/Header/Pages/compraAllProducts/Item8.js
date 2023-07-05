@@ -9,8 +9,8 @@ export function Item8() {
             imagem2={secundaria}
             imagem3={terciaria}
             titulo={'Tábua Gourmet de Corte Dobrável'}
-            custoR={'51.87'}
-            custoP={'39.90'}
+            custoR={'51,87'}
+            custoP={'39,90'}
             nameVariation={'Cor'}
             variation={'Verde'}
             variation2={'Branco'}

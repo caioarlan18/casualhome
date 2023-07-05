@@ -71,7 +71,7 @@ function MainContent() {
             {/* seção de produtos */}
             <div className={`${stylesMobile.secG} ${stylesDesktop.secG}`}>
                 <div className={`${stylesMobile.title} ${stylesDesktop.title}`}>
-                    <h1>Destaques</h1>
+                    <h1>Produtos em destaque</h1>
                 </div>
                 <div className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
                     {produtos[0]}
@@ -83,7 +83,7 @@ function MainContent() {
 
             <div className={`${stylesMobile.secG} ${stylesDesktop.secG}`}>
                 <div className={`${stylesMobile.title} ${stylesDesktop.title}`}>
-                    <h1>Lançamentos</h1>
+                    <h1>Lançados recentemente</h1>
                 </div>
                 <div className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
                     {produtos[produtos.length - 1]}

@@ -3,6 +3,7 @@ import stylesDesktop from './Produto.desktop.module.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
+import { AiOutlineArrowDown } from 'react-icons/ai';
 
 function Produto({ imagemProduto, titulo, custoR, custoP, buy }) {
     const handleClick = () => {
@@ -11,12 +12,12 @@ function Produto({ imagemProduto, titulo, custoR, custoP, buy }) {
 
     return (
 
-        <div className={`${stylesMobile.produto} ${stylesDesktop.produto}`}>
-            <div className={`${stylesMobile.cart} ${stylesDesktop.cart}`}>
-                <p>30% OFF</p>
+        <Link to={buy} onClick={handleClick} className={`${stylesMobile.produto} ${stylesDesktop.produto}`} >
+            <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
+                <img src={imagemProduto} alt="imagem do produto" />
             </div>
             <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
-                <Link to={buy} onClick={handleClick}><img src={imagemProduto} alt="imagem do produto" /></Link>
+                <h1>{titulo}</h1>
             </div>
             <div className={`${stylesMobile.produto2} ${stylesDesktop.produto2}`}>
                 <FaStar />
@@ -25,18 +26,16 @@ function Produto({ imagemProduto, titulo, custoR, custoP, buy }) {
                 <FaStar />
                 <FaStar />
             </div>
+
             <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
-                <h1>{titulo}</h1>
-            </div>
-            <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
-                <h3>{custoR}</h3><h2>{custoP}</h2>
-            </div>
-            <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>
-                <Link to={buy} onClick={handleClick} className={`${stylesMobile.comprar} ${stylesDesktop.comprar}`}> Ver opções</Link>
+                <h3>{custoR}</h3>
+                <span><AiOutlineArrowDown />30%</span>
+                <h2>{custoP}</h2>
             </div>
 
 
-        </div>
+
+        </Link>
 
     )
 }
