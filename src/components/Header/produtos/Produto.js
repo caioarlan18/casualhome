@@ -5,7 +5,7 @@ import { FaStar } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 
-function Produto({ imagemProduto, titulo, custoR, custoP, buy }) {
+function Produto({ imagemProduto, titulo, custoR, custoP, buy, star }) {
     const handleClick = () => {
         scroll.scrollToTop({ duration: 0 });
     };
@@ -24,7 +24,7 @@ function Produto({ imagemProduto, titulo, custoR, custoP, buy }) {
                 <FaStar />
                 <FaStar />
                 <FaStar />
-                <FaStar />
+                <FaStar style={star === '4' ? { color: '#cccccc' } : { color: 'rgb(242, 200, 50)' }} />
             </div>
 
             <div className={`${stylesMobile.produto1} ${stylesDesktop.produto1}`}>

@@ -35,11 +35,11 @@ export const ArrayProvider = ({ children }) => {
   // meus produtos
   const produtos = [
     <Produto imagemProduto={impressoraPortatil} titulo={'Impressora de etiquetas térmica portátil'} custoR={'R$ 233,87'} custoP={'R$ 179,90'} addToCart={addToCart} buy={'/item1'} categoria={['casa']} />,
-    <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} buy={'/item2'} categoria={['casa']} />,
+    <Produto imagemProduto={removedorDePelos} titulo={'Removedor de pelo de roupas para máquina de lavar'} custoR={'R$ 32,50'} custoP={'R$ 25,00'} addToCart={addToCart} buy={'/item2'} categoria={['casa']} star={'4'} />,
     <Produto imagemProduto={lavadorDeCopos} titulo={'Lavador automático de copo para pia'} custoR={'R$ 149,90'} custoP={'R$ 99,90'} addToCart={addToCart} buy={'/item3'} categoria={['casa', 'cozinha']} />,
-    <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} addToCart={addToCart} buy={'/item4'} categoria={['casa', 'cozinha', 'banheiro']} />,
+    <Produto imagemProduto={escovaEletrica} titulo={'Escova elétrica rotatória para limpeza'} custoR={'R$ 193,97'} custoP={'R$ 149,90'} addToCart={addToCart} buy={'/item4'} categoria={['casa', 'cozinha', 'banheiro']} star={'4'} />,
     <Produto imagemProduto={tampaSilicone} titulo={'Tampas de silicone ajustáveis (6 peças)'} custoR={'R$ 90,87'} custoP={'R$ 69,90'} addToCart={addToCart} buy={'/item5'} categoria={['casa', 'cozinha']} />,
-    <Produto imagemProduto={seladoraVacuo} titulo={'Seladora à vácuo portátil'} custoR={'R$ 297,97'} custoP={'R$ 229,90'} addToCart={addToCart} buy={'/item6'} categoria={['casa', 'cozinha']} />,
+    <Produto imagemProduto={seladoraVacuo} titulo={'Seladora à vácuo portátil'} custoR={'R$ 297,97'} custoP={'R$ 229,90'} addToCart={addToCart} buy={'/item6'} categoria={['casa', 'cozinha']} star={'4'} />,
     <Produto imagemProduto={escovaMagica} titulo={'Escova mágica de gato e cachorro para pelo'} custoR={'R$ 77,87'} custoP={'R$ 59,90'} addToCart={addToCart} buy={'/item7'} categoria={['casa', 'animais']} />,
     <Produto imagemProduto={tabuaDobravel} titulo={'Tábua Gourmet de Corte Dobrável'} custoR={'R$ 51,87'} custoP={'R$ 39,90'} addToCart={addToCart} buy={'/item8'} categoria={['casa', 'cozinha']} />
   ];
