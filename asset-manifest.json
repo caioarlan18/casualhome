@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/casualhome/static/css/main.84c06f45.css",
-    "main.js": "/casualhome/static/js/main.f66f81fd.js",
+    "main.css": "/casualhome/static/css/main.eb9448d5.css",
+    "main.js": "/casualhome/static/js/main.81f8ca9a.js",
     "static/js/787.fc40571a.chunk.js": "/casualhome/static/js/787.fc40571a.chunk.js",
     "static/media/BannerFreteDesktop.jpg": "/casualhome/static/media/BannerFreteDesktop.d3ea584767aebad0eccc.jpg",
     "static/media/bannerFreteMobile.jpg": "/casualhome/static/media/bannerFreteMobile.27d9cc34c427aa7b0360.jpg",
     "static/media/Banner30Mobile.jpg": "/casualhome/static/media/Banner30Mobile.4ac150186bd00eacccba.jpg",
     "static/media/compra segura.png": "/casualhome/static/media/compra segura.c8b39b5d31955b37e2af.png",
     "static/media/tabuadobravel.jpg": "/casualhome/static/media/tabuadobravel.77ecbda169239d2b310e.jpg",
+    "static/media/categoria_animal-removebg-preview.webp": "/casualhome/static/media/categoria_animal-removebg-preview.8ee8617f5d234060c91f.webp",
     "static/media/bandeira2.png": "/casualhome/static/media/bandeira2.e6e85f19199514f31b2c.png",
     "static/media/TerciariaTabuaDobravel.jpg": "/casualhome/static/media/TerciariaTabuaDobravel.5bb3abe4fc7f62901e52.jpg",
     "static/media/bandeiras cartao1.png": "/casualhome/static/media/bandeiras cartao1.c86ce376bffcc336094d.png",
@@ -15,8 +16,10 @@
     "static/media/banner main.jpeg": "/casualhome/static/media/banner main.bf2f0ba922b85e2451eb.jpeg",
     "static/media/eseletrica secundaria.webp": "/casualhome/static/media/eseletrica secundaria.68ce52272ead9fc4f4ad.webp",
     "static/media/magica sec.webp": "/casualhome/static/media/magica sec.e534dcbee39a1df1796c.webp",
+    "static/media/casa_categoria-removebg-preview.webp": "/casualhome/static/media/casa_categoria-removebg-preview.e998115b544a14b9b1d8.webp",
     "static/media/seladora terc.webp": "/casualhome/static/media/seladora terc.e1d79871535785f690a3.webp",
     "static/media/terc tampa.webp": "/casualhome/static/media/terc tampa.4fcb5fe5b1ade25dcfe4.webp",
+    "static/media/categoria_banheiro_melhor-removebg-preview.webp": "/casualhome/static/media/categoria_banheiro_melhor-removebg-preview.59e5288b4cc55ca065b5.webp",
     "static/media/icone-de-casa-removebg-preview.png": "/casualhome/static/media/icone-de-casa-removebg-preview.3244c0cf84c3b002b26e.png",
     "static/media/magica terc.webp": "/casualhome/static/media/magica terc.8699db9f579287339e46.webp",
     "static/media/seladora sec.webp": "/casualhome/static/media/seladora sec.81375533df7f79130506.webp",
@@ -28,6 +31,7 @@
     "static/media/icone-de-pet.png": "/casualhome/static/media/icone-de-pet.7b98d3badc2f602bb53a.png",
     "static/media/terciaria removedor.webp": "/casualhome/static/media/terciaria removedor.c409b9888934a9edc1e1.webp",
     "static/media/mulherAbout.webp": "/casualhome/static/media/mulherAbout.e25bc2e6e6d34dcdf39b.webp",
+    "static/media/categoria_cozinha_melhor-removebg-preview.webp": "/casualhome/static/media/categoria_cozinha_melhor-removebg-preview.1a515e702a19284752ef.webp",
     "static/media/lavador terciaria.webp": "/casualhome/static/media/lavador terciaria.48c2911fc774d0e9d242.webp",
     "static/media/lavador secundaria.webp": "/casualhome/static/media/lavador secundaria.7379713caab696d379a3.webp",
     "static/media/eseletrica terciaria.webp": "/casualhome/static/media/eseletrica terciaria.51343189f38e894b96d2.webp",
@@ -47,12 +51,12 @@
     "static/media/slick.ttf": "/casualhome/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/casualhome/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/casualhome/index.html",
-    "main.84c06f45.css.map": "/casualhome/static/css/main.84c06f45.css.map",
-    "main.f66f81fd.js.map": "/casualhome/static/js/main.f66f81fd.js.map",
+    "main.eb9448d5.css.map": "/casualhome/static/css/main.eb9448d5.css.map",
+    "main.81f8ca9a.js.map": "/casualhome/static/js/main.81f8ca9a.js.map",
     "787.fc40571a.chunk.js.map": "/casualhome/static/js/787.fc40571a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84c06f45.css",
-    "static/js/main.f66f81fd.js"
+    "static/css/main.eb9448d5.css",
+    "static/js/main.81f8ca9a.js"
   ]
 }
