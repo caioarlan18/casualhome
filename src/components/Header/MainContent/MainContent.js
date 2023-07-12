@@ -42,20 +42,20 @@ function MainContent() {
 
 
     const categoria = [
-        <Categorias titulo={'Casa'} imagem={homeIcon} path={'/itenscasa'} />,
-        <Categorias titulo={'Cozinha'} imagem={ItensCozinha} path={'/itenscozinha'} />,
-        <Categorias titulo={'Banheiro'} imagem={banheiro} path={'/itensbanheiro'} />,
-        <Categorias titulo={'Animais'} imagem={petIcon} path={'/itensanimais'} />,
+        <Categorias titulo={'casa'} imagem={homeIcon} path={'/itenscasa'} />,
+        <Categorias titulo={'cozinha'} imagem={ItensCozinha} path={'/itenscozinha'} />,
+        <Categorias titulo={'banheiro'} imagem={banheiro} path={'/itensbanheiro'} />,
+        <Categorias titulo={'animais'} imagem={petIcon} path={'/itensanimais'} />,
     ]
 
     const settings2 = {
         infinite: true,
-        speed: 200,
+        speed: 500,
         slidesToShow: 3.5,
-        slidesToScroll: 1,
         autoplay: false,
-        autoplaySpeed: 3000,
-
+        swipeToSlide: true,
+        touchThreshold: 10,
+        cssEase: 'linear',
 
 
         responsive: [
@@ -63,18 +63,21 @@ function MainContent() {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 4,
+
                 }
             },
             {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 4,
+
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 3.5,
+
                 }
             }
         ]
@@ -84,10 +87,11 @@ function MainContent() {
         infinite: true,
         speed: 200,
         slidesToShow: 4,
-        slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 3000,
-        cssEase: 'linear',
+        swipeToSlide: true,
+        touchThreshold: 10,
+        cssEase: 'ease'
 
     };
     return (
@@ -117,8 +121,8 @@ function MainContent() {
             <div className={`${stylesMobile.sec} ${stylesDesktop.sec}`} >
 
                 <Slider {...settings2} >
-                    {categoria.map((categorias) => (
-                        <div key={categorias.id}  >
+                    {categoria.map((categorias, index) => (
+                        <div key={index}  >
                             {categorias}
                         </div>
                     ))}
@@ -131,8 +135,8 @@ function MainContent() {
             <div className={`${stylesMobile.sec2} ${stylesDesktop.sec2}`} >
 
                 <Slider {...settings3} >
-                    {categoria.map((categorias) => (
-                        <div key={categorias.id} >
+                    {categoria.map((categorias, index) => (
+                        <div key={index} >
                             {categorias}
                         </div>
                     ))}
