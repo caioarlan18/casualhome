@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.276416d5.css",
-    "main.js": "/static/js/main.e873ab13.js",
+    "main.js": "/static/js/main.5db98b9a.js",
     "static/js/787.fc40571a.chunk.js": "/static/js/787.fc40571a.chunk.js",
     "static/media/BannerFreteDesktop.webp": "/static/media/BannerFreteDesktop.dfc9d1223f00181da329.webp",
     "static/media/bannerFreteMobile.webp": "/static/media/bannerFreteMobile.54799a1e19a05e84f4f5.webp",
@@ -52,11 +52,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.276416d5.css.map": "/static/css/main.276416d5.css.map",
-    "main.e873ab13.js.map": "/static/js/main.e873ab13.js.map",
+    "main.5db98b9a.js.map": "/static/js/main.5db98b9a.js.map",
     "787.fc40571a.chunk.js.map": "/static/js/787.fc40571a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.276416d5.css",
-    "static/js/main.e873ab13.js"
+    "static/js/main.5db98b9a.js"
   ]
 }
