@@ -3,8 +3,8 @@ import Footer from "../../rodape/Footer";
 import styles from './PaginaCompra.module.css'
 import { useState } from "react";
 import { FaPlane, FaShieldAlt, FaExchangeAlt } from 'react-icons/fa';
-import Bandeira1 from '../../../../image/bandeiras cartao1.png'
-import Bandeira2 from '../../../../image/bandeira2.png'
+import Bandeira1 from '../../../../image/bandeiras cartao1.webp'
+import Bandeira2 from '../../../../image/bandeira2.webp'
 import antiPirata from '../../../../image/anti-pirata.webp'
 import { HashLink as Link } from 'react-router-hash-link';
 import { useContext } from "react";

@@ -1,0 +1,33 @@
+.categoriesSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.categoriesSection1 {
+  width: 12vh; /* Define a largura do círculo usando uma unidade de medida relativa */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  margin-top: 50px;
+  height: 12vh;
+  display: flex;
+  background-color: #1b3768;
+  align-items: center;
+  justify-content: center;
+}
+.categoriesSection1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.categoriesSection a {
+  text-decoration: none;
+}
+.categoriesSection h1 {
+  font-family: poppins;
+  color: #4b5562;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+}

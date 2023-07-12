@@ -1,8 +1,8 @@
 import { FaInstagram } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
-import Bandeira1 from '../../../image/bandeiras cartao1.png'
-import Bandeira2 from '../../../image/bandeira2.png'
-import CompraSegura from '../../../image/compra segura.png'
+import Bandeira1 from '../../../image/bandeiras cartao1.webp'
+import Bandeira2 from '../../../image/bandeira2.webp'
+import CompraSegura from '../../../image/compra segura.webp'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import stylesMobile from './Footer.mobile.module.css'
 import stylesDesktop from './Footer.desktop.module.css'

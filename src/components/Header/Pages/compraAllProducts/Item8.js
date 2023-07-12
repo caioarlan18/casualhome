@@ -1,7 +1,7 @@
 import PaginaCompra from "../pagina do produto/PaginaCompra"
-import tabuaDobravel from '../../../../image/tabuadobravel.jpg'
-import secundaria from '../../../../image/secundariaTabuaDobravel.jpg'
-import terciaria from '../../../../image/TerciariaTabuaDobravel.jpg'
+import tabuaDobravel from '../../../../image/tabuadobravel.webp'
+import secundaria from '../../../../image/secundariaTabuaDobravel.webp'
+import terciaria from '../../../../image/TerciariaTabuaDobravel.webp'
 export function Item8() {
     return (
         <PaginaCompra

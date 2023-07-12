@@ -4,14 +4,14 @@ import { FaBars } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { FaSearch } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
-import Logo from '../../../image/logotipocasualhome.png'
+import Logo from '../../../image/logotipocasualhome.webp'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
-import petIcon from '../../../image/icone-de-pet.png'
-import homeIcon from '../../../image/icone-de-casa-removebg-preview.png'
-import bolsaCompra from '../../../image/bolsa-de-compras-azul-removebg-preview.png'
+import petIcon from '../../../image/icone-de-pet.webp'
+import homeIcon from '../../../image/icone-de-casa-removebg-preview.webp'
+import bolsaCompra from '../../../image/bolsa-de-compras-azul-removebg-preview.webp'
 import { FaBox } from 'react-icons/fa';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaLock } from 'react-icons/fa';
@@ -22,7 +22,7 @@ import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import itensCozinha from '../../../image/icone-de-categoria-cozinha.svg'
-import banheiro from '../../../image/icone privada.png'
+import banheiro from '../../../image/icone privada.webp'
 function Header({ buscar }) {
     const handleClick = () => {
         // Rolar para o topo imediatamente

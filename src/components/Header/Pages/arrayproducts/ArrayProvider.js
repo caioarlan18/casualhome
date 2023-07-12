@@ -9,7 +9,7 @@ import escovaMagica from '../../../../image/foto escova magica.webp'
 import impressoraPortatil from '../../../../image/foto impressora portatil.webp'
 import escovaEletrica from '../../../../image/foto escova eletrica.webp'
 import seladoraVacuo from '../../../../image/foto seladora vacuo.webp'
-import tabuaDobravel from '../../../../image/tabuadobravel.jpg'
+import tabuaDobravel from '../../../../image/tabuadobravel.webp'
 
 export const ArrayContext = createContext();
 

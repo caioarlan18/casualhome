@@ -4,28 +4,25 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Banner1 from '../../../image/Banner30Mobile.jpg'
-import Banner2 from '../../../image/bannerFreteMobile.jpg'
-import Banner1D from '../../../image/banner main.jpeg'
-import Banner2D from '../../../image/BannerFreteDesktop.jpg'
-import petIcon from '../../../image/icone-de-pet.png'
-import homeIcon from '../../../image/icone-de-casa-removebg-preview.png'
+import Banner1 from '../../../image/Banner30Mobile.webp'
+import Banner2 from '../../../image/bannerFreteMobile.webp'
+import Banner1D from '../../../image/Banner1D.webp'
+import Banner2D from '../../../image/BannerFreteDesktop.webp'
+import petIcon from '../../../image/categoria_animal-removebg-preview.webp'
+import homeIcon from '../../../image/casa_categoria-removebg-preview.webp'
 import { FaTruck } from 'react-icons/fa';
 import { FaCreditCard } from 'react-icons/fa';
 import { FaShieldAlt } from 'react-icons/fa';
 import { FaRegListAlt } from 'react-icons/fa';
-import { animateScroll as scroll } from 'react-scroll';
-import ItensCozinha from '../../../image/icone-de-categoria-cozinha.svg'
-import banheiro from '../../../image/icone privada.png'
+import ItensCozinha from '../../../image/categoria_cozinha_melhor-removebg-preview.webp'
+import banheiro from '../../../image/categoria_banheiro_melhor-removebg-preview.webp'
 import { useContext } from "react"
 import { ArrayContext } from '../Pages/arrayproducts/ArrayProvider';
+import { Categorias } from '../categorias/Categorias';
 function MainContent() {
     const produtos = useContext(ArrayContext);
 
-    const handleClick = () => {
-        // Rolar para o topo imediatamente
-        scroll.scrollToTop({ duration: 0 });
-    };
+
     const images = [
         { id: 1, src: Banner1, alt: 'Image 1' },
         { id: 2, src: Banner2, alt: 'Image 2' },
@@ -44,7 +41,55 @@ function MainContent() {
     };
 
 
+    const categoria = [
+        <Categorias titulo={'Casa'} imagem={homeIcon} path={'/itenscasa'} />,
+        <Categorias titulo={'Cozinha'} imagem={ItensCozinha} path={'/itenscozinha'} />,
+        <Categorias titulo={'Banheiro'} imagem={banheiro} path={'/itensbanheiro'} />,
+        <Categorias titulo={'Animais'} imagem={petIcon} path={'/itensanimais'} />,
+    ]
 
+    const settings2 = {
+        infinite: true,
+        speed: 200,
+        slidesToShow: 3.5,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 3000,
+
+
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3.5,
+                }
+            }
+        ]
+    };
+
+    const settings3 = {
+        infinite: true,
+        speed: 200,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        cssEase: 'linear',
+
+    };
     return (
         <div >
             {/* slider Mobile */}
@@ -66,6 +111,34 @@ function MainContent() {
                         </div>
                     ))}
                 </Slider>
+            </div>
+
+            {/* seção de categoria mobile */}
+            <div className={`${stylesMobile.sec} ${stylesDesktop.sec}`} >
+
+                <Slider {...settings2} >
+                    {categoria.map((categorias) => (
+                        <div key={categorias.id}  >
+                            {categorias}
+                        </div>
+                    ))}
+                </Slider>
+
+
+            </div>
+
+            {/* seção de categoria desktop */}
+            <div className={`${stylesMobile.sec2} ${stylesDesktop.sec2}`} >
+
+                <Slider {...settings3} >
+                    {categoria.map((categorias) => (
+                        <div key={categorias.id} >
+                            {categorias}
+                        </div>
+                    ))}
+                </Slider>
+
+
             </div>
 
             {/* seção de produtos */}
@@ -95,35 +168,7 @@ function MainContent() {
 
             </div>
 
-            {/* seção de categoria */}
-            <div className={`${stylesMobile.secG} ${stylesDesktop.secG}`} >
-                <div className={`${stylesMobile.title} ${stylesDesktop.title}`}>
-                    <h1>Categorias</h1>
-                </div>
-                <section className={`${stylesMobile.categoriesSection} ${stylesDesktop.categoriesSection}`} >
-                    <Link to='/itenscasa' onClick={handleClick}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
-                        <img src={homeIcon} alt="icone de casa" />
-                        <h1>Itens para casa</h1>
-                    </div>
-                    </Link>
-                    <Link to='/itenscozinha' onClick={handleClick}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
-                        <img src={ItensCozinha} alt="icone de panela" />
-                        <h1>Itens para cozinha</h1>
-                    </div>
-                    </Link>
-                    <Link to='/itensbanheiro' onClick={handleClick}> <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
-                        <img src={banheiro} alt="icone de banheiro" />
-                        <h1>Itens para banheiro</h1>
-                    </div>
-                    </Link>
-                    <Link to='/itensanimais' onClick={handleClick}>
-                        <div className={`${stylesMobile.categoriesSection1} ${stylesDesktop.categoriesSection1}`}>
-                            <img src={petIcon} alt="icone de pet" />
-                            <h1>Itens para animais</h1>
-                        </div>
-                    </Link>
-                </section>
-            </div>
+
 
             {/* informações */}
 
