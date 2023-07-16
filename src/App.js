@@ -10,9 +10,9 @@ import PoliticaPrivacidade from './components/Header/Pages/politica de privacida
 import Contato from './components/Header/Pages/contato/Contato';
 import Guia from './components/Header/Pages/instrucao/Guia';
 import Termos from './components/Header/Pages/termos e condicoes/Termos';
-import Busca from './components/Header/Pages/busca de produtos/Busca';
 import Carrinho from './components/Header/Pages/carrinho/Carrinho';
 import PaginaCompra from './components/Header/Pages/pagina do produto/PaginaCompra';
+import { Checkout } from './components/Header/Pages/checkout/Checkout';
 import { Item1 } from './components/Header/Pages/compraAllProducts/Item1';
 import { Item2 } from './components/Header/Pages/compraAllProducts/Item2';
 import { Item3 } from './components/Header/Pages/compraAllProducts/Item3';
@@ -41,9 +41,9 @@ function App() {
           <Route path='/contato' element={<Contato />} />
           <Route path='/instrucaodecompra' element={<Guia />} />
           <Route path='/termos' element={<Termos />} />
-          <Route path='/busca' element={<Busca />} />
           <Route path='/carrinho' element={<Carrinho />} />
           <Route path='/compra' element={<PaginaCompra />} />
+          <Route path='/checkout' element={<Checkout />} />
           <Route path='/item1' element={<Item1 />} />
           <Route path='/item2' element={<Item2 />} />
           <Route path='/item3' element={<Item3 />} />
@@ -52,6 +52,7 @@ function App() {
           <Route path='/item6' element={<Item6 />} />
           <Route path='/item7' element={<Item7 />} />
           <Route path='/item8' element={<Item8 />} />
+
         </Routes>
       </Router>
     </div>

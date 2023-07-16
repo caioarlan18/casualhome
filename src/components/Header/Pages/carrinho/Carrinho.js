@@ -3,7 +3,9 @@ import Navigation from "../../Navigation/Navigation"
 import Footer from "../../rodape/Footer"
 import styles from './Carrinho.module.css'
 import { useState, useEffect } from "react"
-import { AiOutlineClose } from 'react-icons/ai';
+import { IoCartOutline } from 'react-icons/io5';
+import { HashRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll';
 
 function Carrinho() {
 
@@ -20,11 +22,10 @@ function Carrinho() {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        // Função para calcular o total ao atualizar o carrinho
+
         const calculateTotal = () => {
             const sum = cartItems.reduce((accumulator, item) => {
-                const custoPString = String(item.custoP);
-                return accumulator + parseFloat(custoPString.replace('R$ ', ''));
+                return accumulator + parseFloat(item.custoP.replace('R$ ', ''));
             }, 0);
             setTotal(sum);
         };
@@ -38,6 +39,11 @@ function Carrinho() {
         setCartItems(updatedCartItems);
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     };
+    const navigate = useNavigate()
+    function checkout() {
+        navigate('/checkout')
+        scroll.scrollToTop({ duration: 0 });
+    }
 
     if (!cartItems || cartItems.length === 0) {
         return (
@@ -45,7 +51,10 @@ function Carrinho() {
                 <Header />
                 <Navigation navTitle='Carrinho de compras' />
                 <div className={styles.vazio}>
-                    <p>Carrinho vazio</p>
+                    <IoCartOutline />
+                    <h1>seu carrinho tá vazio</h1>
+                    <p>Que tal navegar pelas milhares de ofertas e achar uma especial para você?</p>
+                    <Link to={'/todosprodutos'}><button>ver produtos</button></Link>
                 </div>
                 <Footer />
             </div>
@@ -57,28 +66,50 @@ function Carrinho() {
             <Header />
             <Navigation navTitle={'Carrinho de compras'} />
             <div className={styles.carrinho}>
-                <h2>Carrinho de Compras</h2>
+                <h2>carrinho</h2>
                 <div>
-                    <div className={styles.carrinho1}>
-                        <h1>Produto</h1>
-                        <h1>Preço</h1>
-                    </div>
+
                     {cartItems.map((item, index) => (
                         <div key={index} className={styles.carrinho2}>
                             <div className={styles.carrinho3}>
-                                <AiOutlineClose onClick={() => removeFromCart(index)}>Remover</AiOutlineClose>
-                                <img src={item.imagemProduto || item.imagemMain} alt="imagem do produto" />
-                                <p>{item.titulo}</p>
+                                <img src={item.imagemMain} alt="imagem do produto" />
+                                <p onClick={() => removeFromCart(index)}>remover</p>
                             </div>
                             <div className={styles.carrinho3}>
-                                <p>{item.selectedValue}</p>
-                                <p>{item.custoP}</p>
+                                <h1>{item.titulo}</h1>
+                                <h2>Tipo: {item.selectedValue}</h2>
+
+                                <h3>R$ {item.custoP}</h3>
                             </div>
                         </div>
                     ))}
                     <div className={styles.carrinho4}>
-                        <p>Total a pagar: R$ {total.toFixed(2)}</p>
-                        <button>Finalizar Compra</button>
+                        <div className={styles.carrinho41}>
+                            <div className={styles.carrinho4a}>
+                                <h1>resumo do pedido</h1>
+                            </div>
+                            <div className={styles.carrinho4b}>
+                                <h2>{cartItems.length} produtos</h2>
+                                <h2>R$ {total.toFixed(2)}</h2>
+                            </div>
+                            <div className={styles.carrinho4b}>
+                                <h2>frete</h2>
+                                <h2>grátis</h2>
+                            </div>
+                            <div className={styles.linha}>
+
+                            </div>
+                            <div className={styles.carrinho4b}>
+                                <h3>total</h3>
+                                <h3>R$ {total.toFixed(2)}</h3>
+                            </div>
+                            <div className={styles.linha}>
+
+                            </div>
+                            <div>
+                                <button onClick={checkout}>Continuar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

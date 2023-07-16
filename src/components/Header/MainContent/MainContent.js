@@ -54,8 +54,9 @@ function MainContent() {
         slidesToShow: 3.5,
         autoplay: false,
         swipeToSlide: true,
-        touchThreshold: 10,
+        touchThreshold: 200,
         cssEase: 'linear',
+
 
 
         responsive: [
@@ -77,7 +78,6 @@ function MainContent() {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 3.5,
-
                 }
             }
         ]
