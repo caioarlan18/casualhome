@@ -32,19 +32,19 @@
   font-weight: 400;
 }
 
-.contato2 label {
+.contato3 p {
   color: #1b3768;
   font-family: poppins;
   font-weight: 400;
   font-size: 14px;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 .contato3 {
   margin-top: 30px;
 }
 .contato3 input {
-  width: 100%;
-  border-radius: 30px;
+  width: 85%;
+  border-radius: 8px;
   height: 45px;
   font-family: poppins;
   font-size: 15px;
@@ -52,34 +52,27 @@
   border: 1px solid #171717;
 }
 
-.contato3 select {
-  width: 100%;
-  border-radius: 30px;
-  height: 40px;
-  font-family: poppins;
-  font-size: 15px;
-  text-indent: 10px;
-  border: 1px solid #171717;
-}
-.contato3 option {
-  color: #1b3768;
-}
-.contato3:nth-last-child(2) textarea {
+.contato2:nth-last-child(2) input {
   height: 80px;
   width: 100%;
-  border-radius: 30px;
+  border-radius: 8px;
   height: 45px;
   font-family: poppins;
   font-size: 15px;
   text-indent: 10px;
   border: 1px solid #171717;
 }
-.contato3:last-child input {
-  cursor: pointer;
+.contato3 button {
+  font-size: 16px;
   color: white;
   background-color: #1b3768;
+  height: 44px;
   border: 0;
-  width: 30%;
+  border-radius: 8px;
+  width: 60%;
+  font-family: poppins;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 992px) and (max-width: 4000px) {

@@ -10,7 +10,7 @@ function HomeItens() {
         <div>
             <Header />
             <Navigation navTitle='Itens para casa' />
-            <section style={{ display: 'flex', flexWrap: 'wrap', marginTop: '30px', marginBottom: '100px', width: '90%' }}>
+            <section style={{ display: 'flex', flexWrap: 'wrap', marginTop: '30px', marginBottom: '100px', width: '95%' }}>
                 {produtos.map((produto, index) => (
                     <Fragment key={index}>
                         {produto.props.categoria.includes('casa') && produto}

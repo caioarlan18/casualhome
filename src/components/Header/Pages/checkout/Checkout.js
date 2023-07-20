@@ -3,6 +3,7 @@ import Header from '../../Header/Header'
 import Navigation from '../../Navigation/Navigation'
 import Footer from '../../rodape/Footer'
 import { useState, useEffect } from 'react'
+import axios from 'axios';
 export function Checkout() {
 
     const [nome, setNome] = useState('')
@@ -14,8 +15,20 @@ export function Checkout() {
     const [bairro, setBairro] = useState('')
     const [cidade, setCidade] = useState('')
     const [estado, setEstado] = useState('')
-
+    const [mostrarCampos, setMostrarCampos] = useState(false);
+    const [erroCEP, setErroCEP] = useState(false);
     const [cartItems, setCartItems] = useState([]);
+    const dados = {
+        nome: nome,
+        cpf: cpf,
+        cep: cep,
+        endereco: endereco,
+        numero: numero,
+        complemento: complemento,
+        bairro: bairro,
+        cidade: cidade,
+        estado: estado
+    }
     // Função para recuperar os dados do carrinho ao carregar a página
     useEffect(() => {
         const savedCartItems = localStorage.getItem('cartItems');
@@ -46,7 +59,7 @@ export function Checkout() {
                 menssagem += `${index + 1}- ${item.titulo} (Tipo: ${item.selectedValue}) - R$ ${item.custoP}%0A %0A`
             ));
 
-            menssagem += `*Total*: R$ ${total.toFixed(2)}%0A %0A *Meus Dados* %0A %0A Nome: ${nome} %0A %0A CPF: ${cpf} %0A %0A CEP: ${cep} %0A %0A Endereço: ${endereco} %0A %0A Número: ${numero} %0A %0A Complemento: ${complemento} %0A %0A Bairro: ${bairro} %0A %0A Cidade: ${cidade} %0A %0A Estado: ${estado}`
+            menssagem += `*Total*: R$ ${total.toFixed(2)}%0A %0A %0A %0A *Meus Dados* %0A %0A Nome: ${nome} %0A %0A CPF: ${cpf} %0A %0A CEP: ${cep} %0A %0A Endereço: ${endereco} %0A %0A Número: ${numero} %0A %0A Complemento: ${complemento} %0A %0A Bairro: ${bairro} %0A %0A Cidade: ${cidade} %0A %0A Estado: ${estado}`
             window.location.href = `https://wa.me/5522999677704?text=${menssagem}`;
 
         } else {
@@ -79,11 +92,55 @@ export function Checkout() {
         if (cepSalvo) setCep(cepSalvo);
         if (enderecoSalvo) setEndereco(enderecoSalvo);
         if (numeroSalvo) setNumero(numeroSalvo);
-        if (complementoSalvo) setNumero(complementoSalvo)
+        if (complementoSalvo) setComplemento(complementoSalvo)
         if (bairroSalvo) setBairro(bairroSalvo);
         if (cidadeSalva) setCidade(cidadeSalva);
         if (estadoSalvo) setEstado(estadoSalvo);
     }, []);
+
+    useEffect(() => {
+        if (cep.length === 8) {
+            buscarEnderecoPorCEP();
+        } else {
+            limparCamposEndereco();
+            setMostrarCampos(false);
+            setErroCEP(false);
+        }
+    }, [cep]);
+
+    const buscarEnderecoPorCEP = async () => {
+        try {
+            const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+            const data = response.data;
+
+            if (data.erro) {
+                limparCamposEndereco();
+                setMostrarCampos(false);
+                setErroCEP(true);
+            } else {
+                setEndereco(data.logradouro);
+                setBairro(data.bairro);
+                setCidade(data.localidade);
+                setEstado(data.uf);
+                setMostrarCampos(true);
+                setErroCEP(false);
+            }
+        } catch (error) {
+            limparCamposEndereco();
+            setMostrarCampos(false);
+            setErroCEP(true);
+        }
+    };
+
+    const limparCamposEndereco = () => {
+        setEndereco('');
+        setNumero('');
+        setComplemento('');
+        setBairro('');
+        setCidade('');
+        setEstado('');
+    };
+
 
     return (
         <div>
@@ -91,50 +148,56 @@ export function Checkout() {
             <Navigation navTitle={'Checkout'} />
             <div className={styles.checkout}>
                 <div className={styles.checkout1}>
-                    <h1>dados para entrega</h1>
+                    <h1>Dados para entrega</h1>
                 </div>
                 <div className={styles.checkout1}>
                     <p>Nome</p>
-                    <input type="text" required value={nome} onChange={(e) => { setNome(e.target.value) }} />
+                    <input type="text" value={nome} onChange={(e) => { setNome(e.target.value) }} required />
                 </div>
                 <div className={styles.checkout1}>
                     <p>CPF</p>
-                    <input type="number" required value={cpf} onChange={(e) => { setCpf(e.target.value) }} />
+                    <input type="number" value={cpf} onChange={(e) => { setCpf(e.target.value) }} required />
                 </div>
                 <div className={styles.checkout1}>
-                    <p>CEP</p>
-                    <input type="number" required value={cep} onChange={(e) => { setCep(e.target.value) }} />
+                    <p>CEP {erroCEP && <span style={{ color: 'red' }}>(CEP inválido)</span>}</p>
+                    <input type="number" value={cep} onChange={(e) => { setCep(e.target.value) }} required />
                 </div>
+                {mostrarCampos &&
+                    <>
+                        <div className={styles.checkout1}>
+                            <p>Endereço</p>
+                            <input type="text" value={endereco} onChange={(e) => { setEndereco(e.target.value) }} required />
+                        </div>
+                        <div className={styles.checkout1}>
+                            <p>Número</p>
+                            <input type="number" value={numero} onChange={(e) => { setNumero(e.target.value) }} required />
+                        </div>
+                        <div className={styles.checkout1}>
+                            <p>Complemento (opcional)</p>
+                            <input type="text" value={complemento} onChange={(e) => { setComplemento(e.target.value) }} required />
+                        </div>
+                        <div className={styles.checkout1}>
+                            <p>Bairro</p>
+                            <input type="text" value={bairro} onChange={(e) => { setBairro(e.target.value) }} required />
+                        </div>
+                        <div className={styles.checkout1}>
+                            <p>Cidade</p>
+                            <input type="text" value={cidade} onChange={(e) => { setCidade(e.target.value) }} required />
+                        </div>
+                        <div className={styles.checkout1}>
+                            <p>Estado</p>
+                            <input type="text" value={estado} onChange={(e) => { setEstado(e.target.value) }} required />
+                        </div>
+
+                    </>
+                }
                 <div className={styles.checkout1}>
-                    <p>Endereço</p>
-                    <input type="text" required value={endereco} onChange={(e) => { setEndereco(e.target.value) }} />
-                </div>
-                <div className={styles.checkout1}>
-                    <p>Número</p>
-                    <input type="number" required value={numero} onChange={(e) => { setNumero(e.target.value) }} />
-                </div>
-                <div className={styles.checkout1}>
-                    <p>Complemento (opcional)</p>
-                    <input type="text" value={complemento} onChange={(e) => { setComplemento(e.target.value) }} />
-                </div>
-                <div className={styles.checkout1}>
-                    <p>Bairro</p>
-                    <input type="text" required value={bairro} onChange={(e) => { setBairro(e.target.value) }} />
-                </div>
-                <div className={styles.checkout1}>
-                    <p>Cidade</p>
-                    <input type="text" required value={cidade} onChange={(e) => { setCidade(e.target.value) }} />
-                </div>
-                <div className={styles.checkout1}>
-                    <p>Estado</p>
-                    <input type="text" value={estado} onChange={(e) => { setEstado(e.target.value) }} required />
-                </div>
-                <div className={styles.checkout1}>
-                    <input type="submit" value={'Comprar'} onClick={toBuy} />
+                    <input type="submit" value={'Continuar'} onClick={toBuy} />
                 </div>
             </div>
             <Footer />
         </div>
 
     )
+
 }

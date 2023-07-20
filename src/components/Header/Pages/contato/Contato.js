@@ -2,11 +2,48 @@ import Header from "../../Header/Header"
 import Navigation from "../../Navigation/Navigation"
 import Footer from "../../rodape/Footer"
 import styles from './Contato.module.css'
-import { FaInstagram } from 'react-icons/fa';
-import { FaFacebook } from 'react-icons/fa';
-import { FaWhatsapp } from 'react-icons/fa';
-import { FaEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser'
 function Contato() {
+    const [nome, setNome] = useState('')
+    const [telefone, setTelefone] = useState('')
+    const [menssagem, setMenssagem] = useState('')
+    const [email, setEmail] = useState('')
+
+
+    function send(e) {
+        e.preventDefault()
+        if (nome && telefone && menssagem && email !== '') {
+            const templateParams = {
+                from_name: nome,
+                message: menssagem,
+                telefone: telefone,
+                email: email,
+            }
+            emailjs.send('service_ftnxx52', 'template_5qloiva', templateParams, 'dKIo6Og8ZaQj5mv1d')
+                .then((response) => {
+                    console.log('email enviado', response.status, response.text)
+                    setMenssagem('')
+                    alert('E-mail enviado com sucesso! Iremos responder o mais rápido possível.')
+                }, (err) => {
+                    console.log('erro', err)
+                })
+        } else {
+            alert('Preencha todos os campos')
+        }
+        localStorage.setItem('nome', nome)
+        localStorage.setItem('telefone', telefone)
+        localStorage.setItem('email', email)
+    }
+    useEffect(() => {
+        const nomeSalvo = localStorage.getItem('nome')
+        const telefoneSalvo = localStorage.getItem('telefone')
+        const emailSalvo = localStorage.getItem('email')
+        if (nomeSalvo) setNome(nomeSalvo)
+        if (telefoneSalvo) setTelefone(telefoneSalvo)
+        if (emailSalvo) setEmail(emailSalvo)
+    }, [])
     return (
         <div>
             <Header />
@@ -22,32 +59,27 @@ function Contato() {
                     <a href="https://www.facebook.com/CasualHomeloja/"><FaFacebook className={styles.redes2} /></a>
                 </div>
                 <div className={styles.contato2}>
-                    <form action="enviar_email.php" method="post">
-                        <div className={styles.contato3}>
-                            <label for="nome">Nome</label>
-                            <input type="text" placeholder="Nome" name="nome" id="nome" required />
-                        </div>
-                        <div className={styles.contato3} >
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" placeholder="Telefone" name="telefone" id="telefone" required />
-                        </div>
-                        <div className={styles.contato3}>
-                            <label for="motivo-contato">Assunto</label>
-                            <select id="motivo-contato" name="motivo-contato">
-                                <option value="Trocas">Trocas</option>
-                                <option value="Devoluções">Devoluções</option>
-                                <option value="Problemas com a compra">Problemas com a compra</option>
-                                <option value="Outros">Outros</option>
-                            </select>
-                        </div>
-                        <div className={styles.contato3}>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea placeholder="Mensagem" name="mensagem" id="mensagem"></textarea>
-                        </div>
-                        <div className={styles.contato3}>
-                            <input type="submit" value="Enviar" />
-                        </div>
-                    </form>
+
+                    <div className={styles.contato3}>
+                        <p>Nome</p>
+                        <input placeholder="Nome" type="text" required value={nome} onChange={(e) => setNome(e.target.value)} />
+                    </div>
+                    <div className={styles.contato3} >
+                        <p >Telefone</p>
+                        <input placeholder="Telefone" type="number" required value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+                    </div>
+                    <div className={styles.contato3} >
+                        <p>Email</p>
+                        <input required value={email} type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+                    </div>
+
+                    <div className={styles.contato3}>
+                        <p >Mensagem</p>
+                        <input placeholder="Mensagem" type="text" required value={menssagem} onChange={(e) => setMenssagem(e.target.value)}></input>
+                    </div>
+                    <div className={styles.contato3}>
+                        <button onClick={send}>Enviar</button>
+                    </div>
                 </div>
             </div>
             <Footer />

@@ -1,13 +1,15 @@
 import stylesMobile from './Header.mobile.module.css'
 import stylesDesktop from './Header.desktop.module.css'
-import { FaBars, FaTimes, FaSearch, FaShoppingBag, FaToilet, FaPaw, FaInstagram, FaHome, FaFacebook, FaBox, FaArrowLeft, FaLock, FaPhone } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSearch, FaShoppingBag, FaToilet, FaPaw, FaInstagram, FaHome, FaFacebook, FaBox, FaArrowLeft, FaLock, FaPhone, FaShoppingCart } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { GiSofa, GiCook } from 'react-icons/gi';
-import Logo from '../../../image/logotipocasualhome.webp'
+import LogoMobile from '../../../image/WhatsApp_Image_2023-07-20_at_17.58.48-removebg-preview.png'
+import LogoDesktop from '../../../image/logotipocasualhome.webp'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import { useState, useContext, useEffect, useRef } from 'react';
 import { ArrayContext } from "../Pages/arrayproducts/ArrayProvider"
+
 
 function Header() {
     const handleClick = () => {
@@ -112,23 +114,25 @@ function Header() {
     return (
         <div>
             {/* cabeçalho mobile */}
+            <div className={stylesMobile.prehd}>
+                <h1><FaShoppingCart />Frete grátis para todo o Brasil</h1>
+            </div>
             <header className={`${stylesMobile.mnmobile} ${stylesDesktop.mnmobile}`}>
+
                 <div className={`${stylesMobile.hd} ${stylesDesktop.hd}`}>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
                         <FaBars onClick={MenuOpen} />
-                    </div>
-                    <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
-                        <Link to='/'><img src={Logo} alt="logo do site" /></Link>
+                        <Link to='/'><img src={LogoMobile} alt="logo da casual home" /></Link>
                     </div>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
                         <Link to='/carrinho'><IoCartOutline /></Link>
-                        <div style={{ textAlign: 'center', fontFamily: 'poppins', fontSize: '15px' }}>{quantidade}</div>
+                        <p style={{ textAlign: 'center', fontFamily: 'poppins', fontSize: '13px', color: 'white', padding: '3px 7px', backgroundColor: '#FFB711', borderRadius: '50%' }}>{quantidade}</p>
                     </div>
                 </div>
 
                 <div className={`${stylesMobile.hdd} ${stylesDesktop.hdd}`} >
                     <div className={`${stylesMobile.hdd1} ${stylesDesktop.hdd1}`} style={ativo ? { position: 'fixed', top: '0', width: '100%', zIndex: '2' } : {}}>
-                        <input type="text" ref={buscarRef} placeholder='busque aqui seu produto' onClick={search} onChange={valor} style={ativo ? { borderRadius: '0', height: '50px', border: '0' } : {}} />
+                        <input type="text" ref={buscarRef} placeholder='O que está buscando?' onClick={search} onChange={valor} style={ativo ? { borderRadius: '0', height: '50px', border: '0' } : {}} />
                         <button style={ativo ? { borderRadius: '0', border: '0' } : {}}><FaSearch /></button>
                     </div>
                     {avu.map((produto, index) => (
@@ -145,39 +149,39 @@ function Header() {
                     ))}
 
                 </div>
+            </header >
+            {/* menu hamburguer */}
+            <nav className={`${stylesMobile.nav} ${stylesDesktop.nav}`} >
 
-                {/* menu hamburguer */}
-                <nav className={`${stylesMobile.nav} ${stylesDesktop.nav}`} >
-
-                    <div className={stylesMobile.navl}>
-                        <FaTimes onClick={MenuClose} />
-                        <div className={stylesMobile.englob}>
-                            <div className={stylesMobile.navl1}>
-                                <Link to="/"><FaHome /><span>Home</span></Link>
-                            </div>
-                            <div className={stylesMobile.navl1}>
-                                <a href="https://www.instagram.com/casual_home_loja/"><FaInstagram /></a>
-                                <a href="https://www.facebook.com/CasualHomeloja/"><FaFacebook /></a>
-                            </div>
+                <div className={stylesMobile.navl}>
+                    <FaTimes onClick={MenuClose} />
+                    <div className={stylesMobile.englob}>
+                        <div className={stylesMobile.navl1}>
+                            <Link to="/"><FaHome /><span>Home</span></Link>
+                        </div>
+                        <div className={stylesMobile.navl1}>
+                            <a href="https://www.instagram.com/casual_home_loja/"><FaInstagram /></a>
+                            <a href="https://www.facebook.com/CasualHomeloja/"><FaFacebook /></a>
                         </div>
                     </div>
+                </div>
 
 
 
-                    <div className={`${stylesMobile.nav2} ${stylesDesktop.nav2}`} >
-                        <Link to='/todosprodutos' onClick={handleClick}><FaShoppingBag />Ver todos os produtos</Link>
-                        <Link to='/itenscasa' onClick={handleClick}><GiSofa />Itens para casa</Link>
-                        <Link to='/itenscozinha' onClick={handleClick}><GiCook />Itens para cozinha</Link>
-                        <Link to='/itenscozinha' onClick={handleClick}><FaToilet />Itens para banheiro</Link>
-                        <Link to='/itensanimais' onClick={handleClick}><FaPaw />Itens para animais</Link>
-                        <Link to='/sobre' onClick={handleClick}><FaBox />Quem Somos</Link>
-                        <Link to='/trocas' onClick={handleClick}><FaArrowLeft />Trocas e devoluções</Link>
-                        <Link to='/politicadeprivacidade' onClick={handleClick}><FaLock />Política de privacidade</Link>
-                        <Link to='/contato' onClick={handleClick}><FaPhone />Central de atendimento</Link>
-                    </div>
+                <div className={`${stylesMobile.nav2} ${stylesDesktop.nav2}`} >
+                    <Link to='/todosprodutos' onClick={handleClick}><FaShoppingBag />Ver todos os produtos</Link>
+                    <Link to='/itenscasa' onClick={handleClick}><GiSofa />Itens para casa</Link>
+                    <Link to='/itenscozinha' onClick={handleClick}><GiCook />Itens para cozinha</Link>
+                    <Link to='/itensbanheiro' onClick={handleClick}><FaToilet />Itens para banheiro</Link>
+                    <Link to='/itensanimais' onClick={handleClick}><FaPaw />Itens para animais</Link>
+                    <Link to='/sobre' onClick={handleClick}><FaBox />Quem Somos</Link>
+                    <Link to='/trocas' onClick={handleClick}><FaArrowLeft />Trocas e devoluções</Link>
+                    <Link to='/politicadeprivacidade' onClick={handleClick}><FaLock />Política de privacidade</Link>
+                    <Link to='/contato' onClick={handleClick}><FaPhone />Central de atendimento</Link>
+                </div>
 
-                </nav>
-            </header >
+            </nav>
+
             {/* menu desktop */}
             <header className={`${stylesMobile.mndesktop} ${stylesDesktop.mndesktop}`
             }>
@@ -192,7 +196,7 @@ function Header() {
 
                 <div className={`${stylesMobile.hdd_desk} ${stylesDesktop.hdd_desk}`}>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
-                        <Link to='/'><img src={Logo} alt="logo do site" /></Link>
+                        <Link to='/'><img src={LogoDesktop} alt="logo do site" /></Link>
                     </div>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`} style={ativo ? { position: 'fixed', top: '0', width: '100%', zIndex: '2', left: '0' } : {}} >
                         <input type="text" ref={buscarRef2} placeholder='busque aqui seu produto' onClick={search} onChange={valor} style={ativo ? { borderRadius: '0', height: '50px', border: '0', width: '100%' } : {}} />

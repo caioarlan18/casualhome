@@ -1,19 +1,22 @@
 /* slider rotativo */
 
 .sliderM {
-  margin-top: 30px;
+  margin-top: 0px;
   overflow: hidden;
 }
 
 .banner {
   width: 100%;
+
+  border-radius: 0px;
 }
 .sliderD {
   display: none;
 }
 /* seções de produtos */
 .title {
-  width: 85%;
+  width: 90%;
+  margin-bottom: 10px;
 }
 .title h1 {
   font-family: poppins;
@@ -25,7 +28,7 @@
 .productSections {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 95%;
   justify-content: center;
 }
 .secG {

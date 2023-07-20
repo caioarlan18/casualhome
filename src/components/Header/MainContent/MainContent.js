@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Banner1 from '../../../image/Banner30Mobile.webp'
-import Banner2 from '../../../image/bannerFreteMobile.webp'
+import Banner1 from '../../../image/banner-principal-da-casual-home.jpg'
+import Banner2 from '../../../image/banner-secundario-casual-home.jpg'
 import Banner1D from '../../../image/Banner1D.webp'
 import Banner2D from '../../../image/BannerFreteDesktop.webp'
 import petIcon from '../../../image/categoria_animal-removebg-preview.webp'
