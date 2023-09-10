@@ -7,7 +7,7 @@
   font-size: 30px;
   font-family: poppins;
   font-weight: 500;
-  color: #1b3768;
+  color: #018bd6;
 }
 .termos p {
   font-size: 13px;
@@ -20,7 +20,7 @@
 
 @media screen and (min-width: 992px) and (max-width: 4000px) {
   .termos {
-    width: 70%;
+    width: 60%;
     margin-top: 50px;
   }
   .termos h1 {

@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Banner1 from '../../../image/banner-principal-da-casual-home.jpg'
 import Banner2 from '../../../image/banner-secundario-casual-home.jpg'
-import Banner1D from '../../../image/Banner1D.webp'
+import Banner1D from '../../../image/banner-frete-gratis-desktop.jpg'
 import Banner2D from '../../../image/BannerFreteDesktop.webp'
 import petIcon from '../../../image/categoria_animal-removebg-preview.webp'
 import homeIcon from '../../../image/casa_categoria-removebg-preview.webp'
@@ -29,7 +29,7 @@ function MainContent() {
     ];
     const images2 = [
         { id: 1, src: Banner1D, alt: 'Image 1' },
-        { id: 2, src: Banner2D, alt: 'Image 2' },
+
     ];
     const settings = {
         infinite: true,

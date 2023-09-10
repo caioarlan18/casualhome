@@ -4,7 +4,6 @@ import { FaBars, FaTimes, FaSearch, FaShoppingBag, FaToilet, FaPaw, FaInstagram,
 import { IoCartOutline } from 'react-icons/io5';
 import { GiSofa, GiCook } from 'react-icons/gi';
 import LogoMobile from '../../../image/WhatsApp_Image_2023-07-20_at_17.58.48-removebg-preview.png'
-import LogoDesktop from '../../../image/logotipocasualhome.webp'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import { useState, useContext, useEffect, useRef } from 'react';
@@ -114,7 +113,7 @@ function Header() {
     return (
         <div>
             {/* cabeçalho mobile */}
-            <div className={stylesMobile.prehd}>
+            <div className={`${stylesMobile.prehd} ${stylesDesktop.prehd}`}>
                 <h1><FaShoppingCart />Frete grátis para todo o Brasil</h1>
             </div>
             <header className={`${stylesMobile.mnmobile} ${stylesDesktop.mnmobile}`}>
@@ -183,8 +182,7 @@ function Header() {
             </nav>
 
             {/* menu desktop */}
-            <header className={`${stylesMobile.mndesktop} ${stylesDesktop.mndesktop}`
-            }>
+            <header className={`${stylesMobile.mndesktop} ${stylesDesktop.mndesktop}`}>
                 <div className={`${stylesMobile.hd_desk} ${stylesDesktop.hd_desk}`}>
                     <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
                         <Link to='/'>Home</Link>
@@ -196,7 +194,7 @@ function Header() {
 
                 <div className={`${stylesMobile.hdd_desk} ${stylesDesktop.hdd_desk}`}>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`}>
-                        <Link to='/'><img src={LogoDesktop} alt="logo do site" /></Link>
+                        <Link to='/'><img src={LogoMobile} alt="logo do site" /></Link>
                     </div>
                     <div className={`${stylesMobile.hdd1_desk} ${stylesDesktop.hdd1_desk}`} style={ativo ? { position: 'fixed', top: '0', width: '100%', zIndex: '2', left: '0' } : {}} >
                         <input type="text" ref={buscarRef2} placeholder='busque aqui seu produto' onClick={search} onChange={valor} style={ativo ? { borderRadius: '0', height: '50px', border: '0', width: '100%' } : {}} />

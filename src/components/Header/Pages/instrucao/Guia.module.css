@@ -6,7 +6,7 @@
 .guia h1 {
   font-size: 30px;
   font-family: poppins;
-  color: #1b3768;
+  color: #018bd6;
 }
 .guia p {
   color: #4b4f58;
@@ -18,7 +18,7 @@
 
 @media screen and (min-width: 992px) and (max-width: 4000px) {
   .guia {
-    width: 70%;
+    width: 50%;
     margin-top: 50px;
   }
   .guia p {

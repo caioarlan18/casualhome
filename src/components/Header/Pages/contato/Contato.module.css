@@ -5,13 +5,13 @@
 }
 
 .redes1 {
-  color: #1b3768;
+  color: #018bd6;
   margin-right: 10px;
 }
 .redes2 {
   width: 25px;
   height: 25px;
-  background-color: #1b3768;
+  background-color: #018bd6;
   border-radius: 100%;
   padding: 10px;
   margin-top: 20px;
@@ -21,7 +21,7 @@
 .contato1 h1 {
   font-size: 30px;
   font-family: poppins;
-  color: #1b3768;
+  color: #018bd6;
   font-weight: 500;
 }
 .contato1 p {
@@ -33,7 +33,7 @@
 }
 
 .contato3 p {
-  color: #1b3768;
+  color: #018bd6;
   font-family: poppins;
   font-weight: 400;
   font-size: 14px;
@@ -65,7 +65,7 @@
 .contato3 button {
   font-size: 16px;
   color: white;
-  background-color: #1b3768;
+  background-color: #018bd6;
   height: 44px;
   border: 0;
   border-radius: 8px;

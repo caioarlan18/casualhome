@@ -2,13 +2,16 @@
   .mnmobile {
     display: none;
   }
+  .prehd {
+    display: none;
+  }
   .mndesktop {
     display: block;
   }
   .hd_desk {
     width: 100%;
     height: 70px;
-    background-color: #1b3768;
+    background-color: #018bd6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +45,7 @@
     width: 600px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border: 1px solid #1b3768;
+    border: 1px solid #018bd6;
     border-right: 0;
     outline: none;
     height: 45px;
@@ -58,7 +61,7 @@
   }
   .hdd1_desk button {
     background-color: white;
-    border: 1px solid #1b3768;
+    border: 1px solid #018bd6;
     border-left: 0;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -69,7 +72,7 @@
     right: 50px;
   }
   .hdd1_desk button svg {
-    color: #1b3768;
+    color: #018bd6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,14 +84,14 @@
   .hdd1_desk svg {
     width: 30px;
     height: 30px;
-    color: #1b3768;
+    color: #018bd6;
     cursor: pointer;
     position: relative;
     right: 50px;
   }
   .hdd1_desk img {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 100%;
     cursor: pointer;
   }
   .hddd_desk {
@@ -96,6 +99,7 @@
     justify-content: center;
     align-items: center;
     max-width: 50%;
+    margin-bottom: 30px;
   }
 
   .hddd1_desk a {

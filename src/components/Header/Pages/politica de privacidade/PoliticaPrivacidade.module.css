@@ -5,7 +5,7 @@
 }
 .politicaP h1 {
   font-size: 30px;
-  color: #1b3768;
+  color: #018bd6;
   font-family: poppins;
 }
 .politicaP p {
@@ -17,6 +17,6 @@
 }
 @media screen and (min-width: 992px) and (max-width: 4000px) {
   .politicaP {
-    width: 75%;
+    width: 60%;
   }
 }
