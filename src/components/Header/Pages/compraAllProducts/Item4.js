@@ -9,8 +9,8 @@ export function Item4() {
             imagem2={secundaria}
             imagem3={terciaria}
             titulo={'Escova elétrica rotatória para limpeza'}
-            custoR={'193,97'}
-            custoP={'149,90'}
+            custoR={'168,97'}
+            custoP={'129,99'}
             nameVariation={'Tipo'}
             variation={'Pilha'}
             variation2={'Bateria'}

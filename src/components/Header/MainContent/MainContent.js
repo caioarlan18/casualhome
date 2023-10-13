@@ -16,13 +16,25 @@ import { FaShieldAlt } from 'react-icons/fa';
 import { FaRegListAlt } from 'react-icons/fa';
 import ItensCozinha from '../../../image/categoria_cozinha_melhor-removebg-preview.webp'
 import banheiro from '../../../image/categoria_banheiro_melhor-removebg-preview.webp'
-import { useContext } from "react"
-import { ArrayContext } from '../Pages/arrayproducts/ArrayProvider';
 import { Categorias } from '../categorias/Categorias';
+import { db } from '../Pages/firebase/FireBase'
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from 'react'
+import Produto from '../produtos/Produto';
 function MainContent() {
-    const produtos = useContext(ArrayContext);
 
+    const [users, setUsers] = useState([])
+    const useCollectionRef = collection(db, 'produtos')
 
+    useEffect(() => {
+        const getUsers = async () => {
+            const data = await getDocs(useCollectionRef)
+            setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        }
+
+        getUsers()
+
+    }, [])
     const images = [
         { id: 1, src: Banner1, alt: 'Image 1' },
         { id: 2, src: Banner2, alt: 'Image 2' },
@@ -151,10 +163,7 @@ function MainContent() {
                     <h1>Produtos em destaque</h1>
                 </div>
                 <div className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
-                    {produtos[0]}
-                    {produtos[1]}
-                    {produtos[2]}
-                    {produtos[3]}
+                    <Produto n1={0} n2={4} />
                 </div>
             </div>
 
@@ -163,10 +172,8 @@ function MainContent() {
                     <h1>Lançados recentemente</h1>
                 </div>
                 <div className={`${stylesMobile.productSections} ${stylesDesktop.productSections}`}>
-                    {produtos[produtos.length - 1]}
-                    {produtos[produtos.length - 2]}
-                    {produtos[produtos.length - 3]}
-                    {produtos[produtos.length - 4]}
+
+                    <Produto n1={0} n2={4} />
 
                 </div>
 

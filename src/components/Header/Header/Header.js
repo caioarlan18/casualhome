@@ -7,7 +7,7 @@ import LogoMobile from '../../../image/WhatsApp_Image_2023-07-20_at_17.58.48-rem
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import { useState, useContext, useEffect, useRef } from 'react';
-import { ArrayContext } from "../Pages/arrayproducts/ArrayProvider"
+import { MdViewModule } from 'react-icons/md';
 
 
 function Header() {
@@ -100,7 +100,7 @@ function Header() {
     }, [cartItems]);
 
     // sistema de busca
-    const produtos = useContext(ArrayContext)
+    const produtos = []
     const [pesquisa, setPesquisa] = useState('')
     function valor(event) {
         setPesquisa(event.target.value)
@@ -177,6 +177,7 @@ function Header() {
                     <Link to='/trocas' onClick={handleClick}><FaArrowLeft />Trocas e devoluções</Link>
                     <Link to='/politicadeprivacidade' onClick={handleClick}><FaLock />Política de privacidade</Link>
                     <Link to='/contato' onClick={handleClick}><FaPhone />Central de atendimento</Link>
+                    <Link to='/painel'><MdViewModule />Painel</Link>
                 </div>
 
             </nav>
@@ -189,6 +190,9 @@ function Header() {
                     </div>
                     <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
                         <Link to='/contato'>Contato</Link>
+                    </div>
+                    <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
+                        <Link to='/painel'>Painel</Link>
                     </div>
                 </div>
 

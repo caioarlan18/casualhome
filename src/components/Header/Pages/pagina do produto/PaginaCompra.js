@@ -7,8 +7,6 @@ import Bandeira1 from '../../../../image/bandeiras cartao1.webp'
 import Bandeira2 from '../../../../image/bandeira2.webp'
 import antiPirata from '../../../../image/anti-pirata.webp'
 import { HashLink as Link } from 'react-router-hash-link';
-import { useContext } from "react";
-import { ArrayContext } from "../arrayproducts/ArrayProvider";
 import { Fragment } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
@@ -64,8 +62,7 @@ function PaginaCompra({ imagemMain, imagem2, imagem3, titulo, nameVariation, var
         principal = imagem3
     }
 
-    const produtos = useContext(ArrayContext)
-    const produtosCopia = [...produtos];
+    const produtosCopia = [];
     for (let i = produtosCopia.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [produtosCopia[i], produtosCopia[j]] = [produtosCopia[j], produtosCopia[i]];

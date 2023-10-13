@@ -23,7 +23,10 @@ import { Item7 } from './components/Header/Pages/compraAllProducts/Item7';
 import { Item8 } from './components/Header/Pages/compraAllProducts/Item8';
 import ItensCozinha from './components/Header/Pages/itens para cozinha/ItensCozinha';
 import ItensBanheiro from './components/Header/Pages/itens banheiro/ItensBanheiro';
-
+import { Painel } from './components/Header/Pages/painelAdmin/Painel';
+import { CreateProduct } from './components/Header/Pages/painelAdmin/create/CreateProduct';
+import { UpdateProduct } from './components/Header/Pages/painelAdmin/update/UpdateProduct';
+import { EditProduct } from './components/Header/Pages/painelAdmin/edit/EditProduct';
 function App() {
   return (
     <div >
@@ -52,7 +55,10 @@ function App() {
           <Route path='/item6' element={<Item6 />} />
           <Route path='/item7' element={<Item7 />} />
           <Route path='/item8' element={<Item8 />} />
-
+          <Route path='/painel' element={<Painel />} />
+          <Route path='/createproduct' element={<CreateProduct />} />
+          <Route path='/updateproduct' element={<UpdateProduct />} />
+          <Route path='/editproduct/:id' element={<EditProduct />} />
         </Routes>
       </Router>
     </div>
