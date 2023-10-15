@@ -31,7 +31,7 @@ function ProdutoCategory({ catview }) {
 
         <>
             {produtocategory.map((user) =>
-                <div className={styles.produto} key={user.id} >
+                <div className={styles.produto} key={user.id} onClick={() => { navigate(`/compra/${user.id}`); scroll.scrollToTop({ duration: 0 }) }} >
                     <div className={styles.produto1} >
                         <img src={user.produto.mainImage} alt="imagem do produto" />
                     </div>
