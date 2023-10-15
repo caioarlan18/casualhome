@@ -13,14 +13,6 @@ import Termos from './components/Header/Pages/termos e condicoes/Termos';
 import Carrinho from './components/Header/Pages/carrinho/Carrinho';
 import PaginaCompra from './components/Header/Pages/pagina do produto/PaginaCompra';
 import { Checkout } from './components/Header/Pages/checkout/Checkout';
-import { Item1 } from './components/Header/Pages/compraAllProducts/Item1';
-import { Item2 } from './components/Header/Pages/compraAllProducts/Item2';
-import { Item3 } from './components/Header/Pages/compraAllProducts/Item3';
-import { Item4 } from './components/Header/Pages/compraAllProducts/Item4';
-import { Item5 } from './components/Header/Pages/compraAllProducts/Item5';
-import { Item6 } from './components/Header/Pages/compraAllProducts/Item6';
-import { Item7 } from './components/Header/Pages/compraAllProducts/Item7';
-import { Item8 } from './components/Header/Pages/compraAllProducts/Item8';
 import ItensCozinha from './components/Header/Pages/itens para cozinha/ItensCozinha';
 import ItensBanheiro from './components/Header/Pages/itens banheiro/ItensBanheiro';
 import { Painel } from './components/Header/Pages/painelAdmin/Painel';
@@ -45,16 +37,8 @@ function App() {
           <Route path='/instrucaodecompra' element={<Guia />} />
           <Route path='/termos' element={<Termos />} />
           <Route path='/carrinho' element={<Carrinho />} />
-          <Route path='/compra' element={<PaginaCompra />} />
+          <Route path='/compra/:id' element={<PaginaCompra />} />
           <Route path='/checkout' element={<Checkout />} />
-          <Route path='/item1' element={<Item1 />} />
-          <Route path='/item2' element={<Item2 />} />
-          <Route path='/item3' element={<Item3 />} />
-          <Route path='/item4' element={<Item4 />} />
-          <Route path='/item5' element={<Item5 />} />
-          <Route path='/item6' element={<Item6 />} />
-          <Route path='/item7' element={<Item7 />} />
-          <Route path='/item8' element={<Item8 />} />
           <Route path='/painel' element={<Painel />} />
           <Route path='/createproduct' element={<CreateProduct />} />
           <Route path='/updateproduct' element={<UpdateProduct />} />

@@ -3,17 +3,20 @@ import stylesDesktop from './Header.desktop.module.css'
 import { FaBars, FaTimes, FaSearch, FaShoppingBag, FaToilet, FaPaw, FaInstagram, FaHome, FaFacebook, FaBox, FaArrowLeft, FaLock, FaPhone, FaShoppingCart } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { GiSofa, GiCook } from 'react-icons/gi';
-import LogoMobile from '../../../image/WhatsApp_Image_2023-07-20_at_17.58.48-removebg-preview.png'
+import LogoMobile from '../../../image/logo.png'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import { useState, useContext, useEffect, useRef } from 'react';
 import { MdViewModule } from 'react-icons/md';
-
-
+import { db } from '../Pages/firebase/FireBase'
+import { collection, getDocs } from "firebase/firestore";
+import { useNavigate } from 'react-router-dom';
 function Header() {
+    const navigate = useNavigate()
     const handleClick = () => {
         // Rolar para o topo imediatamente
         scroll.scrollToTop({ duration: 0 });
+
     };
 
     // função de abrir menu hamburguer
@@ -22,6 +25,7 @@ function Header() {
         menu.classList.toggle(stylesMobile.active);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         overlay.style.display = 'block';
+
     }
 
     // função de fechar menu hamburguer
@@ -30,7 +34,9 @@ function Header() {
         menu.classList.remove(stylesMobile.active);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         overlay.style.display = 'none';
+
     }
+
 
     // função do overlay para o menu hamburguer
     function sumir() {
@@ -38,6 +44,7 @@ function Header() {
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         menu.classList.remove(stylesMobile.active);
         overlay.style.display = 'none';
+
 
     }
 
@@ -48,7 +55,17 @@ function Header() {
         setAtivo2(false)
         setAtivo(!ativo)
     }
+    const [users, setUsers] = useState([])
+    const useCollectionRef = collection(db, 'produtos')
+    useEffect(() => {
+        const getUsers = async () => {
+            const data = await getDocs(useCollectionRef)
+            setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        }
 
+        getUsers()
+
+    }, [])
     // função da barra de pesquisa (mobile e desktop)
     const [ativo, setAtivo] = useState(false)
     const [ativo2, setAtivo2] = useState(false)
@@ -100,14 +117,14 @@ function Header() {
     }, [cartItems]);
 
     // sistema de busca
-    const produtos = []
+
     const [pesquisa, setPesquisa] = useState('')
     function valor(event) {
         setPesquisa(event.target.value)
     }
     const pesquisaLower = pesquisa.toLowerCase()
-    var avu = produtos.filter((produto) => (
-        produto.props.titulo.toLowerCase().startsWith(pesquisaLower)
+    const avu = users.filter((objeto) => (
+        objeto.produto.name.toLowerCase().startsWith(pesquisaLower)
     ))
 
     return (
@@ -120,7 +137,7 @@ function Header() {
 
                 <div className={`${stylesMobile.hd} ${stylesDesktop.hd}`}>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
-                        <FaBars onClick={MenuOpen} />
+                        <Link><FaBars onClick={MenuOpen} /></Link>
                         <Link to='/'><img src={LogoMobile} alt="logo da casual home" /></Link>
                     </div>
                     <div className={`${stylesMobile.hd1} ${stylesDesktop.hd1}`}>
@@ -136,14 +153,14 @@ function Header() {
                     </div>
                     {avu.map((produto, index) => (
                         ativo && pesquisa !== '' ? (
-                            <Link to={produto.props.buy} key={index}>
+                            <div key={index} onClick={() => { navigate(`/compra/${produto.id}`); scroll.scrollToTop({ duration: 0 }) }}>
                                 <div className={`${stylesMobile.pesquisa} ${stylesDesktop.pesquisa}`}>
                                     <div className={`${stylesMobile.pesquisa1} ${stylesDesktop.pesquisa1}`}>
-                                        <img src={produto.props.imagemProduto} alt="imagem do produto" />
-                                        <p>{produto.props.titulo}</p>
+                                        <img src={produto.produto.mainImage} alt="imagem do produto" />
+                                        <p>{produto.produto.name}</p>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         ) : null
                     ))}
 
@@ -156,7 +173,7 @@ function Header() {
                     <FaTimes onClick={MenuClose} />
                     <div className={stylesMobile.englob}>
                         <div className={stylesMobile.navl1}>
-                            <Link to="/"><FaHome /><span>Home</span></Link>
+                            <Link to="/" onClick={handleClick}><FaHome /><span>Home</span></Link>
                         </div>
                         <div className={stylesMobile.navl1}>
                             <a href="https://www.instagram.com/casual_home_loja/"><FaInstagram /></a>
@@ -177,7 +194,7 @@ function Header() {
                     <Link to='/trocas' onClick={handleClick}><FaArrowLeft />Trocas e devoluções</Link>
                     <Link to='/politicadeprivacidade' onClick={handleClick}><FaLock />Política de privacidade</Link>
                     <Link to='/contato' onClick={handleClick}><FaPhone />Central de atendimento</Link>
-                    <Link to='/painel'><MdViewModule />Painel</Link>
+                    <Link to='/painel' onClick={handleClick}><MdViewModule />Painel</Link>
                 </div>
 
             </nav>
@@ -212,14 +229,14 @@ function Header() {
                 </div>
                 {avu.map((produto, index) => (
                     ativo && pesquisa !== '' ? (
-                        <Link to={produto.props.buy} key={index}>
+                        <div key={index} onClick={() => { navigate(`/compra/${produto.id}`); scroll.scrollToTop({ duration: 0 }) }}>
                             <div className={`${stylesMobile.pesquisa} ${stylesDesktop.pesquisa}`}>
                                 <div className={`${stylesMobile.pesquisa1} ${stylesDesktop.pesquisa1}`}>
-                                    <img src={produto.props.imagemProduto} alt="imagem do produto" />
-                                    <p>{produto.props.titulo}</p>
+                                    <img src={produto.produto.mainImage} alt="imagem do produto" />
+                                    <p>{produto.produto.name}</p>
                                 </div>
                             </div>
-                        </Link>
+                        </div>
                     ) : null
                 ))}
                 <nav className={`${stylesMobile.hddd_desk} ${stylesDesktop.hddd_desk}`}>

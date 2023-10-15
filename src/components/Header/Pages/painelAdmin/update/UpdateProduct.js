@@ -25,10 +25,10 @@ export function UpdateProduct() {
     const navigate = useNavigate()
 
     return (
-        <div>
+        <>
             <Header />
             <Navigation navTitle={'Atualizar produtos'} />
-            <div className={styles.update}>
+            <div className={styles.productSections}>
                 {users.map((user) =>
                     <div className={styles.produto} key={user.id} onClick={() => { navigate(`/editproduct/${user.id}`); scroll.scrollToTop({ duration: 0 }) }} >
                         <div className={styles.produto1} >
@@ -58,7 +58,7 @@ export function UpdateProduct() {
                 )}
             </div>
             <Footer />
-        </div>
 
+        </>
     )
 }

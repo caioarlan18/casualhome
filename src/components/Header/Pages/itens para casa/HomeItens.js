@@ -1,7 +1,7 @@
 import Header from "../../Header/Header"
 import Footer from "../../rodape/Footer"
 import Navigation from "../../Navigation/Navigation"
-
+import ProdutoCategory from "../../produtos/ProdutoCategory"
 function HomeItens() {
 
     return (
@@ -9,7 +9,7 @@ function HomeItens() {
             <Header />
             <Navigation navTitle='Itens para casa' />
             <section style={{ display: 'flex', flexWrap: 'wrap', marginTop: '30px', marginBottom: '100px', width: '95%' }}>
-                {/* PRODUTO */}
+                <ProdutoCategory catview={'casa'} />
 
             </section>
             <Footer />

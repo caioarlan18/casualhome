@@ -1,5 +1,4 @@
 import styles from './Produto.mobile.module.css'
-import stylesDesktop from './Produto.desktop.module.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import { animateScroll as scroll } from 'react-scroll';
@@ -9,7 +8,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
 
-function Produto({ n1, n2 }) {
+function ProdutoCategory({ catview }) {
     const navigate = useNavigate()
 
     const handleClick = () => {
@@ -26,11 +25,13 @@ function Produto({ n1, n2 }) {
         getUsers()
 
     }, [])
+    console.log(users)
+    const produtocategory = users.filter((objeto) => objeto.produto.category.includes(catview))
     return (
 
         <>
-            {users.slice(n1, n2).map((user) =>
-                <div className={styles.produto} key={user.id} onClick={() => { navigate(`/compra/${user.id}`); scroll.scrollToTop({ duration: 0 }) }} >
+            {produtocategory.map((user) =>
+                <div className={styles.produto} key={user.id} >
                     <div className={styles.produto1} >
                         <img src={user.produto.mainImage} alt="imagem do produto" />
                     </div>
@@ -59,4 +60,4 @@ function Produto({ n1, n2 }) {
         </>
     )
 }
-export default Produto
+export default ProdutoCategory
