@@ -42,7 +42,7 @@ export function Checkout() {
 
         const calculateTotal = () => {
             const sum = cartItems.reduce((accumulator, item) => {
-                return accumulator + parseFloat(item.custoP.replace('R$ ', ''));
+                return accumulator + parseFloat(item.promoPrice.replace('R$ ', ''));
             }, 0);
             setTotal(sum);
         };
@@ -56,7 +56,7 @@ export function Checkout() {
             let menssagem = "*Desejo finalizar minha compra. Estes são os itens do meu carrinho:* %0A %0A";
 
             cartItems.map((item, index) => (
-                menssagem += `${index + 1}- ${item.titulo} (Tipo: ${item.selectedValue}) - R$ ${item.custoP}%0A %0A`
+                menssagem += `${index + 1}- ${item.name} - R$ ${item.promoPrice}%0A %0A`
             ));
 
             menssagem += `*Total*: R$ ${total.toFixed(2)}%0A %0A %0A %0A *Meus Dados* %0A %0A Nome: ${nome} %0A %0A CPF: ${cpf} %0A %0A CEP: ${cep} %0A %0A Endereço: ${endereco} %0A %0A Número: ${numero} %0A %0A Complemento: ${complemento} %0A %0A Bairro: ${bairro} %0A %0A Cidade: ${cidade} %0A %0A Estado: ${estado}`

@@ -51,14 +51,14 @@ function PaginaCompra() {
 
 
     const [cartItems, setCartItems] = useState([]);
-    const navigate = useNavigate()
+
     const addToCart = () => {
         const updatedCartItems = [...cartItems, users.produto];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         navigate('/carrinho')
         scroll.scrollToTop({ duration: 0 });
     };
-
+    const navigate = useNavigate()
     const addToCart2 = () => {
         const updatedCartItems = [...cartItems, users.produto];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
@@ -121,8 +121,8 @@ function PaginaCompra() {
                 </div>
 
                 <div className={styles.compra5}>
-                    <button >COMPRAR</button>
-                    <button className={styles.compra51}>ADICIONAR AO CARRINHO</button>
+                    <button onClick={addToCart} >COMPRAR</button>
+                    <button className={styles.compra51} onClick={addToCart2}>ADICIONAR AO CARRINHO</button>
                 </div>
                 <div className={styles.compra6}>
                     <div className={styles.compra6b}>
@@ -188,8 +188,8 @@ function PaginaCompra() {
                         </div>
 
                         <div className={styles.compra5}>
-                            <button >COMPRAR</button>
-                            <button className={styles.compra51}>ADICIONAR AO CARRINHO</button>
+                            <button onClick={addToCart}>COMPRAR</button>
+                            <button className={styles.compra51} onClick={addToCart2}>ADICIONAR AO CARRINHO</button>
                         </div>
                         <div className={styles.compra6}>
                             <div className={styles.compra6b}>

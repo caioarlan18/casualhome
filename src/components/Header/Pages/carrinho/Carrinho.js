@@ -25,7 +25,7 @@ function Carrinho() {
 
         const calculateTotal = () => {
             const sum = cartItems.reduce((accumulator, item) => {
-                return accumulator + parseFloat(item.custoP.replace('R$ ', ''));
+                return accumulator + parseFloat(item.promoPrice.replace('R$ ', ''));
             }, 0);
             setTotal(sum);
         };
@@ -72,14 +72,12 @@ function Carrinho() {
                     {cartItems.map((item, index) => (
                         <div key={index} className={styles.carrinho2}>
                             <div className={styles.carrinho3}>
-                                <img src={item.imagemMain} alt="imagem do produto" />
+                                <img src={item.mainImage} alt="imagem do produto" />
                                 <p onClick={() => removeFromCart(index)}>remover</p>
                             </div>
                             <div className={styles.carrinho3}>
-                                <h1>{item.titulo}</h1>
-                                <h2>Tipo: {item.selectedValue}</h2>
-
-                                <h3>R$ {item.custoP}</h3>
+                                <h1>{item.name}</h1>
+                                <h3>R$ {item.promoPrice}</h3>
                             </div>
                         </div>
                     ))}
