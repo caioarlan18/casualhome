@@ -215,7 +215,7 @@ function Header() {
                         <Link to='/contato'>Contato</Link>
                     </div>
                     <div className={`${stylesMobile.hd1_desk} ${stylesDesktop.hd1_desk}`}>
-                        <Link to='/painel'>Painel</Link>
+                        <Link to='/login'>Painel</Link>
                     </div>
                 </div>
 

@@ -25,7 +25,7 @@ export function Login() {
             <div className={styles.hd}>
                 <div className={styles.hdd}>
                     <div className={styles.hd1}>
-                        <h1>Bem vindo </h1>
+                        <h1>Bem vindo</h1>
 
                     </div>
                     <div className={styles.hd15}>
