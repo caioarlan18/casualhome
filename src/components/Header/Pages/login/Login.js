@@ -34,7 +34,7 @@ export function Login() {
                             <input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
                         </div>
 
-                        <div class={styles.hd3}>
+                        <div className={styles.hd3}>
                             <input type="submit" value="Logar" onClick={login} />
                         </div>
                     </div>
