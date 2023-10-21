@@ -12,6 +12,10 @@
   background-color: white;
   padding-bottom: 20px;
 }
+.teste {
+  overflow: hidden;
+}
+
 .prehd {
   height: 24px;
   background-color: #028bd8;

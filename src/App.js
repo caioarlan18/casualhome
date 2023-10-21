@@ -19,6 +19,7 @@ import { Painel } from './components/Header/Pages/painelAdmin/Painel';
 import { CreateProduct } from './components/Header/Pages/painelAdmin/create/CreateProduct';
 import { UpdateProduct } from './components/Header/Pages/painelAdmin/update/UpdateProduct';
 import { EditProduct } from './components/Header/Pages/painelAdmin/edit/EditProduct';
+import { Login } from './components/Header/Pages/login/Login';
 function App() {
   return (
     <div >
@@ -43,6 +44,7 @@ function App() {
           <Route path='/createproduct' element={<CreateProduct />} />
           <Route path='/updateproduct' element={<UpdateProduct />} />
           <Route path='/editproduct/:id' element={<EditProduct />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </Router>
     </div>

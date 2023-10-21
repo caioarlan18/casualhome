@@ -20,18 +20,25 @@ function Carrinho() {
         }
     }, []);
     const [total, setTotal] = useState(0);
-
     useEffect(() => {
-
         const calculateTotal = () => {
             const sum = cartItems.reduce((accumulator, item) => {
-                return accumulator + parseFloat(item.promoPrice.replace('R$ ', ''));
+                if (item.promoPrice) {
+                    if (item.promoPrice.includes('R$ ')) {
+                        return accumulator + parseFloat(item.promoPrice.replace('R$ ', ''));
+                    } else {
+                        return accumulator + parseFloat(item.promoPrice);
+                    }
+                } else {
+                    return accumulator;
+                }
             }, 0);
             setTotal(sum);
         };
 
         calculateTotal();
     }, [cartItems]);
+
 
     const removeFromCart = (index) => {
         const updatedCartItems = [...cartItems];

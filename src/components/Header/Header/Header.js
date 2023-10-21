@@ -6,7 +6,7 @@ import { GiSofa, GiCook } from 'react-icons/gi';
 import LogoMobile from '../../../image/logo.png'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
-import { useState, useContext, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MdViewModule } from 'react-icons/md';
 import { db } from '../Pages/firebase/FireBase'
 import { collection, getDocs } from "firebase/firestore";
@@ -16,7 +16,8 @@ function Header() {
     const handleClick = () => {
         // Rolar para o topo imediatamente
         scroll.scrollToTop({ duration: 0 });
-
+        const body = document.querySelector('body')
+        body.classList.remove(stylesMobile.teste)
     };
 
     // função de abrir menu hamburguer
@@ -25,6 +26,8 @@ function Header() {
         menu.classList.toggle(stylesMobile.active);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         overlay.style.display = 'block';
+        const body = document.querySelector('body')
+        body.classList.add(stylesMobile.teste)
 
     }
 
@@ -34,8 +37,11 @@ function Header() {
         menu.classList.remove(stylesMobile.active);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         overlay.style.display = 'none';
-
+        const body = document.querySelector('body')
+        body.classList.remove(stylesMobile.teste)
     }
+
+
 
 
     // função do overlay para o menu hamburguer
@@ -44,8 +50,8 @@ function Header() {
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         menu.classList.remove(stylesMobile.active);
         overlay.style.display = 'none';
-
-
+        const body = document.querySelector('body')
+        body.classList.remove(stylesMobile.teste)
     }
 
     // função para o overlay da barra de pesquisa (mobile e desktop)
@@ -194,7 +200,7 @@ function Header() {
                     <Link to='/trocas' onClick={handleClick}><FaArrowLeft />Trocas e devoluções</Link>
                     <Link to='/politicadeprivacidade' onClick={handleClick}><FaLock />Política de privacidade</Link>
                     <Link to='/contato' onClick={handleClick}><FaPhone />Central de atendimento</Link>
-                    <Link to='/painel' onClick={handleClick}><MdViewModule />Painel</Link>
+                    <Link to='/login' onClick={handleClick}><MdViewModule />Painel</Link>
                 </div>
 
             </nav>
