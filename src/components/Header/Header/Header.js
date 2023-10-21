@@ -16,8 +16,6 @@ function Header() {
     const handleClick = () => {
         // Rolar para o topo imediatamente
         scroll.scrollToTop({ duration: 0 });
-        const body = document.querySelector('body')
-        body.classList.remove(stylesMobile.teste)
     };
 
     // função de abrir menu hamburguer
@@ -26,9 +24,6 @@ function Header() {
         menu.classList.toggle(stylesMobile.active);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         overlay.style.display = 'block';
-        const body = document.querySelector('body')
-        body.classList.add(stylesMobile.teste)
-
     }
 
     // função de fechar menu hamburguer
@@ -37,8 +32,6 @@ function Header() {
         menu.classList.remove(stylesMobile.active);
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         overlay.style.display = 'none';
-        const body = document.querySelector('body')
-        body.classList.remove(stylesMobile.teste)
     }
 
 
@@ -50,8 +43,6 @@ function Header() {
         const overlay = document.querySelector(`.${stylesMobile.overlay}`);
         menu.classList.remove(stylesMobile.active);
         overlay.style.display = 'none';
-        const body = document.querySelector('body')
-        body.classList.remove(stylesMobile.teste)
     }
 
     // função para o overlay da barra de pesquisa (mobile e desktop)
